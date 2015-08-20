@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <link href='/favicon.ico' rel='shortcut icon' type='image/x-icon'>
+    <link href='/favicon.ico' rel='icon' type='image/x-icon'>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>{% if page.title %} {{ page.title }} {% else %} {{ site.title }} {% endif %}</title>
+    <meta content='{% if page.excerpt %} {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ site.description }} {% endif %}' name='description'>
+    <style>
+      a { color: #4D994D; }
+      a:visited { color: #336633; }
+      body { margin: 3%; }
+      #logo {
+        float: right;
+        margin: 0 0 0 2%;
+      }
+    </style>
+  </head>
+  <body>
+    <img id='logo' src='images/schleuder.png'>
+    {{ content }}
+  </body>
+</html>

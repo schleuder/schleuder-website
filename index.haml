@@ -1,0 +1,47 @@
+---
+layout: page
+title: Schleuder <small> — a gpg-enabled mailinglist with remailing-capabilities.</small>
+---
+
+%h3 Stable: version 2
+%p
+  For the stable version of Schleuder see
+  = succeed "." do
+    %a{href: 'https://schleuder2.nadir.org/'} schleuder2.nadir.org
+
+%h3 Development: version 3
+%p
+  For a peek at the next version of Schleuder install
+  %a{href: 'schleuder-3.0.0.pre.alpha.gem'} schleuder-3.0.0.pre.alpha.gem
+  = surround '(', ').' do
+    verify with
+    %a{href: 'schleuder-3.0.0.pre.alpha.gem.sig'} schleuder-3.0.0.pre.alpha.gem.sig
+
+%p
+  For information on the development of Schleuder v3 see
+  = succeed '.' do
+    %a{href: 'https://git.codecoop.org/schleuder/schleuder3'} https://git.codecoop.org/schleuder/schleuder3
+
+%p
+  We're very much interested in 
+  %strong your help!
+
+  We've got enough to do:
+  %ul
+    %li Improve the code of Schleuder.
+    %li Review the code of Schleuder.
+    %li Write a daemon that provides an API for clients (like Webschleuder, the upcoming web-interface).
+    %li Write documentation.
+    %li Design documentation and website.
+    %li Create visually helping information for users and admins (e.g. How-To-instructions with screenshots).
+    %li Improve the code of Webschleuder (a RubyOnRails-app).
+    %li Improve the user-experience of both, Schleuder and Webschleuder.
+    %li Create and maintain packages for your OS
+    %li ...
+
+%p
+  To contact us send an email to
+  = succeed '.' do
+    %a{href: 'mailto:schleuder2.nadir.org'} schleuder2@nadir.org
+
+
