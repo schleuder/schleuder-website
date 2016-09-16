@@ -42,7 +42,7 @@ Here's a simple picture of a message that is sent to a non-subscriber ("Zacharia
 
 [![resent-schema](schleuder-schema-resend-small.png 'Click to enlarge')](schleuder-schema-resend.png)
 
-[↑](#top)
+[↑](#top "Go to top of page")
 {: .linktotop}
 
 ### Technical details
@@ -111,7 +111,7 @@ To configure each list individually adapt the following lines for each list and 
     listname-sendkey@example.org  schleuder:
 
 
-[↑](#top)
+[↑](#top "Go to top of page")
 {: .linktotop}
 
 ## Managing a list
@@ -129,7 +129,7 @@ To use SchleuderConf please see the output of
     schleuder-conf help
 
 
-[↑](#top)
+[↑](#top "Go to top of page")
 {: .linktotop}
 
 ## Using a list
@@ -214,13 +214,13 @@ x-sign-this:
 Write to `listname-owner@hostname` to contact the list-owner(s) even if you don't know who they are. Use the list's key to encrypt the email!
 
 
-[↑](#top)
+[↑](#top "Go to top of page")
 {: .linktotop}
 
 ## Feedback
 
 To suggest changes to these documents or if you found any errors in them, please [contact us](mailto:schleuder2@nadir.org) or use the [issue tracker](https://git.codecoop.org/schleuder/schleuder3/issues).
 
-[↑](#top)
+[↑](#top "Go to top of page")
 {: .linktotop}
 
