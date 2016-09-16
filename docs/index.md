@@ -5,8 +5,6 @@ title: Documentation
 
 *Disclaimer: this is work in progress. To suggest improvements see [Feedback](#feedback).*
 
-[](#top)
-
 * toc
 {:toc}
 
