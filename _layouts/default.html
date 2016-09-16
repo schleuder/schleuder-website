@@ -10,7 +10,10 @@
     <style>
       a { color: #4D994D; }
       a:visited { color: #336633; }
-      body { margin: 3%; }
+      body {
+        margin: 3%;
+        font-family: DroidSans, sans-serif;
+      }
       #logo {
         float: right;
         margin: 0 0 0 2%;
@@ -19,13 +22,58 @@
         padding: 0;
         margin-bottom: 0;
       }
-      #subtitle {
+      h2 {
+        margin: 1em 0 0.5em 0;
+        border-bottom: solid thin #ccc;
+      }
+      h2, h3 {
+      }
+      #subtitle, #breadcrumb {
         color: #999999;
         font-weight: bold;
         font-size: 1.1em;
-        }
+        text-decoration: none;
+      }
       header {
         margin-bottom: 2em;
+      }
+      ul#markdown-toc {
+        font-size: smaller;
+        color: #666;
+        list-style-type: none;
+        margin: 1em 0;
+        padding: 0;
+      }
+      #markdown-toc ul {
+        list-style-type: none;
+        margin: 0 0 0 1.5em;
+        padding: 0;
+      }
+      ul#markdown-toc a {
+        font-size: larger;
+      }
+      ul#markdown-toc > li {
+        margin: 0 0 0.4em 0;
+      }
+
+      .linktotop {
+        text-align: right;
+        font-size: 2em;
+        margin: 0;
+        padding: 0;
+      }
+      .linktotop a {
+        text-decoration: none;
+      }
+      pre, code {
+        background-color: #f8f8f8;
+      }
+      pre {
+        padding: 1em;
+      }
+      dt {
+        font-style: italic;
+        margin: 0.5em 0 0 0;
       }
     </style>
   </head>
