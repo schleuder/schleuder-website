@@ -90,7 +90,7 @@ To enable Schleuder to receive emails your Mail Transport Agent must be configur
 To hook Schleuder into Postfix adapt these lines and add them to `master.cf`:
 
     schleuder  unix  -       n       n       -       -       pipe
-      flags=DRhu user=schleuder argv=/path/to/bin/schleuder ${user}
+      flags=DRhu user=schleuder argv=/path/to/bin/schleuder ${recipient}
 
 Also adapt these lines and add them to `main.cf`:
 
