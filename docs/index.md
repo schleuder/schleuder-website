@@ -55,7 +55,7 @@ The keyrings for each list are standard GnuPG keyrings and sit in the filesystem
 
 In the list-dir there's also a list-specific log-file (might be missing if the log-level is high and no error occurred yet).
 
-Other logging goes is sent to syslog. Where that ends up depends on the operating system and the system administration.
+Other logging is sent to syslog. Where that ends up depends on the operating system and the system administration.
 
 All other list-related data is stored in the SQL-database. Most data is unserialized, only some values are JSON-encoded.
 
