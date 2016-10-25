@@ -118,6 +118,18 @@ To configure each list individually adapt the following lines for each list and 
 
 To create and manage lists you have two options: Webschleuder and SchleuderConf.
 
+Both require a running `schleuderd`. Depending on the type of operating system and the setup you are using you can either start the systemd-unit-file:
+
+    systemctl start schleuderd
+
+Or you can run it manually in a shell:
+
+    schleuderd
+
+If you change the port schleuderd is listening at, you must tell SchleuderConf
+(CLI-option `-p`) and Webschleuder( `schleuderd_uri` in `webschleuder.yml`),
+respectively.
+
 ### Webschleuder
 
 To create lists with Webschleuder log in as `root@localhost`. Managing lists is allowed to each list-admin.
