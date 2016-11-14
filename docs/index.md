@@ -3,7 +3,8 @@ layout: docs
 title: Documentation
 ---
 
-*Disclaimer: this is work in progress. To suggest improvements see [Feedback](#feedback).*
+{: .note}
+Disclaimer: this is work in progress. To suggest improvements see [Feedback](#feedback).
 
 * toc
 {:toc}
