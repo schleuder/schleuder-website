@@ -51,13 +51,13 @@ Here's a simple picture of a message that is sent to a non-subscriber ("Zacharia
 
 ### Technical details
 
-Schleuder behaves like an email-filter: it reads email from standard-input, and reports errors to standard-error. If all goes well Schleuder closes the initial connection to the Mail Transport Agent only after it sent out all outgoing emails.
+Schleuder behaves like an email-filter: it reads email from standard-input, and reports errors to standard-error. If all goes well Schleuder closes the initial connection to the Mail Transport Agent (MTA) only after it sent out all outgoing emails.
 
-In case of an error the MTA includes the message from Schleuder's standard-error into a bounce-email to is directed back to the sender.
+In case of an error the MTA includes Schleuder's error message into a bounce-email that is sent back to the sender.
 
 The keyrings for each list are standard GnuPG keyrings and sit in the filesystem under `$lists_dir/$hostname/$listname/` ($lists_dir is read from `schleuder.yml`, see [Configuration](#configuration)). They can be used manually using gpg2. Please be careful to maintain proper file permissions if you touch the files.
 
-In the list-dir there's also a list-specific log-file (might be missing if the log-level is high and no error occurred yet).
+In the list-directory there's also a list specific log-file (might be missing if the log-level is high and no error occurred yet).
 
 Other logging is sent to syslog. Where that ends up depends on the operating system and the system administration.
 
@@ -85,9 +85,9 @@ The **default settings for new lists** are read from another config file. By def
 
 #### Mail Transport Agent
 
-Schleuder expects the list's email-address as first argument and the incoming email on standard-input.
+In "work"-mode, Schleuder expects the list's email-address as second argument (first one is "work") and the incoming email on standard-input.
 
-To enable Schleuder to receive emails your Mail Transport Agent must be configured accordingly. How to do this with Postfix is documented in detail below.
+To enable Schleuder to receive emails, your Mail Transport Agent must be configured accordingly. How to do this with Postfix is documented in detail below.
 
 #### Postfix
 
@@ -133,6 +133,9 @@ Or you can run it manually in a shell:
 If you change the port schleuderd is listening at, you must tell SchleuderConf
 (CLI-option `-p`) and Webschleuder( `schleuderd_uri` in `webschleuder.yml`),
 respectively.
+
+{: .note}
+Please take care to run `schleuderd` as the user that owns your the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
 
 ### Webschleuder
 
@@ -232,6 +235,27 @@ Write to `listname-owner@hostname` to contact the list-owner(s) even if you don'
 
 [↑](#top "Go to top of page")
 {: .linktotop}
+
+## Maintenance
+
+{: .note}
+Please take care to have the following commands run by the user that owns your the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
+
+
+Schleuder can **check all keys** that are present in the list's keyrings for (upcoming) expiration dates, revocation, or other reasons for not being usable.
+
+Call this command weekly from cron to automate the check and have the results sent to the respective list-admins:
+
+    schleuder check_keys
+
+To only check the keys of one particular list, run:
+
+    schleuder check_keys list@hostname
+
+
+[↑](#top "Go to top of page")
+{: .linktotop}
+
 
 ## Feedback
 
