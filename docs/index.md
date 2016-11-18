@@ -14,7 +14,7 @@ Disclaimer: this is work in progress. To suggest improvements see [Feedback](#fe
 
 ## Introduction
 
-Schleuder is a email hub for groups. Subscribers can communicate encryptedly and pseudonymously among themselves, receive emails from non-subscribers and send emails to non-subscribers via the list. Schleuder takes care of all de- and encryption, stripping of headers, formatting conversions, etc. Further Schleuder can send out its own public key and receive administrative commands by email.
+Schleuder is an email hub for groups. Subscribers can communicate encryptedly and pseudonymously among themselves, receive emails from non-subscribers and send emails to non-subscribers via the list. Schleuder takes care of all de- and encryption, stripping of headers, formatting conversions, etc. Further Schleuder can send out its own public key and receive administrative commands by email.
 
 ### A "wanted man-in-the-middle"
 
@@ -130,12 +130,13 @@ Or you can run it manually in a shell:
 
     schleuderd
 
+{: .note}
+Please take care to run `schleuderd` as the user that owns your the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
+
 If you change the port schleuderd is listening at, you must tell SchleuderConf
 (CLI-option `-p`) and Webschleuder( `schleuderd_uri` in `webschleuder.yml`),
 respectively.
 
-{: .note}
-Please take care to run `schleuderd` as the user that owns your the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
 
 ### Webschleuder
 
@@ -177,9 +178,9 @@ Letter case doesn't matter.
 There are two types of keywords: those to enhance messages sent over the list ("list-keywords"), and those to request something from Schleuder ("request-keywords").
 
 
-#### List-keywords
+#### Resending
 
-List-keywords must be included in messages sent to the normal list-address: `listname@hostname`.
+The resending-keywords must be included in messages sent to the normal list-address: `listname@hostname`.
 
 x-resend: someone@example.org
 : Send the message to the given address, encrypted if possible, otherwise in the clear.
@@ -188,9 +189,9 @@ x-resend-encrypted-only: someone@example.org
 : Send the message to the given address only if it could be encrypted.
 
 
-#### Request-keywords
+#### Subscription and key management
 
-Request-keywords  must be send to `listname-request@hostname`. They are used to get information about the list, its subscribers and keys, or to change that information.
+These keywords  must be send to `listname-request@hostname`. They are used to get information about the list, its subscribers and keys, or to change that information.
 
 x-list-subscriptions
 : List all subscriptions.
@@ -223,6 +224,10 @@ x-get-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 x-fetch-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 : Fetch the key with the given fingerprint from a keyserver and import it into the list's keyring. (This works only if a keyserver has been configured by the provider.)
 
+
+#### Other
+
+These must also be sent to the request-address: <listname-request@hostname>.
 
 x-sign-this:
 : Sign the remaining contents of the email body or the attachments with the list's key. Use this e.g. to provide GnuPG-signatures for things you are publishing. — *Note:* This command reads the whole body of the email. If you want to use other keywords within the same email, *this must be the last one!*
