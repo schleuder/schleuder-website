@@ -26,7 +26,7 @@ Schleuder inserts some lines of metadata into the top of the email, containing a
 
 
     From: Bob <bob@example.net>
-    To: schleuder2@nadir.org
+    To: schleuder@nadir.org
     Date: Tue, 6 Apr 2010 17:28:46 +0200
     Enc: encrypted
     Sig: Good signature from 12345678DEADBEEF Bob <bob@example.net>
@@ -158,7 +158,7 @@ Everything you send to `listname@hostname` will be send to all subscribers, but 
 
 ### Getting a list's public key
 
-Each Schleuder-list replies with its public key to any email sent to `listname-sendkey@hostname`. E.g. to receive the key for our contact address write an email to `schleuder2-sendkey@nadir.org`.
+Each Schleuder-list replies with its public key to any email sent to `listname-sendkey@hostname`. E.g. to receive the key for our contact address write an email to `schleuder-sendkey@nadir.org`.
 
 ### Special keywords
 
@@ -259,7 +259,7 @@ To only check the keys of one particular list, run:
 
 ## Feedback
 
-To suggest changes to these documents or if you found any errors in them, please [contact us](mailto:schleuder2@nadir.org) or use the [issue tracker](https://git.codecoop.org/schleuder/schleuder3/issues).
+To suggest changes to these documents or if you found any errors in them, please [contact us](mailto:schleuder@nadir.org) or use the [issue tracker](https://git.codecoop.org/schleuder/schleuder3/issues).
 
 [↑](#top "Go to top of page")
 {: .linktotop}

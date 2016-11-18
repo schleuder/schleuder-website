@@ -12,7 +12,7 @@ For the stable version of Schleuder see [schleuder2.nadir.org](https://schleuder
 
 We're looking for **your help!** You could give us a hand by:
 
-* testing Schleuder (and maybe Webschleuder) from a user-, list-admin-, or system-admin-perspective (we can provide you with test-lists, just [ask](mailto:schleuder2.nadir.org)).
+* testing Schleuder (and maybe Webschleuder) from a user-, list-admin-, or system-admin-perspective (we can provide you with test-lists, just [ask](mailto:schleuder@nadir.org)).
 * reviewing the code.
 * suggesting improvements to Schleuder (or Webschleuder).
 * suggesting improvements for documentation and website.
@@ -21,10 +21,10 @@ We're looking for **your help!** You could give us a hand by:
 To  **install** version 3 see [the README](https://git.codecoop.org/schleuder/schleuder3/blob/master/README.md).
 
 To **participate** in the development use the [issue tracker](https://git.codecoop.org/schleuder/schleuder3/milestones/4).
-(If you want an account for codecoop.org, [contact us](mailto:schleuder2.nadir.org).)
+(If you want an account for codecoop.org, [contact us](mailto:schleuder@nadir.org).)
 
 To **read** the documentation see [docs/](docs/).
 
-To **contact** us send an email to [schleuder2@nadir.org](mailto:schleuder2.nadir.org).
+To **contact** us send an email to [schleuder@nadir.org](mailto:schleuder@nadir.org).
 
 
