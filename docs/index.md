@@ -122,19 +122,19 @@ To configure each list individually adapt the following lines for each list and 
 
 To create and manage lists you have two options: Webschleuder and SchleuderConf.
 
-Both require a running `schleuderd`. Depending on the type of operating system and the setup you are using you can either start the systemd-unit-file:
+Both require a running `schleuder-api-daemon`. Depending on the type of operating system and the setup you are using you can either start the systemd-unit-file:
 
-    systemctl start schleuderd
+    systemctl start schleuder-api-daemon
 
 Or you can run it manually in a shell:
 
-    schleuderd
+    schleuder-api-daemon
 
 {: .note}
-Please take care to run `schleuderd` as the user that owns your the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
+Please take care to run `schleuder-api-daemon` as the user that owns your the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
 
-If you change the port schleuderd is listening at, you must tell SchleuderConf
-(CLI-option `-p`) and Webschleuder( `schleuderd_uri` in `webschleuder.yml`),
+If you change the port schleuder-api-daemon is listening at, you must tell SchleuderConf
+(CLI-option `-p`) and Webschleuder( `api`.`port` in `webschleuder.yml`),
 respectively.
 
 
