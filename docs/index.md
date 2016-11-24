@@ -165,7 +165,7 @@ To enable the client to connect, their API-key must be added to the section `val
 Provide each client with their own API-key, and use secure channels to transport this information!
 
 {: .note}
-The is not authorization of clients, yet. Each client is allowed every action. So be wary who to give an API-key to. Webschleuder does its own authorization, but SchleuderConf does not!
+The is **no authorization of clients,** yet. Each client is allowed every action. So be wary who to give an API-key to. Webschleuder does its own authorization, but SchleuderConf does not!
 
 
 
