@@ -12,9 +12,9 @@ For the stable version of Schleuder see [schleuder2.nadir.org](https://schleuder
 
 We're looking for **your help!** You could give us a hand by:
 
-* testing Schleuder (and maybe Webschleuder) from a user-, list-admin-, or system-admin-perspective (we can provide you with test-lists, just [ask](mailto:schleuder@nadir.org)).
+* testing Schleuder (and maybe schleuder-web) from a user-, list-admin-, or system-admin-perspective (we can provide you with test-lists, just [ask](mailto:schleuder@nadir.org)).
 * reviewing the code.
-* suggesting improvements to Schleuder (or Webschleuder).
+* suggesting improvements to Schleuder (or schleuder-web).
 * suggesting improvements for documentation and website.
 * create and maintain packages for your OS (Debian is covered).
 
