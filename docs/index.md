@@ -46,8 +46,6 @@ Here's a simple picture of a message that is sent to a non-subscriber ("Zacharia
 
 [![resent-schema](schleuder-schema-resend-small.png 'Click to enlarge')](schleuder-schema-resend.png)
 
-[↑](#top "Go to top of page")
-{: .linktotop}
 
 ### Technical details
 
@@ -62,6 +60,9 @@ In the list-directory there's also a list specific log-file (might be missing if
 Other logging is sent to syslog. Where that ends up depends on the operating system and the system administration.
 
 All other list-related data is stored in the SQL-database. Most data is unserialized, only some values are JSON-encoded.
+
+[↑](#top "Go to top of page")
+{: .linktotop}
 
 ## Setup
 
@@ -83,7 +84,7 @@ For explanations of the possible settings read the default config file (also [av
 The **default settings for new lists** are read from another config file. By default Schleuder looks at `/etc/schleuder/list-defaults.yml`. To make Schleuder read a different file set the environment variable `SCHLEUDER_LIST_DEFAULTS` analogous to above. The possible settings are explained in the default config file, which is [also available in the repository](https://git.codecoop.org/schleuder/schleuder3/blob/master/etc/list-defaults.yml).
 
 
-#### Mail Transport Agent
+### Hook into Mail Transport Agent
 
 In "work"-mode, Schleuder expects the list's email-address as second argument (first one is "work") and the incoming email on standard-input.
 
@@ -115,14 +116,14 @@ To configure each list individually adapt the following lines for each list and 
     listname-sendkey@example.org  schleuder:
 
 
-[↑](#top "Go to top of page")
-{: .linktotop}
+### Schleuder API
 
-## Managing a list
+The Schleuder API is provided by `schleuder-api-daemon`. Configuration clients (Webschleuder, SchleuderConf) use it to access information about lists, subscriptions, and keys. As you probably want to at least use SchleuderConf from localhost, setting up schleuder-api-daemon is useful even without remote clients.
 
-To create and manage lists you have two options: Webschleuder and SchleuderConf.
+{: .note}
+Schleuder does *not* require its daemon to process emails.
 
-Both require a running `schleuder-api-daemon`. Depending on the type of operating system and the setup you are using you can either start the systemd-unit-file:
+To run `schleuder-api-daemon`, depending on the type of operating system and the setup you are using, you can either start the systemd-unit-file:
 
     systemctl start schleuder-api-daemon
 
@@ -133,9 +134,49 @@ Or you can run it manually in a shell:
 {: .note}
 Please take care to run `schleuder-api-daemon` as the user that owns your the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
 
-If you change the port schleuder-api-daemon is listening at, you must tell SchleuderConf
-(CLI-option `-p`) and Webschleuder( `api`.`port` in `webschleuder.yml`),
-respectively.
+#### Transport encryption
+
+By default schleuder-api-daemon **listens only to localhost** and does not authenticate requests. To enable it listen to other addresses, you have to provide transport encryption (TLS) certificates.
+
+You can **generate a new certificate** by executing:
+
+    schleuder cert generate
+
+If the file systems permissions allow it, Schleuder will write the certificate and the key directly into the correct files (paths are read from the configuration file). Otherwise you might have to move them. Please read the output of the above command for possible instructions.
+
+In case you **already have a suitable certificate** you can use that, too. Its hostnames do not matter. Just copy it to the paths specified in the configuration file, or change those paths.
+
+{: .note}
+In order to verify the connection, each client needs to know the fingerprint of the API-certificate. Use secure channels to transport this information!
+
+
+
+#### Authentication
+
+The Schleuder API uses API-keys to authenticate clients — if transport encryption is enabled *(and only if).*
+
+You can generate new API-keys by executing:
+
+    schleuder new_api_key
+
+To enable the client to connect, their API-key must be added to the section `valid_api_keys` in Schleuder's configuration file.
+
+{: .note}
+Provide each client with their own API-key, and use secure channels to transport this information!
+
+{: .note}
+The is not authorization of clients, yet. Each client is allowed every action. So be wary who to give an API-key to. Webschleuder does its own authorization, but SchleuderConf does not!
+
+
+
+[↑](#top "Go to top of page")
+{: .linktotop}
+
+## Managing a list
+
+To create and manage lists you have two options: Webschleuder and SchleuderConf.
+
+Both require a running `schleuder-api-daemon`. Please see [the previous section](#schleuder-api) on how to set that up.
 
 
 ### Webschleuder
@@ -256,6 +297,17 @@ Call this command weekly from cron to automate the check and have the results se
 To only check the keys of one particular list, run:
 
     schleuder check_keys list@hostname
+
+
+Schleuder can also **refresh all keys** in the same manner:
+
+    schleuder refresh_keys
+
+To run only for one particular list:
+
+    schleuder refresh_keys list@hostname
+
+Alternatively to using Schleuder for refreshing keys you could set up more sophisticated tools like [parcimonie](https://gaffer.ptitcanardnoir.org/intrigeri/code/parcimonie/), [parcimonie.sh](https://github.com/EtiennePerot/parcimonie.sh) or [GPG maintenance](https://github.com/ilf/gpg-maintenance/).
 
 
 [↑](#top "Go to top of page")
