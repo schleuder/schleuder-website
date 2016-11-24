@@ -121,7 +121,7 @@ To configure each list individually adapt the following lines for each list and 
 The Schleuder API is provided by `schleuder-api-daemon`. Configuration clients (Webschleuder, SchleuderConf) use it to access information about lists, subscriptions, and keys. As you probably want to at least use SchleuderConf from localhost, setting up schleuder-api-daemon is useful even without remote clients.
 
 {: .note}
-Schleuder does *not* require its daemon to process emails.
+Schleuder does **not** use schleuder-api-daemon to process emails.
 
 To run `schleuder-api-daemon`, depending on the type of operating system and the setup you are using, you can either start the systemd-unit-file:
 
