@@ -118,7 +118,7 @@ To configure each list individually adapt the following lines for each list and 
 
 ### Schleuder API
 
-The Schleuder API is provided by `schleuder-api-daemon`. Configuration clients (Webschleuder, SchleuderConf) use it to access information about lists, subscriptions, and keys. As you probably want to at least use SchleuderConf from localhost, setting up schleuder-api-daemon is useful even without remote clients.
+The Schleuder API is provided by `schleuder-api-daemon`. Configuration clients (schleuder-web, SchleuderConf) use it to access information about lists, subscriptions, and keys. As you probably want to at least use SchleuderConf from localhost, setting up schleuder-api-daemon is useful even without remote clients.
 
 {: .note}
 Schleuder does **not** use schleuder-api-daemon to process emails.
@@ -165,7 +165,7 @@ To enable the client to connect, their API-key must be added to the section `val
 Provide each client with their own API-key, and use secure channels to transport this information!
 
 {: .note}
-The is **no authorization of clients,** yet. Each client is allowed every action. So be wary who to give an API-key to. Webschleuder does its own authorization, but SchleuderConf does not!
+The is **no authorization of clients,** yet. Each client is allowed every action. So be wary who to give an API-key to. schleuder-web does its own authorization, but SchleuderConf does not!
 
 
 
@@ -174,14 +174,14 @@ The is **no authorization of clients,** yet. Each client is allowed every action
 
 ## Managing a list
 
-To create and manage lists you have two options: Webschleuder and SchleuderConf.
+To create and manage lists you have two options: schleuder-web and SchleuderConf.
 
 Both require a running `schleuder-api-daemon`. Please see [the previous section](#schleuder-api) on how to set that up.
 
 
-### Webschleuder
+### schleuder-web
 
-To create lists with Webschleuder log in as `root@localhost`. Managing lists is allowed to each list-admin.
+To create lists with schleuder-web log in as `root@localhost`. Managing lists is allowed to each list-admin.
 
 ### SchleuderConf
 
