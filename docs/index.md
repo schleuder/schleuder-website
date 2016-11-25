@@ -70,7 +70,7 @@ All other list-related data is stored in the SQL-database. Most data is unserial
 
 For install instructions please see the [README](https://git.codecoop.org/schleuder/schleuder3/blob/master/README.md) of Schleuder.
 
-As suggested there you should also install [SchleuderConf](https://git.codecoop.org/schleuder/schleuder-conf), which is a command line tool to manage Schleuder lists.
+As suggested there you should also install [schleuder-cli](https://git.codecoop.org/schleuder/schleuder-cli), which is a command line tool to manage Schleuder lists.
 
 
 ### Configuration
@@ -118,7 +118,7 @@ To configure each list individually adapt the following lines for each list and 
 
 ### Schleuder API
 
-The Schleuder API is provided by `schleuder-api-daemon`. Configuration clients (schleuder-web, SchleuderConf) use it to access information about lists, subscriptions, and keys. As you probably want to at least use SchleuderConf from localhost, setting up schleuder-api-daemon is useful even without remote clients.
+The Schleuder API is provided by `schleuder-api-daemon`. Configuration clients (schleuder-web, schleuder-cli) use it to access information about lists, subscriptions, and keys. As you probably want to at least use schleuder-cli from localhost, setting up schleuder-api-daemon is useful even without remote clients.
 
 {: .note}
 Schleuder does **not** use schleuder-api-daemon to process emails.
@@ -165,7 +165,7 @@ To enable the client to connect, their API-key must be added to the section `val
 Provide each client with their own API-key, and use secure channels to transport this information!
 
 {: .note}
-The is **no authorization of clients,** yet. Each client is allowed every action. So be wary who to give an API-key to. schleuder-web does its own authorization, but SchleuderConf does not!
+The is **no authorization of clients,** yet. Each client is allowed every action. So be wary who to give an API-key to. schleuder-web does its own authorization, but schleuder-cli does not!
 
 
 
@@ -174,7 +174,7 @@ The is **no authorization of clients,** yet. Each client is allowed every action
 
 ## Managing a list
 
-To create and manage lists you have two options: schleuder-web and SchleuderConf.
+To create and manage lists you have two options: schleuder-web and schleuder-cli.
 
 Both require a running `schleuder-api-daemon`. Please see [the previous section](#schleuder-api) on how to set that up.
 
@@ -183,11 +183,11 @@ Both require a running `schleuder-api-daemon`. Please see [the previous section]
 
 To create lists with schleuder-web log in as `root@localhost`. Managing lists is allowed to each list-admin.
 
-### SchleuderConf
+### schleuder-cli
 
-To use SchleuderConf please see the output of
+To use schleuder-cli please see the output of
 
-    schleuder-conf help
+    schleuder-cli help
 
 
 [↑](#top "Go to top of page")
