@@ -132,7 +132,7 @@ Or you can run it manually in a shell:
     schleuder-api-daemon
 
 {: .note}
-Please take care to run `schleuder-api-daemon` as the user that owns your the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
+Please take care to run `schleuder-api-daemon` as the user that owns the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
 
 #### Transport encryption
 
@@ -165,7 +165,7 @@ To enable the client to connect, their API-key must be added to the section `val
 Provide each client with their own API-key, and use secure channels to transport this information!
 
 {: .note}
-The is **no authorization of clients,** yet. Each client is allowed every action. So be wary who to give an API-key to. schleuder-web does its own authorization, but schleuder-cli does not!
+There is **no authorization of clients,** yet. Each client is allowed every action. So be wary who to give an API-key to. schleuder-web does its own authorization, but schleuder-cli does not!
 
 
 
