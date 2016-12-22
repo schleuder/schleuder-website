@@ -232,7 +232,7 @@ x-resend-encrypted-only: someone@example.org
 x-resend-cc: someone@example.org anotherperson@example.org
 : Send one message to all of the given addresses in Cc, so they get to know of each other (encrypted if possible, otherwise in the clear).
 
-x-resend-encrypted-only: someone@example.org
+x-resend-cc-encrypted-only: someone@example.org
 : Send one message to all of the given addresses in Cc, so they get to know of each other, only if it could be encrypted to all of those addresses.
 
 
