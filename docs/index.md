@@ -294,20 +294,8 @@ Call this command weekly from cron to automate the check and have the results se
 
     schleuder check_keys
 
-To only check the keys of one particular list, run:
 
-    schleuder check_keys list@hostname
-
-
-Schleuder can also **refresh all keys** in the same manner:
-
-    schleuder refresh_keys
-
-To run only for one particular list:
-
-    schleuder refresh_keys list@hostname
-
-Alternatively to using Schleuder for refreshing keys you could set up more sophisticated tools like [parcimonie](https://gaffer.ptitcanardnoir.org/intrigeri/code/parcimonie/), [parcimonie.sh](https://github.com/EtiennePerot/parcimonie.sh) or [GPG maintenance](https://github.com/ilf/gpg-maintenance/).
+Schleuder doesn't provide a method to refresh keys from the keyservers. There are dedicated and more sophisticated tools to do that, e.g.  [parcimonie](https://gaffer.ptitcanardnoir.org/intrigeri/code/parcimonie/), [parcimonie.sh](https://github.com/EtiennePerot/parcimonie.sh) or [GPG maintenance](https://github.com/ilf/gpg-maintenance/).
 
 
 [↑](#top "Go to top of page")
