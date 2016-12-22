@@ -227,13 +227,13 @@ x-resend: someone@example.org
 : Send the message to the given address, encrypted if possible, otherwise in the clear.
 
 x-resend-encrypted-only: someone@example.org
-: Send the message to the given address only if it could be encrypted.
+: Send the message to the given address only if it could be encrypted. Can be abbreviated to `x-resend-enc`.
 
 x-resend-cc: someone@example.org anotherperson@example.org
 : Send one message to all of the given addresses in Cc, so they get to know of each other (encrypted if possible, otherwise in the clear).
 
 x-resend-cc-encrypted-only: someone@example.org
-: Send one message to all of the given addresses in Cc, so they get to know of each other, only if it could be encrypted to all of those addresses.
+: Send one message to all of the given addresses in Cc, so they get to know of each other, only if it could be encrypted to all of those addresses. Can be abbreviated to `x-resend-cc-enc.`
 
 
 #### Subscription and key management
