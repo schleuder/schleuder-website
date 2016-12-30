@@ -25,6 +25,6 @@ To **participate** in the development use the [issue tracker](https://git.codeco
 
 To **read** the documentation see [docs](docs/).
 
-To **contact** us send see [contact](contact.html).
+To **contact** us read [contact](contact.html).
 
 
