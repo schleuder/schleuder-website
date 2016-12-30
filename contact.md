@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Schleuder ★ contact
-subtitle: Contact
+subtitle: A gpg-enabled mailinglist with remailing-capabilities.
 ---
 
 To contact us please use the [issue tracker](https://git.codecoop.org/schleuder/schleuder3) or 

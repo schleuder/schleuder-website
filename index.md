@@ -23,8 +23,8 @@ To  **install** version 3 see [the README](https://git.codecoop.org/schleuder/sc
 To **participate** in the development use the [issue tracker](https://git.codecoop.org/schleuder/schleuder3/milestones/4).
 (If you want an account for codecoop.org, [contact us](contact.html).)
 
-To **read** the documentation see [docs/](docs/).
+To **read** the documentation see [docs](docs/).
 
-To **contact** us send an email to [schleuder@nadir.org](contact.html).
+To **contact** us send see [contact](contact.html).
 
 
