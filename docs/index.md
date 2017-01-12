@@ -132,7 +132,7 @@ Or you can run it manually in a shell:
     schleuder-api-daemon
 
 {: .note}
-Please take care to run `schleuder-api-daemon` as the user that owns the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
+Please take care to run `schleuder-api-daemon` as the user that owns the directory of schleuder lists (by default `/var/lib/schleuder/lists`) to avoid running into file permission problems!
 
 #### Transport encryption
 
@@ -291,7 +291,7 @@ Write to `listname-owner@hostname` to contact the list-owner(s) even if you don'
 ## Maintenance
 
 {: .note}
-Please take care to have the following commands run by the user that owns your the directory of schleuder lists (by default `/var/schleuder/lists`) to avoid running into file permission problems!
+Please take care to have the following commands run by the user that owns your the directory of schleuder lists (by default `/var/lib/schleuder/lists`) to avoid running into file permission problems!
 
 
 Schleuder can **check all keys** that are present in the list's keyrings for (upcoming) expiration dates, revocation, or other reasons for not being usable.
