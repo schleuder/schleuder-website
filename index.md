@@ -18,10 +18,9 @@ We're looking for **your help!** You could give us a hand by:
 * suggesting improvements for documentation and website.
 * create and maintain packages for your OS (Debian is covered).
 
-To  **install** version 3 see [the README](https://git.codecoop.org/schleuder/schleuder3/blob/master/README.md).
+To  **install** version 3 see [the README](https://0xacab.org/schleuder/schleuder/blob/master/README.md).
 
-To **participate** in the development use the [issue tracker](https://git.codecoop.org/schleuder/schleuder3/milestones/4).
-(If you want an account for codecoop.org, [contact us](contact.html).)
+To **participate** in the development use the [issue tracker](https://0xacab.org/schleuder/schleuder/milestones/4).
 
 To **read** the documentation see [docs](docs/).
 

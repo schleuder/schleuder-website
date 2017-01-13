@@ -4,7 +4,7 @@ title: Schleuder ★ contact
 subtitle: A gpg-enabled mailinglist with remailing-capabilities.
 ---
 
-To contact us please use the [issue tracker](https://git.codecoop.org/schleuder/schleuder3) or 
+To contact us please use the [issue tracker](https://0xacab.org/schleuder/schleuder) or 
 send an email to [schleuder@nadir.org](mailto:schleuder@nadir.org).
 
 **Please encrypt** the emails, if possible.
