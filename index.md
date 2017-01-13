@@ -4,13 +4,15 @@ title: Schleuder
 subtitle: A gpg-enabled mailinglist with remailing-capabilities.
 ---
 
-###  Stable: version 2
+###  Legacy: version 2
 
-For the stable version of Schleuder see [schleuder2.nadir.org](https://schleuder2.nadir.org/).
+For the legacy (old) version of Schleuder see [schleuder2.nadir.org](https://schleuder2.nadir.org/).
 
-### Development: version 3
+### Upcoming: version 3
 
-We're looking for **your help!** You could give us a hand by:
+Schleuder version 3 is in its final stages of development and testing.
+
+We're always looking for **help** — you could give us a hand by:
 
 * testing Schleuder (and maybe schleuder-web) from a user-, list-admin-, or system-admin-perspective (we can provide you with test-lists, just [ask](contact.html).
 * reviewing the code.
