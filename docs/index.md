@@ -70,7 +70,7 @@ All other list-related data is stored in the SQL-database. Most data is unserial
 
 For install instructions please see the [README](https://0xacab.org/schleuder/schleuder/blob/master/README.md) of Schleuder.
 
-As suggested there you should also install [schleuder-cli](https://git.codecoop.org/schleuder/schleuder-cli), which is a command line tool to manage Schleuder lists.
+As suggested there you should also install [schleuder-cli](https://0xacab.org/schleuder/schleuder-cli), which is a command line tool to manage Schleuder lists.
 
 
 ### Configuration
