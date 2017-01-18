@@ -114,8 +114,8 @@ the following lines for each list and add them to `/etc/postfix/transport`:
 Afterwards run `postmap /etc/postfix/transport` and restart postfix.
 
 
-If you run a lot of lists it might become cumbersome to add new lines to the transport-file for each list.
-To avoid this you can specify a whole domain to connect to Schleuder. The downside is that you cannot use regular mailboxes on that domain (only aliases), and that postfix will accept any email directed at anything @thatdomain — which means that you might have a lot of undeliverable messages in your mail-queue, because Schleuder rejects them as unknown, and Postfix might not be able to bounce them properly (google 'backscatter' for details).
+**If you run a lot of lists** it might become cumbersome to add new lines to the transport-file for each list.
+To avoid this you can specify a whole domain to connect to Schleuder. The downside is that you have to manually specify addresses that should *not* be handed to Schleuder, and that postfix will accept any email directed at anything @thatdomain — which means that you soon might collect a lot of undeliverable messages in your mail-queue, because Schleuder rejects them as unknown, and Postfix might not be able to bounce them properly (google 'backscatter' for details).
 
 To nevertheless use that setup, put these lines into `main.cf`:
 
