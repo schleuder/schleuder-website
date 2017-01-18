@@ -97,23 +97,41 @@ To hook Schleuder into Postfix adapt these lines and add them to `master.cf`:
     schleuder  unix  -       n       n       -       -       pipe
       flags=DRhu user=schleuder argv=/path/to/bin/schleuder work ${recipient}
 
-Also adapt these lines and add them to `main.cf`:
+Then adapt these lines and add them to `main.cf`:
 
-    transport_maps = hash:/etc/postfix/transport
-    local_recipient_maps = proxy:unix:passwd.byname $alias_maps $transport_maps
     schleuder_destination_recipient_limit = 1
+    transport_maps = hash:/etc/postfix/transport
 
-Then you have to configure which addresses should be connected to Schleuder via `transport`. If you have a whole (sub)domain dedicated to Schleuder you can just list it like this:
-
-    @sub.example.org          schleuder:
-
-To configure each list individually adapt the following lines for each list and add them to `transport`:
+Now, to configure the addresses that postfix should connect to Schleuder, adapt
+the following lines for each list and add them to `/etc/postfix/transport`:
 
     listname@example.org          schleuder:
     listname-request@example.org  schleuder:
     listname-owner@example.org    schleuder:
     listname-bounces@example.org  schleuder:
     listname-sendkey@example.org  schleuder:
+
+Afterwards run `postmap /etc/postfix/transport` and restart postfix.
+
+
+If you run a lot of lists it might become cumbersome to add new lines to the transport-file for each list.
+To avoid this you can specify a whole domain to connect to Schleuder. The downside is that you cannot use regular mailboxes on that domain (only aliases), and that postfix will accept any email directed at anything @thatdomain — which means that you might have a lot of undeliverable messages in your mail-queue, because Schleuder rejects them as unknown, and Postfix might not be able to bounce them properly (google 'backscatter' for details).
+
+To nevertheless use that setup, put these lines into `main.cf`:
+
+    schleuder_destination_recipient_limit = 1
+    virtual_mailbox_domains = lists.example.org
+    virtual_transport       = schleuder
+    virtual_alias_maps      = hash:/etc/postfix/virtual_aliases
+
+Then add exceptions from the all-to-Schleuder-rule like the following to `/etc/postfix/virtual_aliases`, and run `postmap /etc/postfix/virtual_aliases` afterwards.
+
+    postmaster@lists.example.org    root@anotherdomain
+    abuse@lists.example.org         root@anotherdomain
+    MAILER-DAEMON@lists.example.org root@anotherdomain
+    root@lists.example.org          root@anotherdomain
+  
+We strongly suggest to provide at least these four addresses!
 
 
 ### Schleuder API
