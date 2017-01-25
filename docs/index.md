@@ -160,10 +160,14 @@ schleuder-api-daemon uses transport encyrption (TLS) for all connections. The re
 
 If the file systems permissions allow it, Schleuder will write the certificate and the key directly into the correct files (paths are read from the configuration file). Otherwise you might have to move them. Please read the output of the above command for possible instructions.
 
-In case you **already have a suitable certificate** you can use that, too. Its hostnames do not matter. Just copy it to the paths specified in the configuration file, or change those paths.
+In case you already have a suitable certificate you can use that, too. Its hostnames do not matter. Just copy it to the paths specified in the configuration file, or change those paths.
+
+In order to verify the connection, each client needs to know the fingerprint of the API-certificate. The fingerprint will be shown when generating the certificates. Later you can always have it show again by executing this:
+
+    schleuder cert fingerprint
 
 {: .note}
-In order to verify the connection, each client needs to know the fingerprint of the API-certificate. Use secure channels to transport this information!
+Use secure channels to transport this information!
 
 
 
