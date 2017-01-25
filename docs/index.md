@@ -139,7 +139,7 @@ We strongly suggest to provide at least these four addresses!
 The Schleuder API is provided by `schleuder-api-daemon`. Configuration clients (schleuder-web, schleuder-cli) use it to access information about lists, subscriptions, and keys. As you probably want to at least use schleuder-cli from localhost, setting up schleuder-api-daemon is useful even without remote clients.
 
 {: .note}
-Schleuder does **not** use schleuder-api-daemon to process emails.
+Schleuder does **not** use schleuder-api-daemon to process emails. You can stop schleuder-api-daemon at any time without breaking the email flow.
 
 To run `schleuder-api-daemon`, depending on the type of operating system and the setup you are using, you can either start the systemd-unit-file:
 
@@ -154,9 +154,7 @@ Please take care to run `schleuder-api-daemon` as the user that owns the directo
 
 #### Transport encryption
 
-By default schleuder-api-daemon **listens only to localhost** and does not authenticate requests. To enable it listen to other addresses, you have to provide transport encryption (TLS) certificates.
-
-You can **generate a new certificate** by executing:
+schleuder-api-daemon uses transport encyrption (TLS) for all connections. The required TLS-certifcates should have been generated during the setup (`schleuder install`). You can generate new ones at any time by executing:
 
     schleuder cert generate
 
@@ -171,7 +169,7 @@ In order to verify the connection, each client needs to know the fingerprint of 
 
 #### Authentication
 
-The Schleuder API uses API-keys to authenticate clients — if transport encryption is enabled *(and only if).*
+The Schleuder API uses API-keys to authenticate clients.
 
 You can generate new API-keys by executing:
 
@@ -235,6 +233,12 @@ Keywords can be repeated within one email at will.
 Letter case doesn't matter.
 
 There are two types of keywords: those to enhance messages sent over the list ("list-keywords"), and those to request something from Schleuder ("request-keywords").
+
+
+#### Security
+
+x-listname: someone@example.org
+: **You must always provide this keyword once per email.** Without it, no other keyword will be considered but you will receive an error message. It helps to mitigate replay-attacks.
 
 
 #### Resending
@@ -319,7 +323,13 @@ Call this command weekly from cron to automate the check and have the results se
     schleuder check_keys
 
 
-Schleuder doesn't provide a method to refresh keys from the keyservers. There are dedicated and more sophisticated tools to do that, e.g.  [parcimonie](https://gaffer.ptitcanardnoir.org/intrigeri/code/parcimonie/), [parcimonie.sh](https://github.com/EtiennePerot/parcimonie.sh) or [GPG maintenance](https://github.com/ilf/gpg-maintenance/).
+Schleuder can also **refresh all keys** in the same manner. Each key of each list will be refreshed from a keyserver one by one. If you're using gpg 2.1, it's possible to configure a TOR onion service to be used as keyserver! See [the config](https://0xacab.org/schleuder/schleuder/blob/master/etc/schleuder.yml) for an example.
+
+
+Call this command weekly from cron to automate the check and have the results sent to the respective list-admins:
+
+    schleuder refresh_keys
+
 
 
 [↑](#top "Go to top of page")
