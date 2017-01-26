@@ -346,3 +346,10 @@ To suggest changes to these documents or if you found any errors in them, please
 [↑](#top "Go to top of page")
 {: .linktotop}
 
+
+## Changes
+
+We use a public git-repository to maintain these documents, thus you can [browse the list of changes](https://0xacab.org/schleuder/schleuder-website/commits/master).
+
+[↑](#top "Go to top of page")
+{: .linktotop}
