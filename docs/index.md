@@ -342,8 +342,7 @@ Call this command weekly from cron to automate the check and have the results se
 
 ## Feedback
 
-To suggest changes to these documents or if you found any errors in them, please [contact us](mailto:schleuder@nadir.org) or use the [issue tracker](https://0xacab.org/schleuder/schleuder/issues).
-
+To suggest changes to these documents or if you found any errors in them, please use the [issue tracker](https://0xacab.org/schleuder/schleuder-website/issues) (or [contact us by email](mailto:schleuder@nadir.org)).
 [↑](#top "Go to top of page")
 {: .linktotop}
 
