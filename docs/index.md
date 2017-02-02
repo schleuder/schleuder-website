@@ -286,7 +286,7 @@ x-list-keys:
 : Lists all public keys known to the list.
 
 x-add-key:
-: Import the rest of the email-body into the list's keyring. Write the ascii-armored key-block below this keyword. — *Note:* This command reads the whole body of the email. If you want to use other keywords within the same email, *this must be the last one!*
+: Import the attachments or the rest of the email-body into the list's keyring. Only ascii-armored keys are supported.
 
 x-delete-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 : Delete the key with the given fingerprint from the list's keyring.
