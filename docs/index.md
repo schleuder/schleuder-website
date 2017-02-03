@@ -303,7 +303,7 @@ x-fetch-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 These must also be sent to the request-address: <listname-request@hostname>.
 
 x-sign-this:
-: Sign the remaining contents of the email body or the attachments with the list's key. Use this e.g. to provide GnuPG-signatures for things you are publishing. — *Note:* This command reads the whole body of the email. If you want to use other keywords within the same email, *this must be the last one!*
+: Sign the remaining contents of the email body or the attachments with the list's key. Use this e.g. to provide GnuPG-signatures for things you are publishing.
 
 
 ### Contact list-owner
