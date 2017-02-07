@@ -92,18 +92,26 @@ To enable Schleuder to receive emails, your Mail Transport Agent must be configu
 
 #### Postfix
 
-To hook Schleuder into Postfix adapt these lines and add them to `master.cf`:
+{: .note}
+This section describes only those parts of a Postfix-setup that are relevant to Schleuder. We assume that you have a sensible and tested Postfix-setup already.
+
+Firstly, to hook Schleuder into Postfix adapt these lines (path and maybe user) and add them to `master.cf`:
 
     schleuder  unix  -       n       n       -       -       pipe
       flags=DRhu user=schleuder argv=/path/to/bin/schleuder work ${recipient}
 
-Then adapt these lines and add them to `main.cf`:
+Then you have to chose how postfix should decide if a message should be delivered to Schleuder. There are two options:
+
+1. Configure it for each list individually. That's the way to go if you don't run many lists, or use the respective domain also for a varying number of email accounts or aliases.
+2. Dedicate a whole domain to Schleuder. That's the way to go if you run more lists than email accounts or aliases on that domain.
+
+
+**To configure each list individually,** add these lines to `main.cf`:
 
     schleuder_destination_recipient_limit = 1
-    transport_maps = hash:/etc/postfix/transport
+    transport_maps = hash:/etc/postfix/transport_schleuder
 
-Now, to configure the addresses that postfix should connect to Schleuder, adapt
-the following lines for each list and add them to `/etc/postfix/transport`:
+Now adapt the following lines for each list and add them to `/etc/postfix/transport_schleuder`:
 
     listname@example.org          schleuder:
     listname-request@example.org  schleuder:
@@ -111,27 +119,27 @@ the following lines for each list and add them to `/etc/postfix/transport`:
     listname-bounces@example.org  schleuder:
     listname-sendkey@example.org  schleuder:
 
-Afterwards run `postmap /etc/postfix/transport` and restart postfix.
+Afterwards run `postmap /etc/postfix/transport_schleuder` and restart postfix. Remember to repeat this also for newly created lists later.
 
 
-**If you run a lot of lists** it might become cumbersome to add new lines to the transport-file for each list.
-To avoid this you can specify a whole domain to connect to Schleuder. The downside is that you have to manually specify addresses that should *not* be handed to Schleuder, and that postfix will accept any email directed at anything @thatdomain — which means that you soon might collect a lot of undeliverable messages in your mail-queue, because Schleuder rejects them as unknown, and Postfix might not be able to bounce them properly (google 'backscatter' for details).
-
-To nevertheless use that setup, put these lines into `main.cf`:
+**To dedicate a whole domain to Schleuder,** add these lines to `main.cf`:
 
     schleuder_destination_recipient_limit = 1
     virtual_mailbox_domains = lists.example.org
     virtual_transport       = schleuder
     virtual_alias_maps      = hash:/etc/postfix/virtual_aliases
+    virtual_mailbox_maps    = sqlite:/etc/postfix/schleuder_sqlite.cf
 
-Then add exceptions from the all-to-Schleuder-rule like the following to `/etc/postfix/virtual_aliases`, and run `postmap /etc/postfix/virtual_aliases` afterwards.
+Then adapt and add at least the following exceptions from the All-to-Schleuder-rule to `/etc/postfix/virtual_aliases`:
 
     postmaster@lists.example.org    root@anotherdomain
     abuse@lists.example.org         root@anotherdomain
     MAILER-DAEMON@lists.example.org root@anotherdomain
     root@lists.example.org          root@anotherdomain
-  
-We strongly suggest to provide at least these four addresses!
+
+Afterwards run `postmap /etc/postfix/virtual_aliases`.
+
+From now on each Schleuder-list will instantly be reachable by email once it was created.
 
 
 ### Schleuder API
