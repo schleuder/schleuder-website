@@ -14,6 +14,8 @@ To **participate** in the development use the [issue tracker](https://0xacab.org
 
 To **contact** us read [contact](contact.html).
 
+To **be notified** of news about Schleuder subscribe to [schleuder-announce](https://lists.nadir.org/mailman/listinfo/schleuder-announce).
+
 
 ## News
 
