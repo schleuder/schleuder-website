@@ -116,7 +116,7 @@ Now adapt the following lines for each list and add them to `/etc/postfix/transp
     listname@example.org          schleuder:
     listname-request@example.org  schleuder:
     listname-owner@example.org    schleuder:
-    listname-bounces@example.org  schleuder:
+    listname-bounce@example.org   schleuder:
     listname-sendkey@example.org  schleuder:
 
 Afterwards run `postmap /etc/postfix/transport_schleuder` and restart postfix. Remember to repeat this also for newly created lists later.
