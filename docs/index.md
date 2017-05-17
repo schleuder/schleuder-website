@@ -352,6 +352,9 @@ Call this command weekly from cron to automate the check and have the results se
 Changes that we consider users or list-admins of Schleuder should be aware of, are independently [summarized per version](/docs/changes/).
 
 
+[↑](#top "Go to top of page")
+{: .linktotop}
+
 ## Feedback
 
 To suggest changes to these documents or if you found any errors in them, please use the [issue tracker](https://0xacab.org/schleuder/schleuder-website/issues) (or [contact us by email](mailto:schleuder@nadir.org)).
