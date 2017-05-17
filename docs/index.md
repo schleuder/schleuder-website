@@ -4,7 +4,7 @@ title: Documentation
 ---
 
 {: .note}
-This document refers to **Schleuder v3.** To read about Schleuder v2 please go to the [old site](https://schleuder2.nadir.org/documentation.html).
+This document refers to **Schleuder version 3.0** To read about older versions of Schleuder please see the [older docs](older/).
 
 {: .note}
 Disclaimer: this is work in progress. To suggest improvements see [Feedback](#feedback).
