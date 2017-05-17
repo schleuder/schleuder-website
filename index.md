@@ -19,7 +19,7 @@ To **be notified** of news about Schleuder subscribe to [schleuder-announce](htt
 
 ## News
 
-**Schleuder 3.0.4 and schleuder-cli 0.0.4 released!** These releases fix a few minor bugs. Please see the [Changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#304-2017-04-15) and the [Changelog of schleuder-cli](https://0xacab.org/schleuder/schleuder-cli/blob/master/CHANGELOG.md#004-2017-04-15) for changes. (2017-04-15)
+** Schleuder 3.1.0 released!** Several bugs were fixed and some features addded. Please see the [Changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#310-2017-05-19) for details. (2017-05-19)
 
 
 ##  Legacy: version 2
