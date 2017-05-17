@@ -347,9 +347,26 @@ Call this command weekly from cron to automate the check and have the results se
 [↑](#top "Go to top of page")
 {: .linktotop}
 
-## Changes between versions
+## Changes to the previous version of Schleuder
 
-Changes that we consider users or list-admins of Schleuder should be aware of, are independently [summarized per version](/docs/changes/).
+{: .note} This list describes changes that users or list-admins of Schleuder should be aware of. For a more technical changelog, please see the [repository](https://0xacab.org/schleuder/schleuder).
+
+User-relevant changes in version 3.0 compared to version 2.2:
+
+* Keywords may be written in lower case letters, too.
+* `X-LISTNAME`: Each use of an `X-`keyword must be accompanied by this new keyword (once per message).
+* Changed `X-`keywords:
+  * `X-LIST-MEMBERS` is now `X-LIST-SUBSCRIPTIONS`.
+  * `X-ADD-MEMBER` is now `X-SUBSCRIBE`.
+  * `X-DELETE-MEMBER` is now `X-UNSUBSCRIBE`.
+* New keyword `X-RESEND-CC` (and `X-RESEND-CC-ENCRYPTED-ONLY`): resends the message to all given arguments in Cc, so the recipients see each others involvement. (The latter may be abbreviated as `x-resend-cc-enc`.)
+* Dropped support for sending inline ciphertext ("pgp/inline"). Schleuder still supports to receive such messages, but doesn't send them anymore. The former member-attribute `mime`, and the list-attribute `default_mime` have been dropped accordingly.
+* Keys for subscriptions (including admins) are looked up only using the subscription-attribute `fingerprint`. When resending to non-subscribers, keys are still looked up by the recipient's email-address.
+* `send_encrypted_only` is only supported for lists, not anymore for individual subscriptions. (This might return in a later version if enough people complain.)
+* Dropped the feature to archive messages on the server (list-attribute `archive`). Instead there's now the option to have all incoming messages forwarded as an attachment to the list-admins (list-attribute `forward_all_incoming_to_admins`). Most people won't need this ever, it's useful for researching problems.
+* New subscription-attribute `delivery_enabled` to pause delivery of list-messages to a subscription. Useful for holidays, or for list-admins that don't want to receive the list's traffic.
+* New list-attribute `language`, which defines in which language informational hints or error-messages are being sent. Currently supported are english and german.
+* Threading for recipients of resend-messages has been fixed (if the list-attribute `keep_msgid` is true).
 
 
 [↑](#top "Go to top of page")
@@ -363,7 +380,7 @@ To suggest changes to these documents or if you found any errors in them, please
 {: .linktotop}
 
 
-## Documentation changes
+## Changes to the documentation
 
 We use a public git-repository to maintain these documents, thus you can [browse the list of changes](https://0xacab.org/schleuder/schleuder-website/commits/master).
 
