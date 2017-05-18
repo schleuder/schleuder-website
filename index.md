@@ -10,7 +10,7 @@ To **read** the documentation see [docs](docs/).
 
 To **install** the current version see [the README](https://0xacab.org/schleuder/schleuder/blob/master/README.md).
 
-To **participate** in the development use the [issue tracker](https://0xacab.org/schleuder/schleuder/milestones/4).
+To **participate** in the development use the [issue tracker](https://0xacab.org/schleuder/schleuder/issues).
 
 To **contact** us read [contact](contact.html).
 
