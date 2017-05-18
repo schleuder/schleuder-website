@@ -4,7 +4,7 @@ title: Documentation
 ---
 
 {: .note}
-This document refers to **Schleuder version 3.0.X** To read about older versions of Schleuder please see the [older docs](older/).
+This document refers to **Schleuder version 3.0** To read about older versions of Schleuder please see the [older docs](older/).
 
 {: .note}
 Disclaimer: this is work in progress. To suggest improvements see [Feedback](#feedback).
@@ -352,7 +352,7 @@ Call this command weekly from cron to automate the check and have the results se
 {: .note}
 This list describes changes that users or list-admins of Schleuder should be aware of. For a more technical changelog, please see the [repository](https://0xacab.org/schleuder/schleuder).
 
-User-relevant changes in version 3.0.X compared to version 2.2:
+User-relevant changes in version 3.0 compared to version 2.2:
 
 * Keywords may be written in lower case letters, too.
 * `X-LISTNAME`: Each use of an `X-`keyword must be accompanied by this new keyword (once per message).
