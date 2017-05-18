@@ -8,7 +8,7 @@ Schleuder is a gpg-enabled mailing list manager with resending-capabilities. Sub
 
 To **read** the documentation see [docs](docs/).
 
-To **install** version 3 see [the README](https://0xacab.org/schleuder/schleuder/blob/master/README.md).
+To **install** the current version see [the README](https://0xacab.org/schleuder/schleuder/blob/master/README.md).
 
 To **participate** in the development use the [issue tracker](https://0xacab.org/schleuder/schleuder/milestones/4).
 
