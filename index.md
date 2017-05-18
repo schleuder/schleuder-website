@@ -19,7 +19,7 @@ To **be notified** of news about Schleuder subscribe to [schleuder-announce](htt
 
 ## News
 
-2017-05-19: ** Schleuder 3.1.0 released!** Several bugs were fixed and some features addded. Please see the [Changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#310-2017-05-19) for details.
+FIXME: ** Schleuder 3.1.0 released!** Several bugs were fixed and some features addded. Please see the [Changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#FIXME) for details.
 
 
 ##  Legacy: version 2
