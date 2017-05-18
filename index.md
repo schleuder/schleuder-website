@@ -23,7 +23,7 @@ FIXME: **Schleuder 3.1.0 released!** Several bugs were fixed and some features a
 
 2017-04-15: **Schleuder 3.0.4 and schleuder-cli 0.0.4 released!** These releases fix a few minor bugs. Please see the [Changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#304-2017-04-15) and the [Changelog of schleuder-cli](https://0xacab.org/schleuder/schleuder-cli/blob/master/CHANGELOG.md#004-2017-04-15) for changes.
 
-##  Past versions
+##  Legacy: version 2
 
-For documentation about older releases, please see [here](older/).
+For the legacy (old) version of Schleuder see [schleuder2.nadir.org](https://schleuder2.nadir.org/).
 
