@@ -272,7 +272,7 @@ x-resend-cc-encrypted-only: someone@example.org
 
 #### Subscription and key management
 
-These keywords  must be send to `listname-request@hostname`. They are used to get information about the list, its subscribers and keys, or to change that information.
+These keywords must be send to `listname-request@hostname`. They are used to get information about the list, its subscribers and keys, or to change that information.
 
 x-list-subscriptions
 : List all subscriptions.
@@ -286,7 +286,7 @@ x-unsubscribe: person@example.org
 x-set-fingerprint: 0x12345678DEADBEEF12345678DEADBEEF12345678
 : Assign the key with the given fingerprint to your subscription.
 
-x-set-fingerprint: person@example.org  0x12345678DEADBEEF12345678DEADBEEF12345678
+x-set-fingerprint: person@example.org 0x12345678DEADBEEF12345678DEADBEEF12345678
 : Assign the key with the given fingerprint to the given subscription. This variant of this command may only be used by list-admins.
 
 
