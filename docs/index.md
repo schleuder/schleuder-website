@@ -365,8 +365,18 @@ This list describes changes that users or list-admins of Schleuder should be awa
 
 User-relevant changes in version 3.1 compared to version 3.0:
 
-* ...
-
+* New `x-`keywords:
+  * `x-get-logfile`: Sends the logfile of the list.
+  * `x-get-version`: Returns the version of schleuder.
+  * `x-attach-listkey`: Attachs the public key of the list. Probably most useful when in combination with x-resend.
+* Changed and fixed `x-`keywords:
+  * `x-get-key`: Handles multiple keys per match; keys are added as attachments.
+* Whitespaces and 0x-prefix in the input are tolerated while setting the fingerprint of a subscription.
+* The texts that describe the forwarded automated messages now reflect that not all of those were bounces.
+* Fixed `public_footer` position: The content is displayed at the bottom of the mail.
+* If a key wasn't changed during an import, this is reported.
+* Errors of list-plugins are not written into the list of pseudo-headers anymore. List-plugins must handle errors on their own.
+* Unnecessary empty lines in the output while refreshing keys are removed now.  
 
 [↑](#top "Go to top of page")
 {: .linktotop}
