@@ -305,6 +305,11 @@ x-get-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 x-fetch-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 : Fetch the key with the given fingerprint from a keyserver and import it into the list's keyring. (This works only if a keyserver has been configured by the provider.)
 
+This keyword must be send to the normal list-address: `listname@hostname`.
+
+x-attach-listkey:
+: Attachs the public key of the list. Probably most useful when in combination with x-resend.
+
 
 #### Other
 
