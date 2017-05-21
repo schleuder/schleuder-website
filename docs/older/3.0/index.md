@@ -4,7 +4,7 @@ title: Documentation
 ---
 
 {: .note}
-This document refers to **Schleuder version 3.0** To read about older versions of Schleuder please see the [older docs](older/).
+This document refers to **Schleuder version 3.0** To read about older versions of Schleuder please see the [older docs](/docs/older/).
 
 {: .note}
 Disclaimer: this is work in progress. To suggest improvements see [Feedback](#feedback).
