@@ -10,12 +10,11 @@ To **read** the documentation see [docs](docs/).
 
 To **install** the current version see [the README](https://0xacab.org/schleuder/schleuder/blob/master/README.md).
 
-To **participate** in the development use the [issue tracker](https://0xacab.org/schleuder/schleuder/issues).
+To **participate** in the development use the [issue tracker](https://0xacab.org/schleuder/schleuder/issues). Please take note of our [Code of Conduct](https://0xacab.org/schleuder/schleuder/blob/master/CODE_OF_CONDUCT.md).
 
 To **contact** us read [contact](contact.html).
 
 To **be notified** of news about Schleuder subscribe to [schleuder-announce](https://lists.nadir.org/mailman/listinfo/schleuder-announce).
-
 
 ## News
 
