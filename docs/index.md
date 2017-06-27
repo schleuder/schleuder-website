@@ -83,7 +83,7 @@ For explanations of the possible settings read the default config file (also [av
 
 The **default settings for new lists** are read from another config file. By default Schleuder looks at `/etc/schleuder/list-defaults.yml`. To make Schleuder read a different file set the environment variable `SCHLEUDER_LIST_DEFAULTS` analogous to above. The possible settings are explained in the default config file, which is [also available in the repository](https://0xacab.org/schleuder/schleuder/blob/master/etc/list-defaults.yml).
 
-Once a list is created, it is not affected by these configuration files any more.  Existing lists have their configuration stored in the database. The settings in the database can be shown and set via the schleuder API, available through schleuder-web or schleuder-cli. Run `schleuder-cli lists help` and `schleuder-cli lists list-options` for more information on the latter.
+Once a list is created, it is not affected by these configuration files any more. Existing lists have their configuration stored in the database. The settings in the database can be shown and set via the schleuder API, available through schleuder-web or schleuder-cli. Run `schleuder-cli lists help` and `schleuder-cli lists list-options` for more information on the latter.
 
 ### Hook into Mail Transport Agent
 
