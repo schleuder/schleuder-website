@@ -142,6 +142,42 @@ Afterwards run `postmap /etc/postfix/virtual_aliases`.
 
 From now on each Schleuder-list will instantly be reachable by email once it was created.
 
+#### Exim
+
+{: .note}
+This section describes only those parts of a Exim-setup that are relevant to Schleuder. We assume that you have a sensible and tested Exim-setup already.
+
+As with any exim email routing, we need to configure essentially a router that accepts and directs a mail to a transport, which knows how to hand-over an email to schleuder.
+
+Within the `begin routers` section of your `exim.conf` you can add the following router:
+
+    mlschleuder:
+      driver = accept
+      condition = ${lookup {$local_part@$domain}lsearch{/etc/exim/schleuder-lists} {yes}{no}}
+      local_part_suffix_optional
+      local_part_suffix = +* : -bounce : -sendkey : -request : -owner
+      transport = mlschleuder_transport_local
+      no_more
+
+`/etc/exim/schleuder-lists` is a simple textfile containing one list-address per line. You can for example create it by executing `schleuder-cli lists list > /etc/exim/schleuder-lists` after creating or deleting any lists. In more advanced setups you might have different conditions depending on how you manage the inventory of your schleuder lists and decide to accept a mail for a list.
+
+Within the `begin transports` section of your `exim.conf` you then configure the transport:
+
+    mlschleuder_transport_local:
+       driver = pipe
+       user = schleuder
+       group = schleuder
+       # schleuders generates nice log messages for some of the problems
+       return_fail_output = true
+       home_directory = /var/lib/schleuder/lists/$domain/$local_part
+       command = "/usr/bin/schleuder work $local_part$local_part_suffix@$domain"
+       message_size_limit = 10M
+
+Please note that we keep the `$local_part_suffix` when handing the mail over to schleuder, so schleuder can e.g. detect bounces or sendkey emails properly.
+
+Restart exim and you have your working schleuder+exim setup.
+
+Remember to repeat dumping the list of schleuder-lists to `/etc/exim/schleuder-lists` also for newly created lists later.
 
 ### Schleuder API
 
