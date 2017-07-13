@@ -4,8 +4,11 @@ title: Schleuder ★ contact
 subtitle: A gpg-enabled mailinglist with remailing-capabilities.
 ---
 
-To contact us please use the [issue tracker](https://0xacab.org/schleuder/schleuder) or 
-send an email to [schleuder@nadir.org](mailto:schleuder@nadir.org).
+To contact us you have the following options:
+
+* Use the [issue tracker](https://0xacab.org/schleuder/schleuder) (note the option to mark an issue as confidential in case of security-relevant issues).
+* Join the IRC-channel: [ircs://irc.indymedia.org/schleuder](ircs://irc.indymedia.org/schleuder)
+* Send an email to [schleuder@nadir.org](mailto:schleuder@nadir.org).
 
 **Please encrypt** the emails, if possible.
 
