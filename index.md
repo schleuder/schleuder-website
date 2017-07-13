@@ -18,6 +18,8 @@ To **be notified** of news about Schleuder subscribe to [schleuder-announce](htt
 
 ## News
 
+2017-07-13: **Schleuder 3.1.2 released!** Several bugs were fixed. Please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#312-2017-07-13) for details.
+
 2017-06-24: **Schleuder 3.1.1 released!** Several bugs were fixed, one of which more noteworthy: migrating a v2-list could have resulted in subscriptions receiving plaintext-emails where they possibly received encrypted emails before. For details on this and the other fixes please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#311-2017-06-24).
 
 2017-05-21: **Schleuder 3.1.0 released!** Several bugs were fixed and some features addded. Please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#310-2017-05-21) for details.
