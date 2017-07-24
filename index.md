@@ -18,6 +18,8 @@ To **be notified** of news about Schleuder subscribe to [schleuder-announce](htt
 
 ## News
 
+2017-07-24: **Schleuder-cli 0.1.0 released!** This release add a new sub-command (`list send-list-to-subscriptions`), and changes one other. Please see the [changelog of schleuder-cli](https://0xacab.org/schleuder/schleuder-cli/blob/master/CHANGELOG.md#010-2017-07-21) for details.
+
 2017-07-13: **Schleuder 3.1.2 released!** Several bugs were fixed. Please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#312-2017-07-13) for details.
 
 2017-06-24: **Schleuder 3.1.1 released!** Several bugs were fixed, one of which more noteworthy: migrating a v2-list could have resulted in subscriptions receiving plaintext-emails where they possibly received encrypted emails before. For details on this and the other fixes please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#311-2017-06-24).
