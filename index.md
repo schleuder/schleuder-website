@@ -23,7 +23,7 @@ To **be notified** of news about Schleuder subscribe to [schleuder-announce](htt
 2017-07-13: **Schleuder 3.1.2 released!** Several bugs were fixed. Please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#312-2017-07-13) for details.
 
 
-Older news can be found in the [archive of the announce-mailinglists](https://lists.nadir.org/pipermail/schleuder-announce/2017/).
+Older news can be found in the [archive of the announce-mailinglist](https://lists.nadir.org/pipermail/schleuder-announce/).
 
 ##  Legacy: version 2
 
