@@ -18,13 +18,12 @@ To **be notified** of news about Schleuder subscribe to [schleuder-announce](htt
 
 ## News
 
+2017-07-24: **Schleuder-cli 0.1.0 released!** This release adds a new sub-command (`lists send-list-key-to-subscriptions`), and changes one other. Please see the [changelog of schleuder-cli](https://0xacab.org/schleuder/schleuder-cli/blob/master/CHANGELOG.md#010-2017-07-21) for details.
+
 2017-07-13: **Schleuder 3.1.2 released!** Several bugs were fixed. Please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#312-2017-07-13) for details.
 
-2017-06-24: **Schleuder 3.1.1 released!** Several bugs were fixed, one of which more noteworthy: migrating a v2-list could have resulted in subscriptions receiving plaintext-emails where they possibly received encrypted emails before. For details on this and the other fixes please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#311-2017-06-24).
 
-2017-05-21: **Schleuder 3.1.0 released!** Several bugs were fixed and some features addded. Please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#310-2017-05-21) for details.
-
-2017-04-15: **Schleuder 3.0.4 and schleuder-cli 0.0.4 released!** These releases fix a few minor bugs. Please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#304-2017-04-15) and the [changelog of schleuder-cli](https://0xacab.org/schleuder/schleuder-cli/blob/master/CHANGELOG.md#004-2017-04-15) for changes.
+Older news can be found in the [archive of the announce-mailinglist](https://lists.nadir.org/pipermail/schleuder-announce/).
 
 ##  Legacy: version 2
 
