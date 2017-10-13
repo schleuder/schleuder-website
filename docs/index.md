@@ -4,7 +4,7 @@ title: Documentation
 ---
 
 {: .note}
-This document refers to **Schleuder version 3.1** To read about older versions of Schleuder please see the [older docs](older/).
+This document refers to **Schleuder version 3.2** To read about older versions of Schleuder please see the [older docs](older/).
 
 {: .note}
 Disclaimer: this is work in progress. To suggest improvements see [Feedback](#feedback).
@@ -405,20 +405,18 @@ Call this command weekly from cron to automate the check and have the results se
 {: .note}
 This list describes changes that users or list-admins of Schleuder should be aware of. For a more technical changelog, please see the [repository](https://0xacab.org/schleuder/schleuder).
 
-User-relevant changes in version 3.1 compared to version 3.0:
+User-relevant changes in version 3.2 compared to version 3.1:
 
-* New `x-`keywords:
-  * `x-get-logfile`: Sends the logfile of the list.
-  * `x-get-version`: Returns the version of schleuder.
-  * `x-attach-listkey`: Attachs the public key of the list. Probably most useful when in combination with x-resend.
-* Changed and fixed `x-`keywords:
-  * `x-get-key`: Handles multiple keys per match; keys are added as attachments.
-* Whitespaces and 0x-prefix in the input are tolerated while setting the fingerprint of a subscription.
-* The texts that describe the forwarded automated messages now reflect that not all of those were bounces.
-* Fixed `public_footer` position: The content is displayed at the bottom of the mail.
-* If a key wasn't changed during an import, this is reported.
-* Errors of list-plugins are not written into the list of pseudo-headers anymore. List-plugins must handle errors on their own.
-* Unnecessary empty lines in the output while refreshing keys are removed now.  
+* To improve consistency with the English language, `X-LISTNAME` has been renamed to `X-LIST-NAME`. `X-LISTNAME` still works, but will be deprecated, therefore please use `X-LIST-NAME` from now on.
+* Lists can have an internal-footer now. It's appended to each message sent to a subscriber (if it's not blank).
+* New keywords: `X-RESEND-UNENCRYPTED` and `X-RESEND-CC-UNENCRYPTED`. With them you can enforce that resent-email will be sent in the clear, regardless of whether we would find a key for the recipient or not.
+* The short representation of GnuPG keys became more human-friendly. Besides the fingerprint we now show the email-address of the first UID, the generation-date, and (if present) the expiration-date.
+* The resend-keywords now check the given arguments to be valid email-addresses, and block resending if any one is found invalid.
+* `X-LIST-KEYS` does not require an argument anymore.
+* `X-SUBSCRIBE` now handles the combination of space-separated fingerprint and additional arguments (admin-flag, delivery-enabled-flag) correctly.
+* `X-RESEND` now respects the encoding the mail was sent with.
+* Fixed broken encoding of certain character-sequences in encrypted+signed messages.
+
 
 [↑](#top "Go to top of page")
 {: .linktotop}
