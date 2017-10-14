@@ -286,7 +286,7 @@ There are two types of keywords: those to enhance messages sent over the list ("
 
 #### Security
 
-x-listname: someone@example.org
+x-list-name: someone@example.org
 : **You must always provide this keyword once per email.** Without it, no other keyword will be considered but you will receive an error message. It helps to mitigate replay-attacks.
 
 
