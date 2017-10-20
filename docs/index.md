@@ -114,11 +114,11 @@ Then you have to chose how postfix should decide if a message should be delivere
 
 Now adapt the following lines for each list and add them to `/etc/postfix/transport_schleuder`:
 
-    listname@example.org          schleuder:
-    listname-request@example.org  schleuder:
-    listname-owner@example.org    schleuder:
-    listname-bounce@example.org   schleuder:
-    listname-sendkey@example.org  schleuder:
+    foo@example.org          schleuder:
+    foo-request@example.org  schleuder:
+    foo-owner@example.org    schleuder:
+    foo-bounce@example.org   schleuder:
+    foo-sendkey@example.org  schleuder:
 
 Afterwards run `postmap /etc/postfix/transport_schleuder` and restart postfix. Remember to repeat this also for newly created lists later.
 
@@ -261,11 +261,11 @@ To use schleuder-cli please see the output of
 ## Using a list
 
 
-Everything you send to `listname@hostname` will be send to all subscribers, but they will see only certain headers and the body of your email. The selection of these headers can be configured for each list individually by the list-admins.
+Everything you send to `foo@hostname` will be send to all subscribers, but they will see only certain headers and the body of your email. The selection of these headers can be configured for each list individually by the list-admins.
 
 ### Getting a list's public key
 
-Each Schleuder-list replies with its public key to any email sent to `listname-sendkey@hostname`. E.g. to receive the key for our contact address write an email to `schleuder-sendkey@nadir.org`.
+Each Schleuder-list replies with its public key to any email sent to `foo-sendkey@hostname`. E.g. to receive the key for our contact address write an email to `schleuder-sendkey@nadir.org`.
 
 ### Special keywords
 
@@ -292,7 +292,7 @@ x-list-name: someone@example.org
 
 #### Resending
 
-The resending-keywords must be included in messages sent to the normal list-address: `listname@hostname`.
+The resending-keywords must be included in messages sent to the normal list-address: `foo@hostname`.
 
 x-resend: someone@example.org
 : Send the message to the given address, encrypted if possible, otherwise in the clear.
@@ -314,7 +314,7 @@ x-resend-cc-unencrypted: someone@example.org
 
 #### Subscription and key management
 
-These keywords must be send to `listname-request@hostname`. They are used to get information about the list, its subscribers and keys, or to change that information.
+These keywords must be send to `foo-request@hostname`. They are used to get information about the list, its subscribers and keys, or to change that information.
 
 x-list-subscriptions
 : List all subscriptions.
@@ -347,7 +347,7 @@ x-get-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 x-fetch-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 : Fetch the key with the given fingerprint from a keyserver and import it into the list's keyring. (This works only if a keyserver has been configured by the provider.)
 
-This keyword must be send to the normal list-address: `listname@hostname`.
+This keyword must be send to the normal list-address: `foo@hostname`.
 
 x-attach-listkey:
 : Attachs the public key of the list. Probably most useful in combination with x-resend.
@@ -355,7 +355,7 @@ x-attach-listkey:
 
 #### Other
 
-These must also be sent to the request-address: <listname-request@hostname>.
+These must also be sent to the request-address: <foo-request@hostname>.
 
 x-get-logfile:
 : Sends the logfile of the list.
@@ -369,7 +369,7 @@ x-sign-this:
 
 ### Contact list-owner
 
-Write to `listname-owner@hostname` to contact the list-owner(s) even if you don't know who they are. Use the list's key to encrypt the email!
+Write to `foo-owner@hostname` to contact the list-owner(s) even if you don't know who they are. Use the list's key to encrypt the email!
 
 
 [↑](#top "Go to top of page")
