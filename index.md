@@ -30,4 +30,3 @@ Older news can be found in the [archive of the announce-mailinglist](https://lis
 ##  Legacy: version 2
 
 For the legacy (old) version of Schleuder see [schleuder2.nadir.org](https://schleuder2.nadir.org/).
-.
