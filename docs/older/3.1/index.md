@@ -4,7 +4,7 @@ title: Documentation
 ---
 
 {: .note}
-This document refers to **Schleuder version 3.2** To read about older versions of Schleuder please see the [older docs](older/).
+This document refers to **Schleuder version 3.1** To read about older versions of Schleuder please see the [older docs](older/).
 
 {: .note}
 Disclaimer: this is work in progress. To suggest improvements see [Feedback](#feedback).
@@ -114,11 +114,11 @@ Then you have to chose how postfix should decide if a message should be delivere
 
 Now adapt the following lines for each list and add them to `/etc/postfix/transport_schleuder`:
 
-    foo@example.org          schleuder:
-    foo-request@example.org  schleuder:
-    foo-owner@example.org    schleuder:
-    foo-bounce@example.org   schleuder:
-    foo-sendkey@example.org  schleuder:
+    listname@example.org          schleuder:
+    listname-request@example.org  schleuder:
+    listname-owner@example.org    schleuder:
+    listname-bounce@example.org   schleuder:
+    listname-sendkey@example.org  schleuder:
 
 Afterwards run `postmap /etc/postfix/transport_schleuder` and restart postfix. Remember to repeat this also for newly created lists later.
 
@@ -261,11 +261,11 @@ To use schleuder-cli please see the output of
 ## Using a list
 
 
-Everything you send to `foo@hostname` will be send to all subscribers, but they will see only certain headers and the body of your email. The selection of these headers can be configured for each list individually by the list-admins.
+Everything you send to `listname@hostname` will be send to all subscribers, but they will see only certain headers and the body of your email. The selection of these headers can be configured for each list individually by the list-admins.
 
 ### Getting a list's public key
 
-Each Schleuder-list replies with its public key to any email sent to `foo-sendkey@hostname`. E.g. to receive the key for our contact address write an email to `schleuder-sendkey@nadir.org`.
+Each Schleuder-list replies with its public key to any email sent to `listname-sendkey@hostname`. E.g. to receive the key for our contact address write an email to `schleuder-sendkey@nadir.org`.
 
 ### Special keywords
 
@@ -286,13 +286,13 @@ There are two types of keywords: those to enhance messages sent over the list ("
 
 #### Security
 
-x-list-name: someone@example.org
+x-listname: someone@example.org
 : **You must always provide this keyword once per email.** Without it, no other keyword will be considered but you will receive an error message. It helps to mitigate replay-attacks.
 
 
 #### Resending
 
-The resending-keywords must be included in messages sent to the normal list-address: `foo@hostname`.
+The resending-keywords must be included in messages sent to the normal list-address: `listname@hostname`.
 
 x-resend: someone@example.org
 : Send the message to the given address, encrypted if possible, otherwise in the clear.
@@ -300,21 +300,16 @@ x-resend: someone@example.org
 x-resend-encrypted-only: someone@example.org
 : Send the message to the given address only if it could be encrypted. Can be abbreviated to `x-resend-enc`.
 
-x-resend-unencrypted: someone@example.org
-: Send the message to the given address without encrypting it. You can use this keyword to make schleuder skip looking for a matching key for this address and enforce sending the email out in the clear.
-
 x-resend-cc: someone@example.org anotherperson@example.org
 : Send one message to all of the given addresses in Cc, so they get to know of each other (encrypted if possible, otherwise in the clear).
 
 x-resend-cc-encrypted-only: someone@example.org
 : Send one message to all of the given addresses in Cc, so they get to know of each other, only if it could be encrypted to all of those addresses. Can be abbreviated to `x-resend-cc-enc.`
 
-x-resend-cc-unencrypted: someone@example.org
-: Send one unencrypted message to all of the given addresses in Cc, so they get to know of each other. We skip looking for any key and will just send out the email in the clear.
 
 #### Subscription and key management
 
-These keywords must be send to `foo-request@hostname`. They are used to get information about the list, its subscribers and keys, or to change that information.
+These keywords must be send to `listname-request@hostname`. They are used to get information about the list, its subscribers and keys, or to change that information.
 
 x-list-subscriptions
 : List all subscriptions.
@@ -347,7 +342,7 @@ x-get-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 x-fetch-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 : Fetch the key with the given fingerprint from a keyserver and import it into the list's keyring. (This works only if a keyserver has been configured by the provider.)
 
-This keyword must be send to the normal list-address: `foo@hostname`.
+This keyword must be send to the normal list-address: `listname@hostname`.
 
 x-attach-listkey:
 : Attachs the public key of the list. Probably most useful in combination with x-resend.
@@ -355,7 +350,7 @@ x-attach-listkey:
 
 #### Other
 
-These must also be sent to the request-address: <foo-request@hostname>.
+These must also be sent to the request-address: <listname-request@hostname>.
 
 x-get-logfile:
 : Sends the logfile of the list.
@@ -369,7 +364,7 @@ x-sign-this:
 
 ### Contact list-owner
 
-Write to `foo-owner@hostname` to contact the list-owner(s) even if you don't know who they are. Use the list's key to encrypt the email!
+Write to `listname-owner@hostname` to contact the list-owner(s) even if you don't know who they are. Use the list's key to encrypt the email!
 
 
 [↑](#top "Go to top of page")
@@ -405,18 +400,20 @@ Call this command weekly from cron to automate the check and have the results se
 {: .note}
 This list describes changes that users or list-admins of Schleuder should be aware of. For a more technical changelog, please see the [repository](https://0xacab.org/schleuder/schleuder).
 
-User-relevant changes in version 3.2 compared to version 3.1:
+User-relevant changes in version 3.1 compared to version 3.0:
 
-* To improve consistency with the English language, `X-LISTNAME` has been renamed to `X-LIST-NAME`. `X-LISTNAME` still works, but will be deprecated, therefore please use `X-LIST-NAME` from now on.
-* Lists can have an internal-footer now. It's appended to each message sent to a subscriber (if it's not blank).
-* New keywords: `X-RESEND-UNENCRYPTED` and `X-RESEND-CC-UNENCRYPTED`. With them you can enforce that resent-email will be sent in the clear, regardless of whether we would find a key for the recipient or not.
-* The short representation of GnuPG keys became more human-friendly. Besides the fingerprint we now show the email-address of the first UID, the generation-date, and (if present) the expiration-date.
-* The resend-keywords now check the given arguments to be valid email-addresses, and block resending if any one is found invalid.
-* `X-LIST-KEYS` does not require an argument anymore.
-* `X-SUBSCRIBE` now handles the combination of space-separated fingerprint and additional arguments (admin-flag, delivery-enabled-flag) correctly.
-* `X-RESEND` now respects the encoding the mail was sent with.
-* Fixed broken encoding of certain character-sequences in encrypted+signed messages.
-
+* New `x-`keywords:
+  * `x-get-logfile`: Sends the logfile of the list.
+  * `x-get-version`: Returns the version of schleuder.
+  * `x-attach-listkey`: Attachs the public key of the list. Probably most useful when in combination with x-resend.
+* Changed and fixed `x-`keywords:
+  * `x-get-key`: Handles multiple keys per match; keys are added as attachments.
+* Whitespaces and 0x-prefix in the input are tolerated while setting the fingerprint of a subscription.
+* The texts that describe the forwarded automated messages now reflect that not all of those were bounces.
+* Fixed `public_footer` position: The content is displayed at the bottom of the mail.
+* If a key wasn't changed during an import, this is reported.
+* Errors of list-plugins are not written into the list of pseudo-headers anymore. List-plugins must handle errors on their own.
+* Unnecessary empty lines in the output while refreshing keys are removed now.  
 
 [↑](#top "Go to top of page")
 {: .linktotop}
