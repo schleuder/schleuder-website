@@ -18,7 +18,7 @@ To **be notified** of news about Schleuder subscribe to [schleuder-announce](htt
 
 ## News
 
-2017-10-23: **Schleuder 3.2 released!** This release adds two new features: An internal footer to be appended to each mail sent to a subcribed address, and an option to use an OS-wide defined keyserver (useful on Debian 9). On top, two new keywords: `X-RESEND-UNENCRYPTED` and `X-RESEND-CC-UNENCRYPTED` will send out mails in the clear, regardless of whether relevant keys exist. Additionally, some bugs were fixed. Don't forget to **run `schleuder install`** after the update to apply a necessary database migration. Please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#unreleased) for details.
+2017-10-23: **Schleuder 3.2 released!** This release adds two new features: An internal footer to be appended to each mail sent to a subcribed address, and an option to use an OS-wide defined keyserver (useful on Debian 9). On top, two new keywords: `X-RESEND-UNENCRYPTED` and `X-RESEND-CC-UNENCRYPTED` will send out mails in the clear, regardless of whether relevant keys exist. Additionally, some bugs were fixed. Don't forget to **run `schleuder install`** after the update to apply a necessary database migration. Please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#320-2017-10-23) for details.
 
 2017-07-24: **Schleuder-cli 0.1.0 released!** This release adds a new sub-command (`lists send-list-key-to-subscriptions`), and changes one other. Please see the [changelog of schleuder-cli](https://0xacab.org/schleuder/schleuder-cli/blob/master/CHANGELOG.md#010-2017-07-21) for details.
 
