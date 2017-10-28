@@ -378,7 +378,7 @@ Write to `foo-owner@hostname` to contact the list-owner(s) even if you don't kno
 ## Maintenance
 
 {: .note}
-Please take care to have the following commands run by the user that owns your the directory of schleuder lists (by default `/var/lib/schleuder/lists`) to avoid running into file permission problems!
+Please take care to have the following commands run by the user that owns the directory of schleuder lists (by default `/var/lib/schleuder/lists`) to avoid running into file permission problems!
 
 
 Schleuder can **check all keys** that are present in the list's keyrings for (upcoming) expiration dates, revocation, or other reasons for not being usable.
