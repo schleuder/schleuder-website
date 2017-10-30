@@ -396,6 +396,13 @@ Call this command weekly from cron to automate the check and have the results se
     schleuder refresh_keys
 
 
+Schleuder can also **pin keys**. Each subscription of each list will be checked if it has a key assigned to it. If there is no key assigned, schleuder will try to
+select an encryption capable key from the lists keyring based on the email address.
+
+Call this command weekly from cron to automate the check and have the results sent to the respective list-admins:
+
+    schleuder pin_keys
+
 
 [↑](#top "Go to top of page")
 {: .linktotop}
