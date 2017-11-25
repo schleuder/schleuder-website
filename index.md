@@ -28,7 +28,3 @@ To **be notified** of news about Schleuder subscribe to [schleuder-announce](htt
 
 
 Older news can be found in the [archive of the announce-mailinglist](https://lists.nadir.org/pipermail/schleuder-announce/).
-
-##  Legacy: version 2
-
-For the legacy (old) version of Schleuder see [schleuder2.nadir.org](https://schleuder2.nadir.org/).
