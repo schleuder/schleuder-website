@@ -396,10 +396,11 @@ Call this command weekly from cron to automate the check and have the results se
     schleuder refresh_keys
 
 
-Schleuder can also **pin keys**. Each subscription of each list will be checked if it has a key assigned to it. If there is no key assigned, schleuder will try to
-select an encryption capable key from the lists keyring based on the email address.
+If there is no key assigned, schleuder will try to select a key from the list's keyring that distinctly matches the subscription's email address.
 
-Call this command weekly from cron to automate the check and have the results sent to the respective list-admins:
+This feature should be used with care. It's easy for a malicious (or inexperienced) person to inject additional user-IDs into the list's keyring. This can lead to situations in which people suddenly receive emails that are encrypted to a key they don't own.
+
+You should better not run this command automatedly, and you should always examine the output closely to check for unintended consequences.
 
     schleuder pin_keys
 
