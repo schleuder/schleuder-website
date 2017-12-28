@@ -123,13 +123,15 @@ Now adapt the following lines for each list and add them to `/etc/postfix/transp
 Afterwards run `postmap /etc/postfix/transport_schleuder` and restart postfix. Remember to repeat this also for newly created lists later.
 
 
+Another way to tell postfix which domain and list can be piped to schleuder is to get that information out of the sqlite database. A requirement for that is the postfix-sqlite package, which isn't in the standard repositories of CentOS, but Debian.
+
 **To dedicate a whole domain to Schleuder,** add these lines to `main.cf`:
 
     schleuder_destination_recipient_limit = 1
-    virtual_mailbox_domains = sqlite:/etc/postfix/schleuder_domains_sqlite.cf
+    virtual_mailbox_domains = sqlite:/etc/postfix/schleuder_domain_sqlite.cf
     virtual_transport       = schleuder
     virtual_alias_maps      = hash:/etc/postfix/virtual_aliases
-    virtual_mailbox_maps    = sqlite:/etc/postfix/schleuder_lists_sqlite.cf
+    virtual_mailbox_maps    = sqlite:/etc/postfix/schleuder_list_sqlite.cf
 
 Then adapt and add at least the following exceptions from the All-to-Schleuder-rule to `/etc/postfix/virtual_aliases`:
 
@@ -140,13 +142,13 @@ Then adapt and add at least the following exceptions from the All-to-Schleuder-r
 
 Afterwards run `postmap /etc/postfix/virtual_aliases`.
 
-The file schleuder_domains_sqlite.cf can ask the schleuder sqlite database (this will delegate the whole domain to schleuder):
+The file `schleuder_domain_sqlite.cf` can ask the schleuder sqlite database (this will delegate the whole domain to schleuder):
 
     dbpath = /var/lib/schleuder/db.sqlite
     query = select distinct substr(email, instr(email, '@') + 1) from lists
             where email like '%%%s'
 
-And the file schleuder_lists_sqlite.cf can also get the information from the schleuder sqlite database:
+And the file `schleuder_list_sqlite.cf` can also get the information from the schleuder sqlite database:
 
     dbpath = /var/lib/schleuder/db.sqlite
     query = select 'present' from lists
