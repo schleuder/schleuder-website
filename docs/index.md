@@ -126,10 +126,10 @@ Afterwards run `postmap /etc/postfix/transport_schleuder` and restart postfix. R
 **To dedicate a whole domain to Schleuder,** add these lines to `main.cf`:
 
     schleuder_destination_recipient_limit = 1
-    virtual_mailbox_domains = lists.example.org
+    virtual_mailbox_domains = sqlite:/etc/postfix/schleuder_domains_sqlite.cf
     virtual_transport       = schleuder
     virtual_alias_maps      = hash:/etc/postfix/virtual_aliases
-    virtual_mailbox_maps    = sqlite:/etc/postfix/schleuder_sqlite.cf
+    virtual_mailbox_maps    = sqlite:/etc/postfix/schleuder_lists_sqlite.cf
 
 Then adapt and add at least the following exceptions from the All-to-Schleuder-rule to `/etc/postfix/virtual_aliases`:
 
@@ -139,6 +139,22 @@ Then adapt and add at least the following exceptions from the All-to-Schleuder-r
     root@lists.example.org          root@anotherdomain
 
 Afterwards run `postmap /etc/postfix/virtual_aliases`.
+
+The file schleuder_domains_sqlite.cf can ask the schleuder sqlite database (this will delegate the whole domain to schleuder):
+
+    dbpath = /var/lib/schleuder/db.sqlite
+    query = select distinct substr(email, instr(email, '@') + 1) from lists
+            where email like '%%%s'
+
+And the file schleuder_lists_sqlite.cf can also get the information from the schleuder sqlite database:
+
+    dbpath = /var/lib/schleuder/db.sqlite
+    query = select 'present' from lists
+              where email = '%s'
+              or    email = replace('%s', '-bounce@', '@')
+              or    email = replace('%s', '-owner@', '@')
+              or    email = replace('%s', '-request@', '@')
+              or    email = replace('%s', '-sendkey@', '@')
 
 From now on each Schleuder-list will instantly be reachable by email once it was created.
 
