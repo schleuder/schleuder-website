@@ -68,19 +68,22 @@ All other list-related data is stored in the SQL-database. Most data is unserial
 
 ### Installation
 
-Besides installing schleuder itself, we suggest that you should also install [schleuder-cli](https://0xacab.org/schleuder/schleuder-cli), which is a command line tool to manage Schleuder lists. As well we recommend running an entropy source, such as `haveged`. This ensures Schleuder won't be blocked by lacking entropy, which otherwise might happen especially during key generation.
+You can install schleuder either from Linux distribution packages or rubygems. Currently there are supported distribution packages for Debian ("stretch-backports" and "buster") and CentOS 7. If you use one of the directly supported platforms, you should choose the packages over the gems.
 
-You can install schleuder and schleuder-cli either through distribution packages, source or rubygems. At the moment there are supported packages for Debian (from the stretch release on) and CentOS 7. For the former packages are either available in backports or the testing repositories.
+Besides schleuder you should also install at least one of [schleuder-cli](https://0xacab.org/schleuder/schleuder-cli) (the command line tool to manage Schleuder lists), and [schleuder-web](https://0xacab.org/schleuder/schleuder-web) (the web interface to manage and maintain Schleuder lists).
 
-{: .note}
-For installations on Debian or CentOS 7 we recommend you to use the specific distribution packages over a gem or source-based installation.
+Additionally we recommend running an entropy source such as `haveged`. This ensures Schleuder won't be blocked by lacking entropy, which otherwise might happen e.g. during key generation.
+
+
 
 #### Debian
 
 {: .note}
-All steps need root privileges
+All steps need root privileges.
 
-We maintain schleuder and schleuder-cli in stretch-backports (and, obviously, in Debian buster as well). For production usage, we recommend Debian stretch. To make use of it, add the backports to your APT sources list directory:
+We maintain schleuder and schleuder-cli in "stretch-backports" and "buster". (For production usage we recommend Debian "stretch".)
+
+First, add the backports to your APT sources list directory:
 
     echo "deb http://deb.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/stretch-backports.list
 
@@ -91,6 +94,9 @@ After this, update the APT package cache:
 Finally, install schleuder and schleuder-cli via:
 
     apt-get install schleuder schleuder-cli
+
+The package will finalize the setup of Schleuder, too.
+
 
 #### CentOS
 
@@ -108,17 +114,21 @@ Now you are ready to install schleuder and schleuder-cli
 
     yum install schleuder schleuder-cli
 
-This repository also provides you with a package for [schleuder-web](https://0xacab.org/schleuder/schleuder-web/). Refer to its documentation on how to get schleuder-web up and running.
+Afterwards run `schleuder install` to finalize the setup of Schleuder. This creates neccessary directories, copies example configs, etc. If you see errors about missing write permissions please follow the advice given.
 
-Once installed and configured you can run `schleuder install` to finalize the setup of schleuder. This creates neccessary directories, copies example configs, etc. If you see errors about missing write permissions please follow the advice given.
+{: .note}
+The copr-repository also provides you with a package for [schleuder-web](https://0xacab.org/schleuder/schleuder-web/). Please read the documentation of schleuder-web on how to get it up and running.
 
-#### Gem / Source installation
 
-For install instructions for gem or source-based installations please see the [README](https://0xacab.org/schleuder/schleuder/blob/master/README.md#installing-schleuder) of Schleuder.
+#### From Ruby-Gem
+
+For instructions on how to install from rubygems please see the [README](https://0xacab.org/schleuder/schleuder/blob/master/README.md#installing-schleuder) of Schleuder.
+
 
 #### Puppet
 
-To automate the installation and configuration of schleuder, schleuder-cli, schleuder-web (on CentOS 7) and to create/destroy schleuder lists, there is a [schleuder puppet module](https://0xacab.org/schleuder/puppet-schleuder). Have a look at its [README](https://0xacab.org/schleuder/puppet-schleuder/blob/master/README.md) on how to use it. We would like to extend the module to Debian as well - help highly appreciated.
+There is a [schleuder puppet module](https://0xacab.org/schleuder/puppet-schleuder) to automate the installation and configuration of schleuder, schleuder-cli, and schleuder-web, and the creation and deletion of schleuder lists. Have a look at its [README](https://0xacab.org/schleuder/puppet-schleuder/blob/master/README.md) on how to use it. Currenty it works for CentOS 7, but we would like to make it work for Debian as well - help would be highly appreciated.
+
 
 ### Configuration
 
