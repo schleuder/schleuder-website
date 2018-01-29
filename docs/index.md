@@ -68,10 +68,57 @@ All other list-related data is stored in the SQL-database. Most data is unserial
 
 ### Installation
 
-For install instructions please see the [README](https://0xacab.org/schleuder/schleuder/blob/master/README.md) of Schleuder.
+Besides installing schleuder itself, we suggest that you should also install [schleuder-cli](https://0xacab.org/schleuder/schleuder-cli), which is a command line tool to manage Schleuder lists. As well we recommend running an entropy source, such as `haveged`. This ensures Schleuder won't be blocked by lacking entropy, which otherwise might happen especially during key generation.
 
-As suggested there you should also install [schleuder-cli](https://0xacab.org/schleuder/schleuder-cli), which is a command line tool to manage Schleuder lists.
+You can install schleuder and schleuder-cli either through distribution packages, source or rubygems. At the moment there are supported packages for Debian (from the stretch release on) and CentOS 7. For the former packages are either available in backports or the testing repositories.
 
+{: .note}
+For installations on Debian or CentOS 7 we recommend you to use the specific distribution packages over a gem or source-based installation.
+
+#### Debian
+
+{: .note}
+All steps need root privileges
+
+We maintain schleuder and schleuder-cli in stretch-backports (and, obviously, in Debian buster as well). For production usage, we recommend Debian stretch. To make use of it, add the backports to your APT sources list directory:
+
+    echo "deb http://deb.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/stretch-backports.list
+
+After this, update the APT package cache:
+
+    apt-get update
+
+Finally, install schleuder and schleuder-cli via:
+
+    apt-get install schleuder schleuder-cli
+
+#### CentOS
+
+For CentOS 7 there is a maintained [copr-repository](https://copr.fedorainfracloud.org/coprs/schleuder/schleuder/) using [Software Collections](https://www.softwarecollections.org/en/).
+
+{: .note}
+All steps need root privileges
+
+Install the repository & the SCL repository
+
+    yum install centos-release-scl
+    curl -o /etc/yum.repos.d/schleuder-schleuder-epel-7.repo https://copr.fedorainfracloud.org/coprs/schleuder/schleuder/repo/epel-7/schleuder-schleuder-epel-7.repo
+
+Now you are ready to install schleuder and schleuder-cli
+
+    yum install schleuder schleuder-cli
+
+This repository also provides you with a package for [schleuder-web](https://0xacab.org/schleuder/schleuder-web/). Refer to its documentation on how to get schleuder-web up and running.
+
+Once installed and configured you can run `schleuder install` to finalize the setup of schleuder. This creates neccessary directories, copies example configs, etc. If you see errors about missing write permissions please follow the advice given.
+
+#### Gem / Source installation
+
+For install instructions for gem or source-based installations please see the [README](https://0xacab.org/schleuder/schleuder/blob/master/README.md#installing-schleuder) of Schleuder.
+
+#### Puppet
+
+To automate the installation and configuration of schleuder, schleuder-cli, schleuder-web (on CentOS 7) and to create/destroy schleuder lists, there is a [schleuder puppet module](https://0xacab.org/schleuder/puppet-schleuder). Have a look at its [README](https://0xacab.org/schleuder/puppet-schleuder/blob/master/README.md) on how to use it. We would like to extend the module to Debian as well - help highly appreciated.
 
 ### Configuration
 
