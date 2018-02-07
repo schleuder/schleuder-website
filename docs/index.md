@@ -93,7 +93,7 @@ After this, update the APT package cache:
 
 Finally, install schleuder and schleuder-cli via:
 
-    apt-get install schleuder schleuder-cli
+    apt-get install -t stretch-backports schleuder schleuder-cli
 
 The package will finalize the setup of Schleuder, too.
 
