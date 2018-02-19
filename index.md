@@ -18,6 +18,8 @@ To **be notified** of news about Schleuder subscribe to [schleuder-announce](htt
 
 ## News
 
+2018-02-19: **Linux-packages for Schleuder 3.2.2 available.** For Debian (stretch-backports) and CentOS (EL 7) there are now packages of Schleuder version 3.2.2 available to easily install and upgrade it. Please see the [installation instructions](https://schleuder.nadir.org/docs/#installation) for details on how to use the packages. For details about version 3.2.2 please read the [changelog](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#322-2018-02-06).
+
 2018-02-06: **Schleuder 3.2.2 released!** This release fixes some minor bugs, e.g. with lingering dirmngr-processes, parsing keywords from big messages, and OpenPGP-keys with non-ASCII-characters. It also pins the "mail"-library to version 2.6, because 2.7 seems to have problems. For all details please see the [changelog](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#322-2018-02-06).
 
 2017-10-24: **Schleuder 3.2.1 released!** This release adds an explicit dependency on ruby-gpgme >= 2.0.13, which includes a fix for a bug people have run into. Please see the [changelog of schleuder](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#321-2017-10-24) for details.
