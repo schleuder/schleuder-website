@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Schleuder
-subtitle: A gpg-enabled mailinglist with remailing-capabilities.
+subtitle: A gpg-enabled mailing list manager with remailing-capabilities.
 ---
 
 Schleuder is a gpg-enabled mailing list manager with resending-capabilities. Subscribers can communicate encrypted (and pseudonymously) among themselves, receive emails from non-subscribers and send emails to non-subscribers via the list.
