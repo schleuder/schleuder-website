@@ -352,6 +352,7 @@ Keywords require that:
 * they are written into the beginning of the *first text-part* of the email (usually that's just the normal body of the email),
 * possible arguments must be written *on the same line* as the keyword (exceptions are mentioned in the descriptions below),
 * the email must be *encrypted and signed* by a list-member's key.
+* the email must be formatted as a *plain text* message and not with HTML, RTF or similar formatting.
 
 Keywords can be repeated within one email at will.
 Letter case doesn't matter.
