@@ -114,7 +114,7 @@ Now you are ready to install schleuder and schleuder-cli
 
     yum install schleuder schleuder-cli
 
-Afterwards run `schleuder install` to finalize the setup of Schleuder. This creates neccessary directories, copies example configs, etc. If you see errors about missing write permissions please follow the advice given.
+Afterwards run `schleuder install` to finalize the setup of Schleuder. This creates necessary directories, copies example configs, etc. If you see errors about missing write permissions please follow the advice given.
 
 {: .note}
 The copr-repository also provides you with a package for [schleuder-web](https://0xacab.org/schleuder/schleuder-web/). Please read the documentation of schleuder-web on how to get it up and running.
