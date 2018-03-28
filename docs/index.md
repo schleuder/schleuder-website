@@ -70,6 +70,9 @@ All other list-related data is stored in the SQL-database. Most data is unserial
 
 You can install schleuder either from Linux distribution packages or rubygems. Currently there are supported distribution packages for Debian ("stretch-backports" and "buster") and CentOS 7. If you use one of the directly supported platforms, you should choose the packages over the gems.
 
+{: .note}
+Don't use the packages provided by Ubuntu in all releases up to and including 17.10, they are severely outdated. On Ubuntu 18.04 only use the package if it has at least version 3.2.2.
+
 Besides schleuder you should also install at least one of [schleuder-cli](https://0xacab.org/schleuder/schleuder-cli) (the command line tool to manage Schleuder lists), and [schleuder-web](https://0xacab.org/schleuder/schleuder-web) (the web interface to manage and maintain Schleuder lists).
 
 Additionally we recommend running an entropy source such as `haveged`. This ensures Schleuder won't be blocked by lacking entropy, which otherwise might happen e.g. during key generation.
