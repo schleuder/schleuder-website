@@ -1,0 +1,27 @@
+<nav class="breadcrumbs hidden-sm-down">
+   <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+      {% for crumb in breadcrumbs %} 
+        {% if forloop.first %}
+          <li class="breadcrumb-item breadcrumb-item-icon" property="itemListElement" typeof="ListItem">
+             <a property="item" typeof="WebPage" href="{{ crumb.url | relative_url }}">
+               <img src="/images/schleuder.png" title='Home' alt='Logo: a slingshot' />
+               <meta property="position" content="{{ crumb.position }}" />
+             </a>
+          </li>
+          {% continue %} 
+        {% endif %} 
+        {% unless forloop.last %}
+          <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+             <div class="separator">/</div>
+             <a property="item" typeof="WebPage" href="{{ crumb.url | relative_url }}">
+                <span property="name">{{ crumb.title }}</span>
+                <meta property="position" content="{{ crumb.position }}" />
+             </a>
+          </li>
+        {% endunless %}
+      {% endfor %}
+
+   </ol>
+</nav>
+

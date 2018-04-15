@@ -7,5 +7,13 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://schleuder.org" # the base hostname & protocol for your site
 exclude: [Rakefile]
 
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "page"
+
 # Build settings
 markdown: kramdown
+

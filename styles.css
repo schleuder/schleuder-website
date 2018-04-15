@@ -1,0 +1,204 @@
+a { color: #4D994D; }
+
+a:visited { color: #336633; }
+
+body {
+  margin: 1em;
+  font-family: DroidSans, sans-serif;
+  max-width: 50em;
+}
+
+#logo {
+  float: right;
+  margin: 0 0 0 2%;
+}
+
+h1 { 
+  padding: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin: 2em 0 0.5em 0;
+  border-bottom: solid thin #ccc;
+}
+
+h3 {
+  color: darkgreen;
+  margin: 2em 0 0.5em 0;
+}
+
+#subtitle {
+  color: #999999;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+header {
+  margin-bottom: 2em;
+}
+
+ul#markdown-toc {
+  font-size: smaller;
+  color: #666;
+  list-style-type: none;
+  margin: 1em 0 2em 0;
+  padding: 0;
+}
+
+#markdown-toc ul {
+  list-style-type: none;
+  margin: 0 0 0 1.5em;
+  padding: 0;
+}
+
+ul#markdown-toc a {
+  font-size: larger;
+}
+
+ul#markdown-toc > li {
+  margin: 0 0 0.4em 0;
+}
+
+.linktotop {
+  text-align: right;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+.linktotop a {
+  text-decoration: none;
+}
+
+pre, code {
+  background-color: #f8f8f8;
+}
+
+pre {
+  display: inline-block;
+  padding: 1em;
+}
+
+code {
+  font-size: 115%;
+}
+
+dt {
+  font-family: monospace;
+  font-size: 125%;
+  margin: 1em 0 0.2em 0;
+}
+
+.note {
+  padding: 0.2em 1.5em;
+  font-style: italic;
+}
+
+.note:before {
+  content:"!";
+  font-size: 2em;
+  color: #999999;
+  position: absolute;
+  margin: -0.3em 0 0 -0.6em;
+}
+
+
+.smallblock {
+  display: inline-block;
+  width: 13.5em;
+  margin-right: 2em;
+}
+
+
+.block {
+  border: 1px green solid;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0 10px 10px 10px;
+}
+
+@media only screen and (max-device-width : 480px) {
+  .smallblock {
+    display: block;
+    width: auto;
+    margin-right: 0em;
+  }
+  body {
+    margin: 0.5em;
+  }
+  body.layout-page #logo {
+    width: 25%;
+  }
+}
+
+.block h3 {
+  margin-top: 1em;
+}
+
+ul {
+  margin-top: 0;
+  padding: 0 2em;
+}
+
+p + ul {
+  margin-top: -0.5em;
+}
+
+.date {
+  font-family: monospace;
+}
+
+.footer {
+  margin: 5em 0 0 0;
+}
+
+.feedback {
+  margin: 1em 0 0 0;
+  border: solid 1px lightgrey;
+  padding: 0.8em;
+  font-size: 0.8em;
+  color: grey;
+}
+
+
+
+
+nav.breadcrumbs ol {
+  font-size: 1rem;
+  padding: 0 0 3em 0;
+  list-style: none;
+}
+
+nav.breadcrumbs li {
+   float: left;
+}
+
+nav.breadcrumbs .separator {
+   display: inline-block;
+   font-size: 1.3em;
+   padding-right: 0.3rem;
+   padding-left: 0.5rem;
+   color: #ccc;
+   vertical-align: sub;
+}
+
+nav.breadcrumbs a {
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav.breadcrumbs .breadcrumb-item-icon {
+  width: 25px;
+}
+
+nav.breadcrumbs img {
+   display: inline-block;
+   height: 100%;
+   width: 100%;
+   margin-top: -5px;
+}
+
+

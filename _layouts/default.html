@@ -7,95 +7,10 @@
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <title>{% if page.title %} {{ page.title }} {% else %} {{ site.title }} {% endif %}</title>
     <meta content='{% if page.excerpt %} {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ site.description }} {% endif %}' name='description'>
-    <style>
-      a { color: #4D994D; }
-      a:visited { color: #336633; }
-      body {
-        margin: 3%;
-        font-family: DroidSans, sans-serif;
-        max-width: 50em;
-      }
-      #logo {
-        float: right;
-        margin: 0 0 0 2%;
-      }
-      h1 { 
-        padding: 0;
-        margin-bottom: 0;
-      }
-      h2 {
-        margin: 1em 0 0.5em 0;
-        border-bottom: solid thin #ccc;
-      }
-      h2, h3 {
-      }
-      #subtitle, #breadcrumb {
-        color: #999999;
-        font-weight: bold;
-        font-size: 1.1em;
-        text-decoration: none;
-      }
-      header {
-        margin-bottom: 2em;
-      }
-      ul#markdown-toc {
-        font-size: smaller;
-        color: #666;
-        list-style-type: none;
-        margin: 1em 0;
-        padding: 0;
-      }
-      #markdown-toc ul {
-        list-style-type: none;
-        margin: 0 0 0 1.5em;
-        padding: 0;
-      }
-      ul#markdown-toc a {
-        font-size: larger;
-      }
-      ul#markdown-toc > li {
-        margin: 0 0 0.4em 0;
-      }
-
-      .linktotop {
-        text-align: right;
-        font-size: 2em;
-        margin: 0;
-        padding: 0;
-      }
-      .linktotop a {
-        text-decoration: none;
-      }
-      pre, code {
-        background-color: #f8f8f8;
-      }
-      pre {
-        display: inline-block;
-        padding: 1em;
-      }
-      code {
-        font-size: 115%;
-      }
-      dt {
-        font-family: monospace;
-        font-size: 125%;
-        margin: 1em 0 0.2em 0;
-      }
-      .note {
-        padding: 0.2em 1.5em;
-        font-style: italic;
-      }
-      .note:before {
-        content:"!";
-        font-size: 2em;
-        color: #999999;
-        position: absolute;
-        margin: -0.3em 0 0 -0.6em;
-      }
-    </style>
+    <link href='/styles.css' rel='stylesheet' media='all'>
   </head>
-  <body id="top">
-    <img id='logo' src='/images/schleuder.png' alt="Logo of schleuder">
+  <body id="top" class='layout-{{ page.layout }}'>
+    <a href='/'><img id='logo' src='/images/schleuder.png' alt="Logo of schleuder"></a>
     {{ content }}
   </body>
 </html>
