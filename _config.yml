@@ -1,10 +1,10 @@
 # Site settings
 title: Schleuder
-email: schleuder@nadir.org
+email: team@schleuder.org
 description: > # this means to ignore newlines until "baseurl:"
   Schleuder is a gpg-enabled mailinglist with remailing-capabilities.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://schleuder.nadir.org" # the base hostname & protocol for your site
+url: "https://schleuder.org" # the base hostname & protocol for your site
 exclude: [Rakefile]
 
 # Build settings
