@@ -1,4 +1,6 @@
 ---
+image: debian:unstable
+
 stages:
   - static
 
