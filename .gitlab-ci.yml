@@ -3,6 +3,8 @@ image: debian:unstable
 
 stages:
   - static
+  - build
+  - deploy
 
 cache:
   paths:
@@ -36,3 +38,43 @@ codespell:
     # warnings about binary files and to check file names as well.
     - codespell -q 2 -f
   stage: static
+
+build:
+  variables:
+    APT_INSTALL_PACKAGES: jekyll
+  <<: *setup_apt
+  script:
+    - jekyll build
+    - tar cfz site.tar.gz _site
+  stage: build
+  artifacts:
+    paths:
+      - site.tar.gz
+    expire_in: 2 weeks
+
+deploy:
+  variables:
+    APT_INSTALL_PACKAGES: lftp openssh-client
+  <<: *setup_apt
+  script:
+    # Disable bash history to prevent secret variables to be recorded and saved
+    - unset HISTFILE
+    # Start SSH agent
+    - eval $(ssh-agent -s)
+    # Add the SSH key stored in the SSH_DEPLOY_KEY variable to the agent store
+    # We're using 'tr' to fix line endings which makes ed25519 keys work without 
+    # extra base64 encoding
+    - echo "$DEPLOY_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - printf "
+      |1|ZfxGVbfwfCHlaURlet/V6y+2gjg=|/X7OweXQUnXZnGSKkvF/IpVz4n4= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPJx38PfGvaHtkSsHptiHoIQxlI3Yf0cskPNTwAQnY14\n
+      |1|8YPsezXF2SYQ7rq9U5TbDnMsVjo=|SJOodZB+8j+dO+l6YTdZ7+44XLw= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPJx38PfGvaHtkSsHptiHoIQxlI3Yf0cskPNTwAQnY14
+      " > ~/.ssh/known_hosts
+    - tar fxv site.tar.gz
+    # It seems, lftp needs a "dummy" password, even if key-based authentication is used
+    - lftp -e "mirror -eRv _site www; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
+  stage: deploy
+  only:
+    - master@schleuder/schleuder-website
+    - tags@schleuder/schleuder-website
