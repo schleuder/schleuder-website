@@ -27,7 +27,7 @@ x-set-fingerprint: person@example.org 0x12345678DEADBEEF12345678DEADBEEF12345678
 : Assign the key with the given fingerprint to the given subscription. This variant of this command may only be used by list-admins.
 
 
-x-list-keys:
+x-list-keys
 : Lists all public keys known to the list.
 
 x-add-key:
