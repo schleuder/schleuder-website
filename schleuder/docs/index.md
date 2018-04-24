@@ -4,9 +4,9 @@ title: Documentation
 
 ### Schleuder for&hellip;
 
-* [subscribers](subscribers)
-* [list-admins](list-admins)
-* [server-admins](server-admins)
+* [subscribers](subscribers.html)
+* [list-admins](list-admins.html)
+* [server-admins](server-admins.html)
 
 
 ### Changed behaviour
