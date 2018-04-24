@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{http_host} "!^schleuder.org" [nc]
+RewriteRule ^(.*)$ https://schleuder.org/$1 [r=301,nc]
+
+RewriteRule ^/?docs/(.*)$ https://schleuder.org/schleuder/docs/$1 [r=301,nc]
