@@ -73,7 +73,7 @@ deploy:
       " > ~/.ssh/known_hosts
     - tar fxv site.tar.gz
     # It seems, lftp needs a "dummy" password, even if key-based authentication is used
-    - lftp -e "mirror -eRv _site www; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
+    - lftp -e "mirror -eRv -x ^download/ _site www; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
   stage: deploy
   only:
     - master@schleuder/schleuder-website
