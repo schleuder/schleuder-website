@@ -28,7 +28,7 @@ x-set-fingerprint: person@example.org 0x12345678DEADBEEF12345678DEADBEEF12345678
 
 
 x-list-keys
-: Lists all public keys known to the list.
+: Lists all public keys known to the list. To see only keys that match a given string, use `x-list-keys: something`.
 
 x-add-key:
 : Import the attachments or the rest of the email-body into the list's keyring. Only ascii-armored keys are supported.
