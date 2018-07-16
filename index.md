@@ -8,6 +8,9 @@ subtitle: A gpg-enabled mailing list manager with remailing-capabilities.
 
 Schleuder is a group's email-gateway: subscribers can exchange encrypted emails among themselves, receive emails from non-subscribers and send emails to non-subscribers via the list. [How it works](schleuder/docs/concept.html)
 
+We give our time and knowledge to build and maintain this project in order to help people with their daily private communication and in the struggle for their personal emancipation, social and economic justice and political freedom. [Why we do it](MISSION_STATEMENT.html)
+
+
 <div class='block smallblock'>
 ### Schleuder
 
