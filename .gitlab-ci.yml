@@ -36,7 +36,8 @@ codespell:
   script:
     # Run codespell to check for spelling errors, using a config to ignore 
     # warnings about binary files and to check file names as well.
-    - codespell -q 2 -f
+    # Also, exclude the vendor dir, which leads to false positives.
+    - codespell -q 2 -f -S vendor
   stage: static
 
 build:
