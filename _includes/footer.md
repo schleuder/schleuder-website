@@ -1,6 +1,6 @@
 ### Links
 
-To **participate** in the development use the [issue tracker](https://0xacab.org/schleuder/{{ include.project }}/issues). Please take note of our [Code of Conduct](https://0xacab.org/schleuder/{{ include.project }}/blob/master/CODE_OF_CONDUCT.md).
+To **participate** in the development use the [issue tracker](https://0xacab.org/schleuder/{{ include.project }}/issues). Please take note of our [Code of Conduct](CODE_OF_CONDUCT.html).
 
 To **contact** us read [contact](contact.html).
 
