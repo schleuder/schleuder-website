@@ -34,11 +34,11 @@ These projects also belong to the schleuder-family:
 <div class='block' id='news'>
 ### News
 
+<span class='date'>2018-07-18</span>: **Vulnerability in dependency of schleuder-web.** Anyone running schleuder-web should update the gem sprockets by running "bundle update sprockets" as soon as possible. (See [CVE-2018-3760](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-3760) for details.)
+
 <span class='date'>2018-05-14</span>: **Schleuder 3.2.3 released!** This release fixes some bugs, e.g. with emails sent by Thunderbird/Enigmail with "protected subjects" (they are not leaked anymore and keywords can be found again). Also error messages are converted into human readable text now, instead of giving their class-name. And we moved the project to our own domain, schleuder.org! For all details please see the [changelog](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#323-2018-05-14). Packages for Debian and CentOS will follow as soon as possible. *This release is **not** related to "efail" (a disclosure of vulnerabilities in email-programs that handle encrypted HTML-messages).*
 
 <span class='date'>2018-03-28</span>: **Vulnerability in dependencies of schleuder-web.** Anyone running schleuder-web should update the gems "loofah" and "rails-html-sanitizer" by running "bundle update loofah rails-html-sanitizer" as soon as possible. (See [CVE-2018-8048](https://github.com/flavorjones/loofah/issues/144) and [CVE-2018-3741](https://hackerone.com/reports/328270) for details.)
-
-<span class='date'>2018-02-19</span>: **Linux-packages for Schleuder 3.2.2 available.** For Debian (stretch-backports) and CentOS (EL 7) there are now packages of Schleuder version 3.2.2 available to easily install and upgrade it. Please see the [installation instructions](https://schleuder.org/docs/#installation) for details on how to use the packages. For details about version 3.2.2 please read the [changelog](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#322-2018-02-06).
 
 
 *Older news can be found in the [archive of the announce-mailinglist](https://lists.nadir.org/pipermail/schleuder-announce).*
