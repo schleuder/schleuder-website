@@ -2,7 +2,7 @@
 title: Schleuder-web
 ---
 
-Schleuder-web is the web-interface to manage [Schleuder](schleuder)-lists.
+Schleuder-web is the web-interface to manage [Schleuder]({{ "schleuder" | absolute_url }})-lists.
 
 It runs independently from schleuder, using the schleuder-api-daemon as a backend.
 

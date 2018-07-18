@@ -5,7 +5,7 @@
 {: .linktotop}
 
 {: .feedback }
-To suggest changes to these documents, or if you found any errors in them, please [let us know](/contact.html).
+To suggest changes to these documents, or if you found any errors in them, please [let us know]({{ "contact.html" | absolute_url }}).
 You can also [see their history](https://0xacab.org/schleuder/schleuder-website/commits/master).
 
 </div>
