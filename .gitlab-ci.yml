@@ -73,9 +73,20 @@ deploy:
       |1|8YPsezXF2SYQ7rq9U5TbDnMsVjo=|SJOodZB+8j+dO+l6YTdZ7+44XLw= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPJx38PfGvaHtkSsHptiHoIQxlI3Yf0cskPNTwAQnY14
       " > ~/.ssh/known_hosts
     - tar fxv site.tar.gz
-    # It seems, lftp needs a "dummy" password, even if key-based authentication is used
-    - lftp -e "mirror -eRv -x ^download/ _site www; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
+    # In case we're not dealing with the master branch, create the review dir on the webserver.
+    # We need to catch possible errors, as lftp seems buggy: It fails if the dir already exists,
+    # even if called with the -f option, which should ignore errors (like this one).
+    # lftp needs a "dummy" password, even if key-based authentication is used.
+    - if ! [ "$CI_COMMIT_REF_SLUG" == "master" ]; then REVIEW_SLUG="review/$CI_COMMIT_REF_SLUG" &&
+      lftp -e "mkdir -fp www/$REVIEW_SLUG; quit" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST || /bin/true;
+      fi
+    - lftp -e "mirror -eRv -x ^download/ -x ^review/ _site www/$REVIEW_SLUG; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
+    # TODO: Implement clean up: Remove the review dir once the merge to master happened.
   stage: deploy
+  # It's currently not possible to use env vars which are / were set in the script: part above.
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG
+    url: https://schleuder.org/review/$CI_COMMIT_REF_SLUG
   only:
-    - master@schleuder/schleuder-website
-    - tags@schleuder/schleuder-website
+    # This job relies on secret env vars, which are only available in our repo.
+    - branches@schleuder/schleuder-website
