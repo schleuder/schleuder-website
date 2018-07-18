@@ -4,8 +4,6 @@ title: Schleuder ★ Mission statement
 subtitle: A gpg-enabled mailinglist with remailing-capabilities.
 ---
 
-# Schleuder's Mission Statement
-
 We give our time and knowledge to build and maintain this project in order to help people with their daily private communication and in the struggle for their personal emancipation, social and economic justice and political freedom.
 
 A more human world, in which anyone can be different without fear, is what we strive for.
