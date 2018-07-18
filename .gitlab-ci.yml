@@ -77,10 +77,11 @@ deploy:
     # We need to catch possible errors, as lftp seems buggy: It fails if the dir already exists,
     # even if called with the -f option, which should ignore errors (like this one).
     # lftp needs a "dummy" password, even if key-based authentication is used.
-    - if ! [ "$CI_COMMIT_REF_SLUG" == "master" ]; then REVIEW_SLUG="review/$CI_COMMIT_REF_SLUG" &&
-      lftp -e "mkdir -fp www/$REVIEW_SLUG; quit" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST || /bin/true;
+    - if ! [ "$CI_COMMIT_REF_SLUG" == "master" ]; then DEPLOY_SLUG="www/review/$CI_COMMIT_REF_SLUG" &&
+      lftp -e "mkdir -fp $DEPLOY_SLUG; quit" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST || /bin/true;
+      else DEPLOY_SLUG=www;
       fi
-    - lftp -e "mirror -eRv -x ^download/ -x ^review/ _site www/$REVIEW_SLUG; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
+    - lftp -e "mirror -eRv -x ^download/ -x ^review/ _site $DEPLOY_SLUG; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
     # TODO: Implement clean up: Remove the review dir once the merge to master happened.
   stage: deploy
   # It's currently not possible to use env vars which are / were set in the script: part above.
