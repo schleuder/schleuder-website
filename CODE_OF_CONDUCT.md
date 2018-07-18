@@ -1,4 +1,8 @@
-# Schleuder's Code of Conduct
+---
+layout: page
+title: Schleuder ★ Code of Conduct
+subtitle: A gpg-enabled mailinglist with remailing-capabilities.
+---
 
 The Schleuder development team wants to provide an open and welcoming environment for everyone who participates in the development of Schleuder regardless of level of experience, gender, gender identity and expression, sexual orientation, disability, physical appearance, race, ethnicity, economic or social status, age, religion, or nationality. Harassment in code and discussion or violation of physical boundaries is completely unacceptable anywhere in the Schleuder project.
 
