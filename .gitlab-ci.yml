@@ -95,3 +95,20 @@ codespell:
     # Also, exclude the vendor dir, which leads to false positives.
     - codespell -q 2 -f -I utils/ci/codespell/ignored_words.txt -S vendor
   stage: qa
+
+linkcheck:
+  variables:
+    APT_INSTALL_PACKAGES: linkchecker
+  <<: *setup_apt
+  script:
+    # Run linkchecker against the pushed (and deployed) branch. Exclude mailto: links, as the ones
+    # which we commonly use miss a MX record.
+    - linkchecker --check-extern --ignore-url=mailto https://schleuder.org/review/$CI_COMMIT_REF_SLUG
+  only:
+    # This job relies on secret env vars, which are only available in our repo.
+    - branches@schleuder/schleuder-website
+  except:
+    # This job should help with merge requests, so there is no point in running it against the master
+    # branch.
+    - master@schleuder/schleuder-website
+  stage: qa
