@@ -34,10 +34,10 @@ codespell:
     APT_INSTALL_PACKAGES: codespell
   <<: *setup_apt
   script:
-    # Run codespell to check for spelling errors, using a config to ignore 
-    # warnings about binary files and to check file names as well.
+    # Run codespell to check for spelling errors, using a config with ignored words,
+    # ignoring warnings about binary files and to check file names as well.
     # Also, exclude the vendor dir, which leads to false positives.
-    - codespell -q 2 -f -S vendor
+    - codespell -q 2 -f -I utils/ci/codespell/ignored_words.txt -S vendor
   stage: static
 
 build:
