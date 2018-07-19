@@ -94,6 +94,12 @@ codespell:
     # ignoring warnings about binary files and to check file names as well.
     # Also, exclude the vendor dir, which leads to false positives.
     - codespell -q 2 -f -I utils/ci/codespell/ignored_words.txt -S vendor
+  # This job should help with merge requests. Therefore, don't run it
+  # against the master branch.
+  only:
+    - branches
+  except:
+    - master
   stage: qa
 
 linkcheck:
