@@ -69,7 +69,7 @@ For instructions on how to install from rubygems please see the [README](https:/
 
 #### Puppet
 
-There is a [schleuder puppet module](https://0xacab.org/schleuder/puppet-schleuder) to automate the installation and configuration of schleuder, schleuder-cli, and schleuder-web, and the creation and deletion of schleuder lists. Have a look at its [README](https://0xacab.org/schleuder/puppet-schleuder/blob/master/README.md) on how to use it. Currenty it works for CentOS 7, but we would like to make it work for Debian as well - help would be highly appreciated.
+There is a [schleuder puppet module](https://0xacab.org/schleuder/puppet-schleuder) to automate the installation and configuration of schleuder, schleuder-cli, and schleuder-web, and the creation and deletion of schleuder lists. Have a look at its [README](https://0xacab.org/schleuder/puppet-schleuder/blob/master/README.md) on how to use it. Currently it works for CentOS 7, but we would like to make it work for Debian as well - help would be highly appreciated.
 
 
 ### Configuration
