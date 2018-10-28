@@ -2,7 +2,7 @@
 title: Concept
 ---
 
-{% include docs-head.md version=3.2 %}
+{% include docs-head.md version=3.3 %}
 
 Schleuder is a gpg-enabled mailing list manager with resending capabilities. This document tries to explain what that means.
 
