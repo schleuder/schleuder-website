@@ -45,6 +45,10 @@ build:
     APT_INSTALL_PACKAGES: jekyll
   <<: *setup_apt
   script:
+    # Set jekylls 'baseurl' option in case we're not dealing with the master branch.
+    - 'if ! [ "$CI_COMMIT_REF_SLUG" == "master" ]; then
+      echo "baseurl: /review/$CI_COMMIT_REF_SLUG" >> _config.yml;
+      fi'
     - jekyll build
     - tar cfz site.tar.gz _site
   stage: build
