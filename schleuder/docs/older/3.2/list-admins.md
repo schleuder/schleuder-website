@@ -2,7 +2,7 @@
 title: Documentation for list-admins
 ---
 
-{% include docs-head.md version=3.3 %}
+{% include docs-head.md version=3.2 %}
 
 {% include_relative _list_usage_basics.md %}
 
@@ -18,16 +18,14 @@ x-subscribe: person@example.org 0x12345678DEADBEEF12345678DEADBEEF12345678
 : Subscribe the given address and assign it the given OpenPGP-fingerprint.
 
 x-unsubscribe: person@example.org
-: Unsubscribe the given address. It is not possible to unsubscribe the last admin of a list.
+: Unsubscribe the given address.
 
 x-set-fingerprint: 0x12345678DEADBEEF12345678DEADBEEF12345678
-: Assign the key with the given fingerprint to your subscription. It is not possible to set an empty fingerprint. To unset a fingerprint use `x-unset-fingerprint`.
+: Assign the key with the given fingerprint to your subscription.
 
 x-set-fingerprint: person@example.org 0x12345678DEADBEEF12345678DEADBEEF12345678
-: Assign the key with the given fingerprint to the given subscription. This variant of this command may only be used by list-admins. To unset a fingerprint use `x-unset-fingerprint`.
+: Assign the key with the given fingerprint to the given subscription. This variant of this command may only be used by list-admins.
 
-x-unset-fingerprint: person@example.org
-: Remove the fingerprint associated with a given subscription.
 
 x-list-keys
 : Lists all public keys known to the list. To see only keys that match a given string, use `x-list-keys: something`.

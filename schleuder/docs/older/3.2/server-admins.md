@@ -2,7 +2,7 @@
 title: Documentation for server-admins
 ---
 
-{% include docs-head.md version=3.3 %}
+{% include docs-head.md version=3.2 %}
 
 
 ## Setup Schleuder
