@@ -6,6 +6,15 @@ title: Documentation for subscribers
 
 {% include_relative _list_usage_basics.md %}
 
+#### Subscription and key management
+
+The following keywords must be send to the request address of the list: `foo-request@hostname`.
+
+x-set-fingerprint: 0x12345678DEADBEEF12345678DEADBEEF12345678
+: Assign the key with the given fingerprint to your subscription. It is not possible to set an empty fingerprint. To unset your fingerprint use `x-unset-fingerprint`.
+
+x-unset-fingerprint: person@example.org
+: Remove the fingerprint associated with your subscription.
 
 #### Resending
 
