@@ -47,7 +47,7 @@ x-fetch-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 This keyword must be send to the normal list-address: `foo@hostname`.
 
 x-attach-listkey:
-: Attachs the public key of the list. Probably most useful in combination with x-resend.
+: Attachs the public key of the list. This might be useful for example after the setup of a new list, to distribute the public key of the list to all subscribers.
 
 
 #### Other

@@ -11,6 +11,9 @@ title: Documentation for subscribers
 
 The resending-keywords must be included in messages sent to the normal list-address: `foo@hostname`.
 
+x-attach-listkey:
+: Attachs the public key of the list. Probably most useful in combination with x-resend.
+
 x-resend: someone@example.org
 : Send the message to the given address, encrypted if possible, otherwise in the clear.
 
