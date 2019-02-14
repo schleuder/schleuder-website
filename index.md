@@ -34,7 +34,7 @@ These projects also belong to the schleuder-family:
 <div class='block' id='news'>
 ### News
 
-<span class='date'>2019-02-FIXME</span>: **Schleuder 3.4.0 released!** This release ships an important privacy fix: To not leak keywords (for example via resent messages), HTML is now stripped from multipart/alternative messages if they contain keywords. For all details please see the [changelog](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#340-2019-02-FIXME).
+<span class='date'>2019-02-14</span>: **Schleuder 3.4.0 released!** This release ships an important privacy fix: To not leak keywords (for example via resent messages), HTML is now stripped from multipart/alternative messages if they contain keywords. For all details please see the [changelog](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#340-2019-02-14).
 
 <span class='date'>2019-01-24</span>: **Meet Schleuder devs in Frankfurt/Main**. For everyone located in or near Frankfurt/Main, Germany (or willing to travel): On Friday, Feb 1st, the Schleuder development team will meet in a restaurant in Frankfurt, and would be pleased to have a chat with you! We have no schedule, just time to sit around, discuss ideas, ask questions, and have some drinks or food. Anyone is welcome, be they technically minded, politically interested or simply curious! *Friday, 2019-02-01, from 7pm (local time), at Heck Meck* (Friesengasse 19, Frankfurt am Main, Germany).
 
