@@ -28,11 +28,14 @@ These projects also belong to the schleuder-family:
 
 * [schleuder-web](schleuder-web)
 * [schleuder-cli](schleuder-cli)
+* [schleuder-gitlab-ticketing](schleuder-gitlab-ticketing)
 </div>
 
 
 <div class='block' id='news'>
 ### News
+
+<span class='date'>2019-02-21</span>: **Schleuder Gitlab Ticketing 1.0.0 released!** Since Schleuder 3.3.0 it is possible to extend the schleuder filters through externally provided filters. A project that is using this mechanism is the [schleuder-gitlab-ticketing](schleuder-gitlab-ticketing) project, that provides tracking functionality of your schleuder messaging within a gitlab issue tracker. This is especially built and helpful for schleuder lists being used as helpdesk or project gateway. Read more about the functionality on the projects summary page: [schleuder-gitlab-ticketing](schleuder-gitlab-ticketing).
 
 <span class='date'>2019-02-14</span>: **Schleuder 3.4.0 released!** This release ships an important privacy fix: To not leak keywords (for example via resent messages), HTML is now stripped from multipart/alternative messages if they contain keywords. For all details please see the [changelog](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#340-2019-02-14).
 

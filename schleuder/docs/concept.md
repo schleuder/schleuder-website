@@ -21,6 +21,8 @@ Here's a simple picture of a message that is sent to a non-subscriber ("Zacharia
 
 [![resent-schema](schleuder-schema-resend-small.png 'Click to enlarge')](schleuder-schema-resend.png)
 
+Additionally, it is possible to combine a list being used as a helpdesk to be combined with a Gitlab issue tracker. To learn more about that, have a look at the [project description](../../schleuder-gitlab-ticketing/).
+
 
 ### A helpful bot
 
