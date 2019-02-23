@@ -1,38 +1,12 @@
 ---
-image: debian:unstable
+image: $CI_REGISTRY/schleuder/schleuder-ci-images:debian-generic
 
 stages:
   - build
   - deploy
   - qa
 
-cache:
-  paths:
-    - vendor
-
-# Jobs that start with a period are disabled
-# This is just a template, to be used further below in the individual job definitions
-.setup_apt: &setup_apt
-  before_script:
-    # Export APT env vars to cache packages archives and lists based on the current working directory
-    - export APT_DIR=$CI_PROJECT_DIR/vendor/apt && export APT_ARCHIVES_DIR=$APT_DIR/archives && export APT_LISTS_DIR=$APT_DIR/lists
-    # Configure APT: Only install necessary packages, set cache location
-    - printf
-      "apt::install-recommends 0;\n
-      apt::install-suggests 0;\n
-      dir::cache::archives ${APT_ARCHIVES_DIR};\n
-      dir::state::lists ${APT_LISTS_DIR};\n"
-      >> /etc/apt/apt.conf.d/99custom
-    # Ensure the custom APT directory does exist
-    - mkdir -p {${APT_ARCHIVES_DIR},${APT_LISTS_DIR}}/partial
-    - apt-get update -qq
-    # To keep things DRY, use an env var to handle packages to be installed via APT
-    - apt-get install -qq -y $APT_INSTALL_PACKAGES
-
 build:
-  variables:
-    APT_INSTALL_PACKAGES: jekyll
-  <<: *setup_apt
   script:
     # Set jekylls 'baseurl' option in case we're not dealing with the master branch.
     - 'if ! [ "$CI_COMMIT_REF_SLUG" == "master" ]; then
@@ -47,9 +21,6 @@ build:
     expire_in: 2 weeks
 
 deploy:
-  variables:
-    APT_INSTALL_PACKAGES: lftp openssh-client
-  <<: *setup_apt
   script:
     # Disable bash history to prevent secret variables to be recorded and saved
     - unset HISTFILE
@@ -86,9 +57,6 @@ deploy:
     - branches@schleuder/schleuder-website
 
 codespell:
-  variables:
-    APT_INSTALL_PACKAGES: codespell
-  <<: *setup_apt
   script:
     # Run codespell to check for spelling errors, using a config with ignored words,
     # ignoring warnings about binary files and to check file names as well.
@@ -103,9 +71,6 @@ codespell:
   stage: qa
 
 linkcheck:
-  variables:
-    APT_INSTALL_PACKAGES: linkchecker
-  <<: *setup_apt
   script:
     # Run linkchecker against the pushed (and deployed) branch. Exclude mailto: links, as the ones
     # which we commonly use miss a MX record.
