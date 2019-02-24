@@ -55,6 +55,8 @@ deploy:
   only:
     # This job relies on secret env vars, which are only available in our repo.
     - branches@schleuder/schleuder-website
+  variables:
+    GIT_STRATEGY: none
 
 codespell:
   script:
@@ -83,3 +85,5 @@ linkcheck:
     # branch.
     - master@schleuder/schleuder-website
   stage: qa
+  variables:
+    GIT_STRATEGY: none
