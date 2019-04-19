@@ -6,11 +6,15 @@ stages:
   - deploy
   - qa
 
+variables:
+  DEPLOY_BASE: dev/review
+  DEPLOY_SLUG: dev/review/$CI_PROJECT_NAME/$CI_COMMIT_REF_SLUG
+
 build:
   script:
     # Set jekylls 'baseurl' option in case we're not dealing with the master branch.
     - 'if ! [ "$CI_COMMIT_REF_SLUG" == "master" ]; then
-      echo "baseurl: /review/$CI_COMMIT_REF_SLUG" >> _config.yml;
+      echo "baseurl: /$DEPLOY_SLUG" >> _config.yml;
       fi'
     - jekyll build
     - tar cfz site.tar.gz _site
@@ -41,17 +45,21 @@ deploy:
     # We need to catch possible errors, as lftp seems buggy: It fails if the dir already exists,
     # even if called with the -f option, which should ignore errors (like this one).
     # lftp needs a "dummy" password, even if key-based authentication is used.
-    - if ! [ "$CI_COMMIT_REF_SLUG" == "master" ]; then DEPLOY_SLUG="www/review/$CI_COMMIT_REF_SLUG" &&
-      lftp -e "mkdir -fp $DEPLOY_SLUG; quit" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST || /bin/true;
-      else DEPLOY_SLUG=www;
+    - if ! [ "$CI_COMMIT_REF_SLUG" == "master" ];
+        then DEPLOY_SLUG="www/$DEPLOY_SLUG";
+        export DEPLOY_SLUG;
+        lftp -e "mkdir -fp $DEPLOY_SLUG; quit" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST || /bin/true;
+      else
+        DEPLOY_SLUG="www";
+        export DEPLOY_SLUG;
       fi
-    - lftp -e "mirror -eRv -x ^download/ -x ^review/ _site $DEPLOY_SLUG; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
+    - lftp -e "mirror -eRv -x ^download/ _site $DEPLOY_SLUG; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
     # TODO: Implement clean up: Remove the review dir once the merge to master happened.
   stage: deploy
   # It's currently not possible to use env vars which are / were set in the script: part above.
   environment:
-    name: review/$CI_COMMIT_REF_SLUG
-    url: https://schleuder.org/review/$CI_COMMIT_REF_SLUG
+    name: $DEPLOY_BASE/$CI_PROJECT_NAME/$CI_COMMIT_REF_SLUG
+    url: https://schleuder.org/$DEPLOY_BASE/$CI_PROJECT_NAME/$CI_COMMIT_REF_SLUG
   only:
     # This job relies on secret env vars, which are only available in our repo.
     - branches@schleuder/schleuder-website
@@ -76,7 +84,7 @@ linkcheck:
   script:
     # Run linkchecker against the pushed (and deployed) branch. Exclude mailto: links, as the ones
     # which we commonly use miss a MX record.
-    - linkchecker --check-extern --ignore-url=mailto https://schleuder.org/review/$CI_COMMIT_REF_SLUG
+    - linkchecker --check-extern --ignore-url=mailto https://schleuder.org/$DEPLOY_SLUG
   only:
     # This job relies on secret env vars, which are only available in our repo.
     - branches@schleuder/schleuder-website
