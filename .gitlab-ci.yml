@@ -22,7 +22,7 @@ build:
   artifacts:
     paths:
       - site.tar.gz
-    expire_in: 2 weeks
+    expire_in: 1 day
 
 deploy:
   script:
