@@ -53,7 +53,7 @@ deploy:
         DEPLOY_SLUG="www";
         export DEPLOY_SLUG;
       fi
-    - lftp -e "mirror -eRv -x ^download/ _site $DEPLOY_SLUG; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
+    - lftp -e "mirror -eRv -x ^dev/ -x ^download/ _site $DEPLOY_SLUG; quit;" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST
     # TODO: Implement clean up: Remove the review dir once the merge to master happened.
   stage: deploy
   # It's currently not possible to use env vars which are / were set in the script: part above.
