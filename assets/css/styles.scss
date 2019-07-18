@@ -1,0 +1,16 @@
+---
+---
+// Override bulma variables 
+$family-sans-serif: "DejaVuSans", sans-serif;
+$family-monospace: "DejaVuSansMono", monospace;
+@import "bulma";
+
+@font-face{ 
+	font-family: 'DejaVuSans';
+	src: url('/assets/fonts/DejaVuSans-webfont.woff')
+}
+
+@font-face{ 
+	font-family: 'DejaVuSansMono';
+	src: url('/assets/fonts/DejaVuSansMono-webfont.woff')
+}
