@@ -67,9 +67,13 @@ The copr-repository also provides you with a package for [schleuder-web](https:/
 For instructions on how to install from rubygems please see the [README](https://0xacab.org/schleuder/schleuder/blob/master/README.md#installing-schleuder) of Schleuder.
 
 
-#### Puppet
+#### Automation
 
-There is a [schleuder puppet module](https://0xacab.org/schleuder/puppet-schleuder) to automate the installation and configuration of schleuder, schleuder-cli, and schleuder-web, and the creation and deletion of schleuder lists. Have a look at its [README](https://0xacab.org/schleuder/puppet-schleuder/blob/master/README.md) on how to use it. Currently it works for CentOS 7, but we would like to make it work for Debian as well - help would be highly appreciated.
+To ease the installation and configuration of schleuder, schleuder-cli and schleuder-web, and to help with the creation and deletion of lists, you can rely either on...
+
+* an [ansible role](https://github.com/systemli/ansible-role-schleuder), which works for Debian, or
+
+* a [puppet module](https://0xacab.org/schleuder/puppet-schleuder). Currently it works for CentOS 7, but we would like to make it work for Debian as well - help would be highly appreciated.
 
 
 ### Configuration
