@@ -104,6 +104,11 @@ dt {
   margin: -0.3em 0 0 -0.6em;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
 
 .smallblock {
   display: inline-block;
