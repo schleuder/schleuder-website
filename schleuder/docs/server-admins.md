@@ -9,7 +9,7 @@ title: Documentation for server-admins
 
 ### Installation
 
-You can install schleuder either from Linux distribution packages or rubygems. Currently there are supported distribution packages for Debian ("stretch-backports" and "buster") and CentOS 7. If you use one of the directly supported platforms, you should choose the packages over the gems.
+You can install schleuder either from Linux distribution packages or rubygems. Currently there are supported distribution packages for Debian ("buster" and above) and CentOS 7. If you use one of the directly supported platforms, you should choose the packages over the gems.
 
 {: .note}
 Don't use the packages provided by Ubuntu in all releases up to and including 17.10, they are severely outdated. On Ubuntu 18.04 only use the package if it has at least version 3.2.2.
@@ -21,24 +21,14 @@ Additionally we recommend running an entropy source such as `haveged`. This ensu
 #### Debian
 
 {: .note}
-All steps need root privileges.
+The step needs root privileges
 
-We maintain schleuder and schleuder-cli in "stretch-backports" and "buster". (For production usage we recommend Debian "stretch".)
+We maintain schleuder and schleuder-cli in "buster" and above. (For production usage we recommend Debian "buster".)
+To install the packages
 
-First, add the backports to your APT sources list directory:
+    apt-get install schleuder schleuder-cli
 
-    echo "deb http://deb.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/stretch-backports.list
-
-After this, update the APT package cache:
-
-    apt-get update
-
-Finally, install schleuder and schleuder-cli via:
-
-    apt-get install -t stretch-backports schleuder schleuder-cli
-
-The package will finalize the setup of Schleuder, too.
-
+Running `schleuder install` afterwards isn't necessary, the package takes care of it.
 
 #### CentOS
 
