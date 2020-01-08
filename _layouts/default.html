@@ -11,6 +11,10 @@
   </head>
   <body>
     {% include navbar.html %}
-    {{ content }}
+    <div class="columns">
+      <div class="column is-offset-2-desktop is-two-thirds-desktop is-offset-1-mobile is-four-fifths-mobile">
+        {{ content }}
+      </div>
+    </div>
   </body>
 </html>
