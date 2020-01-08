@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Schleuder ★ Mission statement
+title: Mission statement
 subtitle: A gpg-enabled mailinglist with remailing-capabilities.
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Schleuder ★ Code of Conduct
+title: Code of Conduct
 subtitle: A gpg-enabled mailinglist with remailing-capabilities.
 ---
 

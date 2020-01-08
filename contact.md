@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Schleuder ★ contact
+title: Contact
 subtitle: A gpg-enabled mailinglist with remailing-capabilities.
 ---
 
