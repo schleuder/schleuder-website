@@ -1,0 +1,57 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <input type="checkbox" id="toggler" role="button" class="toggler" aria-label="menu" aria-expanded="false"
+    data-target="navbarBasicExample" />
+  <div class="navbar-brand">
+    <a class="navbar-item" href='{{ "/" }}'>
+      <img src="/assets/images/schleuder.png" alt=width="112" height="28">
+    </a>
+
+    <label for="toggler" class="navbar-burger burger" >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="#">
+        News
+      </a>
+
+      <a class="navbar-item" href='{{ "schleuder/docs/concept.html" | absolute_url }}'>
+        Concept
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href='{{ "schleuder/docs/index.html" | absolute_url }}'>
+          Docs
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href='{{ "schleuder/docs/subscribers.html" | absolute_url }}'>
+            For Subscribers
+          </a>
+          <a class="navbar-item" href='{{ "schleuder/docs/list-admins.html" | absolute_url }}'>
+            For List-Admins
+          </a>
+          <a class="navbar-item" href='{{ "schleuder/docs/server-admins.html" | absolute_url }}'>
+            For Server-Admins
+          </a>
+          <a class="navbar-item" href="#">
+            Projects & Plugins
+          </a>
+        </div>
+      </div>
+
+      <a class="navbar-item" href='{{ "MISSION_STATEMENT.html" | absolute_url }}'>
+        Mission Statement
+      </a>
+      <a class="navbar-item" href='{{ "CODE_OF_CONDUCT.html" | absolute_url }}'>
+        Code of Conduct
+      </a>
+      <a class="navbar-item" href='{{ "contact.html" | absolute_url }}'>
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>
