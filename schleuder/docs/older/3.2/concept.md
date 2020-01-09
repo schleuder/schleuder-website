@@ -62,6 +62,3 @@ In the list-directory there's also a list specific log-file (might be missing if
 Other logging is sent to syslog. Where that ends up depends on the operating system and the system administration.
 
 All other list-related data is stored in the SQL-database. Most data is unserialized, only some values are JSON-encoded.
-
-
-{% include feedback.md %}

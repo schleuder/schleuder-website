@@ -19,4 +19,3 @@ User-relevant changes in version 3.3 compared to version 3.2:
 * In the pseudoheaders, `sig` and `enc` are now configurable. They can be reordered in or removed from the list-option `headers_to_meta`.
 * Schleuder now handles "protected subjects" in a way that Thunderbird/Enigmail recognize.
 
-{% include feedback.md %}

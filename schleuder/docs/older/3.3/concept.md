@@ -63,5 +63,3 @@ Other logging is sent to syslog. Where that ends up depends on the operating sys
 
 All other list-related data is stored in the SQL-database. Most data is unserialized, only some values are JSON-encoded.
 
-
-{% include feedback.md %}

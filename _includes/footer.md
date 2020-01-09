@@ -6,4 +6,3 @@ To **contact** us read [contact]({{ "contact.html" | absolute_url }}).
 
 To **be notified** of news about Schleuder subscribe to [schleuder-announce](https://lists.nadir.org/mailman/listinfo/schleuder-announce).
 
-{% include feedback.md %}
