@@ -32,4 +32,4 @@ These projects also belong to the schleuder-family:
 </div>
 </div>
 
-{% include footer.md project="schleuder" %}
+{% include participate.md project="schleuder" %}

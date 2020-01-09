@@ -66,4 +66,4 @@ x-sign-this:
 {: .linktotop}
 
 
-{% include docs-page-footer.md %}
+{% include docs-page-participate.md %}

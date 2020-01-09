@@ -35,4 +35,4 @@ x-resend-cc-unencrypted: someone@example.org
 Write to `foo-owner@hostname` to contact the list-owner(s) even if you don't know who they are. Use the list's key to encrypt the email!
 
 
-{% include docs-page-footer.md %}
+{% include docs-page-participate.md %}

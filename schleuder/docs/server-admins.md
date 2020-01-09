@@ -298,5 +298,5 @@ You should better not run this command automatedly, and you should always examin
     schleuder pin_keys
 
 
-{% include docs-page-footer.md %}
+{% include docs-page-participate.md %}
 

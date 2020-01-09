@@ -12,4 +12,4 @@ Schleuder takes care of all de- and encryption, stripping of headers, formatting
 * [for list-admins](docs/list-admins.html)
 * [for server-admins](docs/server-admins.html)
 
-{% include footer.md project="schleuder" %}
+{% include participate.md project="schleuder" %}

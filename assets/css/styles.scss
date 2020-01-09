@@ -80,3 +80,9 @@ a.navbar-item.is-active,
 	text-decoration: none !important;
 	color: black;
 }
+
+.footer a {
+	background-image: none;
+	text-decoration: underline !important;
+	font-weight: bold;
+}
