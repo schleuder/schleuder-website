@@ -68,4 +68,4 @@ x-sign-this:
 {: .linktotop}
 
 
-{% include docs-page-participate.md %}
+{% include participate.md %}
