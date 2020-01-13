@@ -11,12 +11,41 @@ $family-monospace: "DejaVuSansMono", monospace;
 
 @import "bulma";
 
-@font-face{ 
+@font-face {
 	font-family: 'DejaVuSans';
 	src: url('/assets/fonts/DejaVuSans-webfont.woff')
 }
 
-@font-face{ 
+@font-face {
 	font-family: 'DejaVuSansMono';
 	src: url('/assets/fonts/DejaVuSansMono-webfont.woff')
+}
+
+.navbar {
+	margin-bottom: 3em;
+}
+
+.news {
+	h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		line-height: 1.125;
+		margin-top: 1.5rem;
+	}
+
+	h3 {
+		margin-bottom: 1.5rem;
+		font-family: $family-monospace;
+	}
+}
+
+.post {
+	h3 {
+		margin-bottom: 1.5rem;
+		font-family: $family-monospace;
+		text-align: center;
+	}
+	h1 {
+		text-align: center;
+	}
 }
