@@ -10,6 +10,6 @@ title:  "News"
   
 {{ post.excerpt }}
 
-[More]({{ post.url }})
+[More]({{ post.url | absolute_url }})
 
 {% endfor %}
