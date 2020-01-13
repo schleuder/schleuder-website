@@ -10,8 +10,6 @@ Schleuder is a group's email-gateway: subscribers can exchange encrypted emails 
 
 We give our time and knowledge to build and maintain this project in order to help people with their daily private communication and in the struggle for their personal emancipation, social and economic justice and political freedom. [Why we do it](MISSION_STATEMENT.html)
 
-<div class='row'>
-<div class='block smallblock'>
 ### Schleuder
 
 Documentation:
@@ -19,17 +17,11 @@ Documentation:
 * [for subscribers](schleuder/docs/subscribers.html)
 * [for list-admins](schleuder/docs/list-admins.html)
 * [for server-admins](schleuder/docs/server-admins.html)
-</div>
-
-<div class='block smallblock'>
-### Projects
 
 These projects also belong to the schleuder-family:
 
 * [schleuder-web](schleuder-web)
 * [schleuder-cli](schleuder-cli)
 * [schleuder-gitlab-ticketing](schleuder-gitlab-ticketing)
-</div>
-</div>
 
 {% include participate.md project="schleuder" %}
