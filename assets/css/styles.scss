@@ -11,7 +11,11 @@ sans-serif;
 $family-monospace: "DejaVuSansMono", monospace;
 $green: #336633;
 $green-light: #80FF80;
-$link: $green;
+$link: black;
+$text: black;
+$navbar-item-color: black;
+$navbar-item-hover-background-color: white;
+
 
 @import "bulma";
 
@@ -27,6 +31,10 @@ $link: $green;
 
 .navbar {
 	margin-bottom: 3em;
+}
+
+.navbar-end {
+	align-self: flex-end;
 }
 
 .main-content {
