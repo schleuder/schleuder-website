@@ -63,9 +63,4 @@ x-get-version:
 x-sign-this:
 : Sign the remaining contents of the email body or the attachments with the list's key. Use this e.g. to provide GnuPG-signatures for things you are publishing.
 
-
-[↑](#top "Go to top of page")
-{: .linktotop}
-
-
 {% include participate.md %}
