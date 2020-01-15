@@ -123,3 +123,22 @@ a.navbar-item.is-active,
 	text-decoration: underline !important;
 	font-weight: bold;
 }
+
+.participate {
+	background-color: $green-light;
+	color: black;
+	border: none;
+	border-radius: 0;
+	text-align: center;
+	font-family: $family-monospace;
+	padding: 1rem;
+	a {
+		text-decoration: underline !important;
+		background-image: none;
+		font-weight: bold;
+	}
+}
+
+.docs .participate {
+	margin-top: 4rem;
+}
