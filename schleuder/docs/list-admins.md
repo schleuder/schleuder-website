@@ -54,13 +54,13 @@ This keyword must be send to the normal list-address: `foo@hostname`.
 
 These must also be sent to the request-address: <foo-request@hostname>.
 
-x-get-logfile:
+**x-get-logfile:**
 : Sends the logfile of the list.
 
-x-get-version:
+**x-get-version:**
 : Returns the version of schleuder.
 
-x-sign-this:
+**x-sign-this:**
 : Sign the remaining contents of the email body or the attachments with the list's key. Use this e.g. to provide GnuPG-signatures for things you are publishing.
 
 {% include participate.md %}
