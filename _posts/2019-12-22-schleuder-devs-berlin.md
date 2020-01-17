@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Meet Schleuder devs in Berlin"
-date: "2019-02-21"
+date: "2019-12-22"
 ---
 
 For everyone located in or near Berlin, Germany (or willing to travel): On Friday, Jan 3rd, the Schleuder development team will meet in a restaurant in Berlin, and would be pleased to have a chat with you! 
