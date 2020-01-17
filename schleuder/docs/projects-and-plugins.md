@@ -2,7 +2,6 @@
 title: Projects and Plugins
 ---
 These projects also belong to the schleuder-family:
- | absolute_url
 
 * [schleuder-web]({{"/schleuder-web" | absolute_url}})
 * [schleuder-cli]({{"/schleuder-cli" | absolute_url}})
