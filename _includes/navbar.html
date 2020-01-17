@@ -2,7 +2,7 @@
   <input type="checkbox" id="toggler" role="button" class="toggler" aria-label="menu" aria-expanded="false"
     data-target="navbarMain" />
   <div class="navbar-brand">
-    <a class="navbar-item" href='{{ "/" }}'>
+    <a class="navbar-item" href='{{ "/" | absolute_url }}'>
       <img src='{{ "/assets/images/schleuder_logo_small.svg" | absolute_url }}' alt="schleuder">
     </a>
 
