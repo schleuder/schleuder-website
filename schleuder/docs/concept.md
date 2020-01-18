@@ -33,9 +33,9 @@ And Schleuder can receive administrative commands by email. E.g. it is possible 
 
 ## Technical details
 
-### A "wanted man-in-the-middle"
+### A "wanted machine-in-the-middle"
 
-Basically Schleuder is a "wanted man-in-the-middle".
+Basically Schleuder is a "wanted machine-in-the-middle".
 
 Each list has its own keypair. Schleuder decrypts every incoming email and verifies its signature with the keys from the list's keyring. Then Schleuder loops over the list of subscribers, creates for each a stripped down copy of the message, encrypts it with the subscriber's key and signs it with its own key, and sends it out.
 
