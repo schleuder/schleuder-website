@@ -241,11 +241,6 @@ Provide each client with their own API-key, and use secure channels to transport
 {: .note}
 There is **no authorization of clients,** yet. Each client is allowed every action. So be wary who to give an API-key to. schleuder-web does its own authorization, but schleuder-cli does not!
 
-
-
-[↑](#top "Go to top of page")
-{: .linktotop}
-
 ## Managing a list
 
 To create and manage lists you have two options: schleuder-web and schleuder-cli.
@@ -262,10 +257,6 @@ To create lists with schleuder-web log in as `root@localhost`. Managing lists is
 To use schleuder-cli please see the output of
 
     schleuder-cli help
-
-
-[↑](#top "Go to top of page")
-{: .linktotop}
 
 ## Maintenance
 
@@ -298,5 +289,5 @@ You should better not run this command automatedly, and you should always examin
     schleuder pin_keys
 
 
-{% include docs-page-footer.md %}
+{% include participate.md %}
 

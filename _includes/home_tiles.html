@@ -1,0 +1,44 @@
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child">
+      <p class="console">{{ page.title }}: {{ page.subtitle }}</p>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child">
+      <figure class="image has-ratio has-padding">
+        <img src='{{ "/assets/images/schleuder_logo.svg" | absolute_url }}'>
+      </figure>
+    </article>
+  </div>
+</div>
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child">
+      <p class="title">How it works</p>
+      <div class="content">
+        <p>Schleuder is a group's email-gateway: subscribers can exchange encrypted emails among themselves, receive emails from non-subscribers and send emails to non-subscribers via the list.</p>
+        <a href='{{ "schleuder/docs/concept.html" | absolute_url }}'>More</a>
+      </div>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child">
+      <p class="title">Mission Statement</p>
+      <div class="content">
+        <p>We give our time and knowledge to build and maintain this project in order to help people with their daily private communication and in the struggle for their personal emancipation, social and economic justice and political freedom.</p>
+        <a href='{{ "MISSION_STATEMENT.html" | absolute_url }}'>More</a>
+      </div>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child">
+      <p class="title">Documentation</p>
+      <div class="content">
+        <p>Are you a subscriber, a list admin or a server admin? Find the docs for your use case.</p>
+        <a href='{{ "schleuder/docs/index.html" | absolute_url }}'>More</a>
+      </div>
+    </article>
+  </div>
+
+</div>

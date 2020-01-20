@@ -1,0 +1,158 @@
+---
+---
+// ↑↑ These dashes are necessary to enable Jeklyll's sass support
+// https://jekyllrb.com/docs/assets/
+
+@import 'navbar';
+
+// Override bulma variables 
+$family-sans-serif: "DejaVuSans",
+sans-serif;
+$family-monospace: "DejaVuSansMono", monospace;
+$green: #336633;
+$green-light: #80FF80;
+$link: black;
+$text: black;
+$navbar-item-color: black;
+$navbar-item-hover-background-color: white;
+$navbar-dropdown-item-hover-background-color: white;
+
+
+@import "bulma";
+
+@font-face {
+	font-family: 'DejaVuSans';
+	src: url('/assets/fonts/DejaVuSans-webfont.woff')
+}
+
+@font-face {
+	font-family: 'DejaVuSansMono';
+	src: url('/assets/fonts/DejaVuSansMono-webfont.woff')
+}
+
+.navbar {
+	margin-bottom: 3em;
+}
+
+.navbar-end {
+	align-self: flex-end;
+}
+
+.main-content {
+	margin-top: 4em;
+	margin-bottom: 4em;
+  min-height: calc(100vh - 390px);
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 1.125;
+	margin-bottom: 1.5rem;
+	font-family: $family-monospace;
+}
+
+.console {
+	background-color: black;
+	color: $green-light;
+	font-family: $family-monospace;
+	font-size: 1.5rem;
+	padding: 4rem;
+}
+
+.has-padding {
+	padding: 3rem;
+}
+
+.has-margin-top {
+	margin-top: 2rem;
+}
+
+.tile.is-child {
+	margin-bottom: 4rem !important;
+}
+
+.title {
+	font-family: $family-monospace;
+	font-size: 1.5rem;
+}
+
+.news {
+	h2 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		line-height: 1.125;
+		margin-top: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1rem;
+		margin-bottom: 1.5rem;
+		font-family: $family-monospace;
+	}
+}
+
+.post {
+	h3 {
+		margin-bottom: 1.5rem;
+		font-family: $family-monospace;
+	}
+}
+
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover,
+a.navbar-item.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+.navbar-link.is-active, 
+.content a
+ {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(35%, rgba(255, 255, 255, 0)), color-stop(35%, #80FF80), color-stop(75%, #80FF80), color-stop(75%, rgba(255, 255, 255, 0)));
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 35%, #80FF80 35%, #80FF80 75%, rgba(255, 255, 255, 0) 75%);
+	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 35%, #80FF80 35%, #80FF80 75%, rgba(255, 255, 255, 0) 75%);
+	background-image: linear-gradient(to bottom,
+
+			rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 35%, #80FF80 35%, #80FF80 75%,
+			rgba(255, 255, 255, 0) 75%);
+
+	background-clip: content-box, padding-box;
+	text-decoration: none !important;
+	color: black;
+}
+
+.footer a {
+	background-image: none;
+	text-decoration: underline !important;
+	font-weight: bold;
+}
+
+.participate {
+	background-color: $green-light;
+	color: black;
+	border: none;
+	border-radius: 0;
+	text-align: center;
+	font-family: $family-monospace;
+	padding: 1rem;
+	a {
+		text-decoration: underline !important;
+		background-image: none;
+		font-weight: bold;
+	}
+}
+
+.docs .participate {
+	margin-top: 4rem;
+}
+
+.highlighter-rouge {
+	margin-bottom: 1rem;
+}
+
+.note {
+	font-style: italic;
+	border: 2px solid $green-light;
+	padding: 0.5rem;
+}

@@ -16,6 +16,3 @@ User-relevant changes in version 3.2 compared to version 3.1:
 * `X-SUBSCRIBE` now handles the combination of space-separated fingerprint and additional arguments (admin-flag, delivery-enabled-flag) correctly.
 * `X-RESEND` now respects the encoding the mail was sent with.
 * Fixed broken encoding of certain character-sequences in encrypted+signed messages.
-
-
-{% include feedback.md %}

@@ -84,7 +84,7 @@ linkcheck:
   script:
     # Run linkchecker against the pushed (and deployed) branch. Exclude mailto: links, as the ones
     # which we commonly use miss a MX record.
-    - linkchecker --check-extern --ignore-url=mailto https://schleuder.org/$DEPLOY_SLUG
+    - linkchecker --check-extern --ignore-url=mailto --ignore-url=woff https://schleuder.org/$DEPLOY_SLUG
   only:
     # This job relies on secret env vars, which are only available in our repo.
     - branches@schleuder/schleuder-website

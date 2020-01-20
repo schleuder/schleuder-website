@@ -1,0 +1,57 @@
+<nav class="navbar is-fixed-top is-spaced" role="navigation" aria-label="main navigation">
+  <input type="checkbox" id="toggler" role="button" class="toggler" aria-label="menu" aria-expanded="false"
+    data-target="navbarMain" />
+  <div class="navbar-brand">
+    <a class="navbar-item" href='{{ "/" | absolute_url }}'>
+      <img src='{{ "/assets/images/schleuder_logo_small.svg" | absolute_url }}' alt="schleuder">
+    </a>
+
+    <label for="toggler" class="navbar-burger burger" >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </label>
+  </div>
+
+  <div id="navbarMain" class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href='{{ "news.html" | absolute_url }}'>
+        News
+      </a>
+
+      <a class="navbar-item" href='{{ "schleuder/docs/concept.html" | absolute_url }}'>
+        Concept
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href='{{ "schleuder/docs/index.html" | absolute_url }}'>
+          Docs
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href='{{ "schleuder/docs/subscribers.html" | absolute_url }}'>
+            For Subscribers
+          </a>
+          <a class="navbar-item" href='{{ "schleuder/docs/list-admins.html" | absolute_url }}'>
+            For List-Admins
+          </a>
+          <a class="navbar-item" href='{{ "schleuder/docs/server-admins.html" | absolute_url }}'>
+            For Server-Admins
+          </a>
+          <a class="navbar-item" href='{{ "schleuder/docs/projects-and-plugins.html" | absolute_url }}'>
+            Projects & Plugins
+          </a>
+        </div>
+      </div>
+
+      <a class="navbar-item" href='{{ "MISSION_STATEMENT.html" | absolute_url }}'>
+        Mission Statement
+      </a>
+      <a class="navbar-item" href='{{ "CODE_OF_CONDUCT.html" | absolute_url }}'>
+        Code of Conduct
+      </a>
+      <a class="navbar-item" href='{{ "contact.html" | absolute_url }}'>
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>

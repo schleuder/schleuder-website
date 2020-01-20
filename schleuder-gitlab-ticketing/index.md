@@ -9,4 +9,4 @@ It is hooked into schleuder by a) installing the gem and b) configuring schleude
 For details and instructions on how to install and use it, please read the [Readme](https://0xacab.org/schleuder/schleuder-gitlab-ticketing/blob/master/README.md).
 
 
-{% include footer.md project="schleuder-gitlab-ticketing" %}
+{% include participate.md project="schleuder-gitlab-ticketing" %}

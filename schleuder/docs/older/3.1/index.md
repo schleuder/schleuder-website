@@ -60,9 +60,6 @@ Other logging is sent to syslog. Where that ends up depends on the operating sys
 
 All other list-related data is stored in the SQL-database. Most data is unserialized, only some values are JSON-encoded.
 
-[↑](#top "Go to top of page")
-{: .linktotop}
-
 ## Setup
 
 ### Installation
@@ -231,11 +228,6 @@ Provide each client with their own API-key, and use secure channels to transport
 {: .note}
 There is **no authorization of clients,** yet. Each client is allowed every action. So be wary who to give an API-key to. schleuder-web does its own authorization, but schleuder-cli does not!
 
-
-
-[↑](#top "Go to top of page")
-{: .linktotop}
-
 ## Managing a list
 
 To create and manage lists you have two options: schleuder-web and schleuder-cli.
@@ -252,10 +244,6 @@ To create lists with schleuder-web log in as `root@localhost`. Managing lists is
 To use schleuder-cli please see the output of
 
     schleuder-cli help
-
-
-[↑](#top "Go to top of page")
-{: .linktotop}
 
 ## Using a list
 
@@ -365,10 +353,6 @@ x-sign-this:
 
 Write to `listname-owner@hostname` to contact the list-owner(s) even if you don't know who they are. Use the list's key to encrypt the email!
 
-
-[↑](#top "Go to top of page")
-{: .linktotop}
-
 ## Maintenance
 
 {: .note}
@@ -388,11 +372,6 @@ Schleuder can also **refresh all keys** in the same manner. Each key of each lis
 Call this command weekly from cron to automate the check and have the results sent to the respective list-admins:
 
     schleuder refresh_keys
-
-
-
-[↑](#top "Go to top of page")
-{: .linktotop}
 
 ## Changes to the previous version of Schleuder
 
@@ -414,20 +393,10 @@ User-relevant changes in version 3.1 compared to version 3.0:
 * Errors of list-plugins are not written into the list of pseudo-headers anymore. List-plugins must handle errors on their own.
 * Unnecessary empty lines in the output while refreshing keys are removed now.  
 
-[↑](#top "Go to top of page")
-{: .linktotop}
-
 ## Feedback
 
 To suggest changes to these documents or if you found any errors in them, please use the [issue tracker](https://0xacab.org/schleuder/schleuder-website/issues) (or [contact us by email](mailto:team@schleuder.org)).
 
-[↑](#top "Go to top of page")
-{: .linktotop}
-
-
 ## Changes to the documentation
 
 We use a public git-repository to maintain these documents, thus you can [browse the list of changes](https://0xacab.org/schleuder/schleuder-website/commits/master).
-
-[↑](#top "Go to top of page")
-{: .linktotop}

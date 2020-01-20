@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <link href='{{ "favicon.ico" | absolute_url }}' rel='shortcut icon' type='image/x-icon'>
-    <link href='{{ "favicon.ico" | absolute_url }}' rel='icon' type='image/x-icon'>
-    <meta charset='UTF-8'>
-    <meta content='width=device-width, initial-scale=1' name='viewport'>
-    <title>{% if page.title %} {{ page.title }} {% else %} {{ site.title }} {% endif %}</title>
-    <meta content='{% if page.excerpt %} {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ site.description }} {% endif %}' name='description'>
-    <link href='{{ "styles.css" | absolute_url }}' rel='stylesheet' media='all'>
-  </head>
-  <body id="top" class='layout-{{ page.layout }}'>
-    <a href='{{ "" }}'><img id='logo' src='{{ "images/schleuder.png" | absolute_url }}' alt="Logo of schleuder"></a>
-    {{ content }}
-  </body>
+<html lang='en' class="has-navbar-fixed-top">
+
+<head>
+  <link href='{{ "favicon.ico" | absolute_url }}' rel='shortcut icon' type='image/x-icon'>
+  <link href='{{ "favicon.ico" | absolute_url }}' rel='icon' type='image/x-icon'>
+  <meta charset='UTF-8'>
+  <meta content='width=device-width, initial-scale=1' name='viewport'>
+  <title>{% if page.title %} {{ page.title }} {% else %} {{ site.title }} {% endif %}</title>
+  <meta
+    content='{% if page.excerpt %} {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ site.description }} {% endif %}'
+    name='description'>
+  <link href='{{ "assets/css/styles.css" | absolute_url }}' rel='stylesheet' media='all'>
+</head>
+
+<body>
+  {% include navbar.html %}
+  <main class="main-content">
+    <div class="columns">
+      <div class="column is-offset-2-desktop is-two-thirds-desktop is-offset-1-mobile is-four-fifths-mobile">
+        {{ content }}
+      </div>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+
 </html>
