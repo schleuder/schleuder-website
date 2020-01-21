@@ -4,7 +4,7 @@ title: Concept
 
 {% include docs-head.md version=3.4 %}
 
-Schleuder is a gpg-enabled mailing list manager with resending capabilities. This document tries to explain what that means.
+Schleuder is an OpenPGP-enabled mailing list manager with resending capabilities. This document tries to explain what that means.
 
 
 ## An email hub for groups

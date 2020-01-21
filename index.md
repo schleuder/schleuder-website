@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Schleuder
-subtitle: A gpg-enabled mailing list manager with remailing-capabilities.
+subtitle: Schleuder is an encrypting mailing list manager with remailing-capabilities
 ---
 
 {% include home_tiles.html %}
