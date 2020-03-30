@@ -2,7 +2,7 @@
 title: Documentation for subscribers
 ---
 
-{% include docs-head.md version=3.5 %}
+{% include docs-head.md version=3.4 %}
 
 {% include_relative _list_usage_basics.md %}
 
