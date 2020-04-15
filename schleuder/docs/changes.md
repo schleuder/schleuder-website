@@ -23,3 +23,4 @@ User-relevant changes in version 3.5 compared to version 3.4:
 * The detection of the encoding of incoming mails is improved. This should reduce the amount of mails which were problematic in this regard, and lead to errors.
 * Incoming mails encrypted to an absent key, using symmetric encryption or containing PGP-garbage are handled in a more graceful manner: No exception is thrown, admins aren't notified (and annoyed), instead the sender is informed how to do better.
 * Notification mails sent to admins contain a List-Id header. This should help with filtering such messages, which wasn't easy to do in a reliable way.
+* `x-add-key` is able to handle mails with attached, quoted-printable encoded keys. Such mails might be produced by Thunderbird.
