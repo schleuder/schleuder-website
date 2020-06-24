@@ -30,6 +30,10 @@ $navbar-dropdown-item-hover-background-color: white;
 	src: url('/assets/fonts/DejaVuSansMono-webfont.woff')
 }
 
+html {
+  scroll-padding-top: 5.6rem; /* height of sticky header plus margins */
+}
+
 .navbar {
 	margin-bottom: 3em;
 }
