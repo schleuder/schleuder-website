@@ -14,8 +14,8 @@ These keywords must be send to `foo-request@hostname`. They are used to get info
 **x-list-subscriptions**
 : List all subscriptions.
 
-**x-subscribe:** person@example.org 0x12345678DEADBEEF12345678DEADBEEF12345678
-: Subscribe the given address and assign it the given OpenPGP-fingerprint.
+**x-subscribe:** person@example.org 0x12345678DEADBEEF12345678DEADBEEF12345678 false true
+: Subscribe the given email address and assign it the given OpenPGP fingerprint. The last two arguments can be omitted and will default to "false true": do not give the given email address administration permissions and enable email delivery.
 
 **x-unsubscribe:** person@example.org
 : Unsubscribe the given address. It is not possible to unsubscribe the last admin of a list.
