@@ -4,6 +4,7 @@ email: team@schleuder.org
 description: > # this means to ignore newlines until "url:"
   Schleuder is a gpg-enabled mailinglist with remailing-capabilities.
 url: "https://schleuder.org" # the base hostname & protocol for your site
+future: true
 exclude: [Rakefile, README.md, vendor]
 
 defaults:
