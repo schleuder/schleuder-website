@@ -16,7 +16,7 @@ build:
     - 'if ! [ "$CI_COMMIT_REF_SLUG" == "master" ]; then
       echo "baseurl: /$DEPLOY_SLUG" >> _config.yml;
       fi'
-    - jekyll build
+    - jekyll build --verbose
     - tar cfz site.tar.gz _site
   stage: build
   artifacts:
