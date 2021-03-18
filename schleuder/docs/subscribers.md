@@ -12,13 +12,13 @@ The following keywords must be send to the request address of the list: `foo-req
 Include `x-list-name: foo@hostname` with every command you send.
 
 **x-add-key:**  
-Import the attachment(s) or the rest of the email-body into the list’s keyring. Only ascii-armored keys are supported.
+: Import the attachment(s) or the rest of the email-body into the list’s keyring. Only ascii-armored keys are supported.
 
-**x-set-fingerprint: 0x12345678DEADBEEF12345678DEADBEEF12345678**  
-Assign the key with the given fingerprint to your subscription. It is not possible to set an empty fingerprint. To unset your fingerprint use `x-unset-fingerprint`.
+**x-set-fingerprint:** 0x12345678DEADBEEF12345678DEADBEEF12345678
+: Assign the key with the given fingerprint to your subscription. It is not possible to set an empty fingerprint. To unset your fingerprint use `x-unset-fingerprint`.
 
-**x-unset-fingerprint: person@example.org**  
-Remove the fingerprint associated with your subscription.
+**x-unset-fingerprint:** person@example.org
+: Remove the fingerprint associated with your subscription.
 
 #### Example: Updating you key for a list
 
@@ -42,7 +42,7 @@ mDMEXuYDuxYJKwYBBAHaRw8BAQdAqP98Ao=
 
 A successful answer should look something like this:
 > This key was newly added:
-0x12345678DEADBEEF12345678DEADBEEF12345678 youraccount@yourmail.net 2019-05-23 [expires: 2023-05-23] 
+> 0x12345678DEADBEEF12345678DEADBEEF12345678 youraccount@yourmail.net 2019-05-23 [expires: 2023-05-23] 
 
 **2. verify that uploaded key made it into the keyring**
 
