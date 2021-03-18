@@ -6,6 +6,9 @@ title: Documentation for subscribers
 
 {% include_relative _list_usage_basics.md %}
 
+&nbsp;  
+
+
 #### Subscription and key management
 
 The following keywords must be send to the request address of the list: `foo-request@hostname`.  
@@ -20,11 +23,14 @@ Include `x-list-name: foo@hostname` with every command you send.
 **x-unset-fingerprint:** person@example.org
 : Remove the fingerprint associated with your subscription.
 
-#### Example: Updating you key for a list
+&nbsp;  
+
+
+#### Example: Updating your key for a list
 
 All commands to switch to a **new** key must be signed with the current **old** key. 
 
-**1. submit new key to lists keyring**
+##### 1. submit new key to lists keyring
 
 ```
 x-list-name: foo@hostname
@@ -44,16 +50,16 @@ A successful answer should look something like this:
 > This key was newly added:
 > 0x12345678DEADBEEF12345678DEADBEEF12345678 youraccount@yourmail.net 2019-05-23 [expires: 2023-05-23] 
 
-**2. verify that uploaded key made it into the keyring**
+##### 2. verify that uploaded key made it into the keyring
 
 ```
 x-list-name: foo@hostname
 x-list-keys
-
 ```
-The answer will list all keys in the lists keyring. Make sure, your **new** key is in the keyring now.
+The answer will be a list of all keys in the lists keyring.
+Make sure, your **new** key is in the keyring now.
 
-**3. change you subscription to use the new key**
+##### 3. change you subscription to use the new key
 
 ```
 x-list-name: foo@hostname
@@ -66,6 +72,12 @@ A successful answer should look something like this:
 From now on, all mails will be encrpyted to the **new** key
 and all your mails must be signed with this key.
 
+##### One caveat: disabled commands 
+To further improve security and confidentiality, list-admins can manually **disable certain commands**
+like `x-add-key` for mere subscribers of the list. With these commands disabled for you,
+you have to rely on the list-admin for key management. 
+
+&nbsp;  
 
 #### Resending
 
