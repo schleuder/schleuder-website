@@ -12,8 +12,8 @@ variables:
 
 build:
   script:
-    # Set jekylls 'baseurl' option in case we're not dealing with the master branch.
-    - 'if ! [ "$CI_COMMIT_REF_SLUG" == "master" ]; then
+    # Set jekylls 'baseurl' option in case we're not dealing with the main branch.
+    - 'if ! [ "$CI_COMMIT_REF_SLUG" == "main" ]; then
       echo "baseurl: /$DEPLOY_SLUG" >> _config.yml;
       fi'
     - jekyll build --verbose
@@ -41,11 +41,11 @@ deploy:
       |1|8YPsezXF2SYQ7rq9U5TbDnMsVjo=|SJOodZB+8j+dO+l6YTdZ7+44XLw= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPJx38PfGvaHtkSsHptiHoIQxlI3Yf0cskPNTwAQnY14
       " > ~/.ssh/known_hosts
     - tar fxv site.tar.gz
-    # In case we're not dealing with the master branch, create the review dir on the webserver.
+    # In case we're not dealing with the main branch, create the review dir on the webserver.
     # We need to catch possible errors, as lftp seems buggy: It fails if the dir already exists,
     # even if called with the -f option, which should ignore errors (like this one).
     # lftp needs a "dummy" password, even if key-based authentication is used.
-    - if ! [ "$CI_COMMIT_REF_SLUG" == "master" ];
+    - if ! [ "$CI_COMMIT_REF_SLUG" == "main" ];
         then DEPLOY_SLUG="www/$DEPLOY_SLUG";
         export DEPLOY_SLUG;
         lftp -e "mkdir -fp $DEPLOY_SLUG; quit" -u $DEPLOY_USER,dummy sftp://$DEPLOY_HOST || /bin/true;
@@ -73,11 +73,11 @@ codespell:
     # Also, exclude the vendor dir, which leads to false positives.
     - codespell -q 2 -f -I utils/ci/codespell/ignored_words.txt -S vendor
   # This job should help with merge requests. Therefore, don't run it
-  # against the master branch.
+  # against the main branch.
   only:
     - branches
   except:
-    - master
+    - main
   stage: qa
 
 linkcheck:
@@ -89,9 +89,9 @@ linkcheck:
     # This job relies on secret env vars, which are only available in our repo.
     - branches@schleuder/schleuder-website
   except:
-    # This job should help with merge requests, so there is no point in running it against the master
+    # This job should help with merge requests, so there is no point in running it against the main
     # branch.
-    - master@schleuder/schleuder-website
+    - main@schleuder/schleuder-website
   stage: qa
   variables:
     GIT_STRATEGY: none
