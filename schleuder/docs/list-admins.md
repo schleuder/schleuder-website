@@ -32,7 +32,7 @@ These keywords must be send to `foo-request@hostname`. They are used to get info
 **x-list-keys**
 : Lists all public keys known to the list. To see only keys that match a given string, use `x-list-keys: something`.
 
-**x-add-key:**  
+**x-add-key:**
 : Import the request-mails attachment(s) or the rest of the email-body into the list’s keyring. To paste your public key into the body of the request-mail, please export it in _"ASCII-armored"_ text format (e.g. `gpg --armor --export 0xAE0DBF5A92A5ADE49481AB6F8A3171EF366150CE`). If you send the key as an **attachement** of the request-mail, **both** _"ASCII-armored"_ and binary format are supported. 
 
 **x-delete-key:** 0x12345678DEADBEEF12345678DEADBEEF12345678
