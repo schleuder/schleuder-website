@@ -15,7 +15,8 @@ The following keywords must be send to the request address of the list: `foo-req
 Include `x-list-name: foo@hostname` with every command you send.
 
 **x-add-key:**  
-: Import the attachment(s) or the rest of the email-body into the list’s keyring. Only ascii-armored keys are supported.
+: Import the request-mails attachment(s) or the rest of the email-body into the list’s keyring. To paste your public key into the body of the request-mail, please export it in _"ASCII-armored"_ text format (e.g. `gpg --armor --export 0xAE0DBF5A92A5ADE49481AB6F8A3171EF366150CE`). If you send the key as an **attachement** of the request-mail, **both** _"ASCII-armored"_ and binary format are supported. 
+
 
 **x-set-fingerprint:** 0x12345678DEADBEEF12345678DEADBEEF12345678
 : Assign the key with the given fingerprint to your subscription. It is not possible to set an empty fingerprint. To unset your fingerprint use `x-unset-fingerprint`.
