@@ -15,7 +15,7 @@ The following keywords must be send to the request address of the list: `foo-req
 Include `x-list-name: foo@hostname` with every command you send.
 
 **x-add-key:**  
-: Import the mails attachment(s) or the rest of the email-body into the list’s keyring. To paste your public key into the body of the mail, please export it in _"ASCII-armored"_ text format (e.g. `gpg --armor --export 0xAE0DBF5A92A5ADE49481AB6F8A3171EF366150CE`). If you send the key as an **attachment** of the mail, **both** _"ASCII-armored"_ and binary format are supported. 
+: Import the email's attachment(s) or the rest of the email-body into the list’s keyring. To paste your public key into the body of the mail, please export it in _"ASCII-armored"_ text format (e.g. `gpg --armor --export 0xAE0DBF5A92A5ADE49481AB6F8A3171EF366150CE`). If you send the key as an **attachment** of the email, **both** _"ASCII-armored"_ and binary format are supported. 
 
 
 **x-set-fingerprint:** 0x12345678DEADBEEF12345678DEADBEEF12345678
