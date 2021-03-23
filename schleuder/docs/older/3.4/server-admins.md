@@ -54,7 +54,7 @@ The copr-repository also provides you with a package for [schleuder-web](https:/
 
 #### From Ruby-Gem
 
-For instructions on how to install from rubygems please see the [README](https://0xacab.org/schleuder/schleuder/blob/master/README.md#installing-schleuder) of Schleuder.
+For instructions on how to install from rubygems please see the [README](https://0xacab.org/schleuder/schleuder/blob/main/README.md#installing-schleuder) of Schleuder.
 
 
 #### Automation
@@ -72,9 +72,9 @@ Schleuder reads its **basic settings** from a file that it by default expects at
 
     SCHLEUDER_CONFIG=/usr/local/etc/schleuder.yml /path/to/bin/schleuder ...
 
-For explanations of the possible settings read the default config file (also [available in the repository](https://0xacab.org/schleuder/schleuder/blob/master/etc/schleuder.yml)).
+For explanations of the possible settings read the default config file (also [available in the repository](https://0xacab.org/schleuder/schleuder/blob/main/etc/schleuder.yml)).
 
-The **default settings for new lists** are read from another config file. By default Schleuder looks at `/etc/schleuder/list-defaults.yml`. To make Schleuder read a different file set the environment variable `SCHLEUDER_LIST_DEFAULTS` analogous to above. The possible settings are explained in the default config file, which is [also available in the repository](https://0xacab.org/schleuder/schleuder/blob/master/etc/list-defaults.yml).
+The **default settings for new lists** are read from another config file. By default Schleuder looks at `/etc/schleuder/list-defaults.yml`. To make Schleuder read a different file set the environment variable `SCHLEUDER_LIST_DEFAULTS` analogous to above. The possible settings are explained in the default config file, which is [also available in the repository](https://0xacab.org/schleuder/schleuder/blob/main/etc/list-defaults.yml).
 
 Once a list is created, it is not affected by these configuration files any more. Existing lists have their configuration stored in the database. The settings in the database can be shown and set via the schleuder API, available through schleuder-web or schleuder-cli. Run `schleuder-cli lists help` and `schleuder-cli lists list-options` for more information on the latter.
 
@@ -271,7 +271,7 @@ Call this command weekly from cron to automate the check and have the results se
     schleuder check_keys
 
 
-Schleuder can also **refresh all keys** in the same manner. Each key of each list will be refreshed from a keyserver one by one. If you're using gpg 2.1, it's possible to configure a TOR onion service to be used as keyserver! See [the config](https://0xacab.org/schleuder/schleuder/blob/master/etc/schleuder.yml) for an example.
+Schleuder can also **refresh all keys** in the same manner. Each key of each list will be refreshed from a keyserver one by one. If you're using gpg 2.1, it's possible to configure a TOR onion service to be used as keyserver! See [the config](https://0xacab.org/schleuder/schleuder/blob/main/etc/schleuder.yml) for an example.
 
 
 Call this command weekly from cron to automate the check and have the results sent to the respective list-admins:

@@ -64,7 +64,7 @@ All other list-related data is stored in the SQL-database. Most data is unserial
 
 ### Installation
 
-For install instructions please see the [README](https://0xacab.org/schleuder/schleuder/blob/master/README.md) of Schleuder.
+For install instructions please see the [README](https://0xacab.org/schleuder/schleuder/blob/main/README.md) of Schleuder.
 
 As suggested there you should also install [schleuder-cli](https://0xacab.org/schleuder/schleuder-cli), which is a command line tool to manage Schleuder lists.
 
@@ -75,9 +75,9 @@ Schleuder reads its **basic settings** from a file that it by default expects at
 
     SCHLEUDER_CONFIG=/usr/local/etc/schleuder.yml /path/to/bin/schleuder ...
 
-For explanations of the possible settings read the default config file (also [available in the repository](https://0xacab.org/schleuder/schleuder/blob/master/etc/schleuder.yml)).
+For explanations of the possible settings read the default config file (also [available in the repository](https://0xacab.org/schleuder/schleuder/blob/main/etc/schleuder.yml)).
 
-The **default settings for new lists** are read from another config file. By default Schleuder looks at `/etc/schleuder/list-defaults.yml`. To make Schleuder read a different file set the environment variable `SCHLEUDER_LIST_DEFAULTS` analogous to above. The possible settings are explained in the default config file, which is [also available in the repository](https://0xacab.org/schleuder/schleuder/blob/master/etc/list-defaults.yml).
+The **default settings for new lists** are read from another config file. By default Schleuder looks at `/etc/schleuder/list-defaults.yml`. To make Schleuder read a different file set the environment variable `SCHLEUDER_LIST_DEFAULTS` analogous to above. The possible settings are explained in the default config file, which is [also available in the repository](https://0xacab.org/schleuder/schleuder/blob/main/etc/list-defaults.yml).
 
 
 ### Hook into Mail Transport Agent
@@ -319,7 +319,7 @@ Call this command weekly from cron to automate the check and have the results se
     schleuder check_keys
 
 
-Schleuder can also **refresh all keys** in the same manner. Each key of each list will be refreshed from a keyserver one by one. If you're using gpg 2.1, it's possible to configure a TOR onion service to be used as keyserver! See [the config](https://0xacab.org/schleuder/schleuder/blob/master/etc/schleuder.yml) for an example.
+Schleuder can also **refresh all keys** in the same manner. Each key of each list will be refreshed from a keyserver one by one. If you're using gpg 2.1, it's possible to configure a TOR onion service to be used as keyserver! See [the config](https://0xacab.org/schleuder/schleuder/blob/main/etc/schleuder.yml) for an example.
 
 
 Call this command weekly from cron to automate the check and have the results sent to the respective list-admins:

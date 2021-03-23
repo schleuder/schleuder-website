@@ -19,4 +19,4 @@ Highlights:
 * Downcase all email addresses when subscribing.
 * Require fingerprints as arguments to `X-DELETE-KEY`, no fuzzy matching of strings anymore.
 
-Please see the [user-relevant changes]({{ "schleuder/docs/changes.html" | absolute_url }}) and the [changelog](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#400-2021-03-04) for details.
+Please see the [user-relevant changes]({{ "schleuder/docs/changes.html" | absolute_url }}) and the [changelog](https://0xacab.org/schleuder/schleuder/blob/main/CHANGELOG.md#400-2021-03-04) for details.

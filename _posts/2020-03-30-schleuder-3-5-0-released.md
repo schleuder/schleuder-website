@@ -17,4 +17,4 @@ This release ships new features, bug fixes and various UX-related improvements:
 * incoming mails encrypted to an absent key, using symmetric encryption or containing PGP-garbage are handled in a more graceful manner,
 * notification mails sent to admins contain a List-Id header, which should help with filtering such messages.
 
-Please see the [user-relevant changes]({{ "schleuder/docs/changes.html" | absolute_url }}) and the [changelog](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#350-2020-03-30) for details.
+Please see the [user-relevant changes]({{ "schleuder/docs/changes.html" | absolute_url }}) and the [changelog](https://0xacab.org/schleuder/schleuder/blob/main/CHANGELOG.md#350-2020-03-30) for details.

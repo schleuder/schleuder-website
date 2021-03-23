@@ -12,4 +12,4 @@ This release ships new features and bug fixes:
 * The detection of bounce messages is massively improved.
 * Mail addresses of subscriptions are properly validated.
 
-Please see the [user-relevant changes]({{ "schleuder/docs/changes.html" | absolute_url }}) and the [changelog](https://0xacab.org/schleuder/schleuder/blob/master/CHANGELOG.md#360-2021-02-FIXME) for details.
+Please see the [user-relevant changes]({{ "schleuder/docs/changes.html" | absolute_url }}) and the [changelog](https://0xacab.org/schleuder/schleuder/blob/main/CHANGELOG.md#360-2021-02-FIXME) for details.
