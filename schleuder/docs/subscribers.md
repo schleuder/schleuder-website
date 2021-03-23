@@ -27,11 +27,11 @@ Include `x-list-name: foo@hostname` with every command you send.
 &nbsp;  
 
 
-#### Example: Updating your key for a list
+#### Example: Update your key of a list subscription
 
-All commands to switch to a **new** key must be signed with the current **old** key. 
+**All commands to switch to a new key must be signed with the current old key.**
 
-##### 1. submit new key to lists keyring
+##### 1. Submit the new key to the keyring of the list
 
 ```
 x-list-name: foo@hostname
@@ -51,16 +51,16 @@ A successful answer should look something like this:
 > This key was newly added:
 > 0x12345678DEADBEEF12345678DEADBEEF12345678 youraccount@yourmail.net 2019-05-23 [expires: 2023-05-23] 
 
-##### 2. verify that uploaded key made it into the keyring
+##### 2. Verify that the uploaded key made it into the keyring
 
 ```
 x-list-name: foo@hostname
 x-list-keys
 ```
-The answer will be a list of all keys in the lists keyring.
+The answer will be a list of all keys in the keyring of the list.
 Make sure, your **new** key is in the keyring now.
 
-##### 3. change you subscription to use the new key
+##### 3. Change your subscription to use the new key
 
 ```
 x-list-name: foo@hostname
@@ -70,13 +70,13 @@ x-set-fingerprint: 0x12345678DEADBEEF12345678DEADBEEF12345678
 A successful answer should look something like this:
 > Fingerprint for youraccount@yourmail.net set to 12345678DEADBEEF12345678DEADBEEF12345678.
 
-From now on, all mails will be encrpyted to the **new** key
-and all your mails must be signed with this key.
+From now on, all mails will be encrpyted to the **new** key and all your mails must be signed with this key.
 
-##### One caveat: disabled commands 
+##### One caveat: Disabled commands 
+
 To further improve security and confidentiality, list-admins can manually **disable certain commands**
 like `x-add-key` for mere subscribers of the list. With these commands disabled for you,
-you have to rely on the list-admin for key management. 
+you have to rely on the list-admin to handle key management. 
 
 &nbsp;  
 
