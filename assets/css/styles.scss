@@ -22,12 +22,19 @@ $navbar-dropdown-item-hover-background-color: white;
 
 @font-face {
 	font-family: 'DejaVuSans';
-	src: url('/assets/fonts/DejaVuSans-webfont.woff')
+	src: url('/assets/fonts/DejaVuSans-webfont.woff');
+	font-weight: 400;
 }
 
 @font-face {
 	font-family: 'DejaVuSansMono';
 	src: url('/assets/fonts/DejaVuSansMono-webfont.woff')
+}
+
+@font-face {
+	font-family: 'DejaVuSans';
+	src: url('/assets/fonts/DejaVuSansBold-webfont.woff');
+	font-weight: 700;
 }
 
 html {
