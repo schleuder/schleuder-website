@@ -355,4 +355,4 @@ To suggest changes to these documents or if you found any errors in them, please
 
 ## Changes to the documentation
 
-We use a public git-repository to maintain these documents, thus you can [browse the list of changes](https://0xacab.org/schleuder/schleuder-website/commits/master).
+We use a public git-repository to maintain these documents, thus you can [browse the list of changes](https://0xacab.org/schleuder/schleuder-website/commits/main).
