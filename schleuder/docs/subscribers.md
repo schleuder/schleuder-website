@@ -70,7 +70,7 @@ x-set-fingerprint: 0x12345678DEADBEEF12345678DEADBEEF12345678
 A successful answer should look something like this:
 > Fingerprint for youraccount@yourmail.net set to 12345678DEADBEEF12345678DEADBEEF12345678.
 
-From now on, all mails will be encrpyted to the **new** key and all your mails must be signed with this key.
+From now on, all mails will be encrypted to the **new** key and all your mails must be signed with this key.
 
 ##### One caveat: Disabled commands 
 
