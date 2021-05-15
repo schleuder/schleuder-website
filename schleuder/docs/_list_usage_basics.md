@@ -27,6 +27,6 @@ There are two types of keywords: those to enhance messages sent over the list ("
 
 To mitigate replay attacks of emails containing keywords, every email using a keyword **must** contain the special `x-list-name` keyword followed by the list's emailaddress. Example:
 
-x-list-name: someone@example.org
+**x-list-name**: someone@example.org
 : **You must always provide this keyword once per email.** Without it, no other keyword will be considered but you will receive an error message.
 
