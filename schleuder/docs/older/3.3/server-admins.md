@@ -216,7 +216,7 @@ Please take care to run `schleuder-api-daemon` as the user that owns the directo
 
 #### Transport encryption
 
-schleuder-api-daemon uses transport encyrption (TLS) for all connections. The required TLS-certifcates should have been generated during the setup (`schleuder install`). You can generate new ones at any time by executing:
+schleuder-api-daemon uses transport encryption (TLS) for all connections. The required TLS-certifcates should have been generated during the setup (`schleuder install`). You can generate new ones at any time by executing:
 
     schleuder cert generate
 
