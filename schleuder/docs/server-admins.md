@@ -9,7 +9,7 @@ title: Documentation for server-admins
 
 ### Installation
 
-You can install schleuder either from Linux distribution packages or rubygems. Currently there are supported distribution packages for Debian ("buster" and above) and CentOS 7. If you use one of the directly supported platforms, you should choose the packages over the gems.
+You can install schleuder either from Linux distribution packages or rubygems. Currently there are supported distribution packages for Debian ("buster" and above), CentOS 7 and Archlinux (via AUR). If you use one of the directly supported platforms, you should choose the packages over the gems.
 
 {: .note}
 Don't use the packages provided by Ubuntu in all releases up to and including 17.10, they are severely outdated. On Ubuntu 18.04 only use the package if it has at least version 3.2.2.
@@ -51,6 +51,13 @@ Afterwards run `schleuder install` to finalize the setup of Schleuder. This crea
 {: .note}
 The copr-repository also provides you with a package for [schleuder-web](https://0xacab.org/schleuder/schleuder-web/). Please read the documentation of schleuder-web on how to get it up and running.
 
+#### Archlinux
+
+For archlinux there are the [AUR](https://wiki.archlinux.org/title/Arch_User_Repository) packages for [schleuder](https://aur.archlinux.org/packages/schleuder/) and [schleuder-cli](https://aur.archlinux.org/packages/schleuder-cli/).
+
+See the [official AUR documentation](https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages) on how to install AUR packages or use one of the many available [AUR helpers](https://wiki.archlinux.org/title/AUR_helpers) to manage AUR dependencies.
+
+Once you have installed the `schleuder` package you need to run `schleuder install` as the created schleuder system user. See also the [schleuder wiki page](https://wiki.archlinux.org/title/Schleuder) for information about installation and configuration.
 
 #### From Ruby-Gem
 
