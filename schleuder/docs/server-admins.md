@@ -171,7 +171,8 @@ Within the `begin routers` section of your `exim.conf` you can add the following
 
     mlschleuder:
       driver = accept
-      condition = ${lookup {$local_part@$domain}lsearch{/etc/exim/schleuder-lists} {yes}{no}}
+      require_files = /etc/exim/schleuder-lists
+      address_data = ${lookup {$local_part@$domain} lsearch,ret=key {/etc/exim/schleuder-lists} {$value} fail}
       local_part_suffix_optional
       local_part_suffix = +* : -bounce : -sendkey : -request : -owner
       transport = mlschleuder_transport_local
@@ -186,8 +187,8 @@ Within the `begin transports` section of your `exim.conf` you then configure the
        group = schleuder
        # schleuders generates nice log messages for some of the problems
        return_fail_output = true
-       home_directory = /var/lib/schleuder/lists/$domain/$local_part
-       command = "/usr/bin/schleuder work $local_part$local_part_suffix@$domain"
+       home_directory = /var/lib/schleuder/lists/${domain:$address_data}/${local_part:$address_data}
+       command = "/usr/bin/schleuder work ${local_part:$address_data}${local_part_suffix}@${domain:$address_data}"
        message_size_limit = 10M
 
 Please note that we keep the `$local_part_suffix` when handing the mail over to schleuder, so schleuder can e.g. detect bounces or sendkey emails properly.
