@@ -175,7 +175,6 @@ Within the `begin routers` section of your `exim.conf` you can add the following
       local_part_suffix_optional
       local_part_suffix = +* : -bounce : -sendkey : -request : -owner
       transport = mlschleuder_transport_local
-      no_more
 
 `/etc/exim/schleuder-lists` is a simple textfile containing one list-address per line. You can for example create it by executing `schleuder-cli lists list > /etc/exim/schleuder-lists` after creating or deleting any lists. In more advanced setups you might have different conditions depending on how you manage the inventory of your schleuder lists and decide to accept a mail for a list.
 
