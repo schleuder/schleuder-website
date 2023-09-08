@@ -38,7 +38,8 @@ deploy:
     - chmod 700 ~/.ssh
     - printf "
       |1|ZfxGVbfwfCHlaURlet/V6y+2gjg=|/X7OweXQUnXZnGSKkvF/IpVz4n4= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPJx38PfGvaHtkSsHptiHoIQxlI3Yf0cskPNTwAQnY14\n
-      |1|8YPsezXF2SYQ7rq9U5TbDnMsVjo=|SJOodZB+8j+dO+l6YTdZ7+44XLw= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPJx38PfGvaHtkSsHptiHoIQxlI3Yf0cskPNTwAQnY14
+      |1|8YPsezXF2SYQ7rq9U5TbDnMsVjo=|SJOodZB+8j+dO+l6YTdZ7+44XLw= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPJx38PfGvaHtkSsHptiHoIQxlI3Yf0cskPNTwAQnY14\n
+      ftp.schleuder.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMipvUM0/aLT4LXkqehXRURN5JHvhz1+9pfuIj7y7LRG
       " > ~/.ssh/known_hosts
     - tar fxv site.tar.gz
     # In case we're not dealing with the main branch, create the review dir on the webserver.
