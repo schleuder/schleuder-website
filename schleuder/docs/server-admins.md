@@ -171,13 +171,29 @@ Within the `begin routers` section of your `exim.conf` you can add the following
 
     mlschleuder:
       driver = accept
+      address_data = ${lookup sqlite,file=/var/lib/schleuder/db.sqlite {select email from lists where email = '${quote_sqlite:${local_part}@${domain}}'} {$value} fail}
+      local_part_suffix_optional
+      local_part_suffix = +* : -bounce : -sendkey : -request : -owner
+      transport = mlschleuder_transport_local
+
+This router will look directly in schleuder’s sqlite file to check if the given recipient is a legitimate list’s email address. For this to work, exim needs to be able to read that file. One approach to achieve this is to add the user exim is running as to the group the file belongs to and make the file group-readable. For Debian the following commands will achieve that:
+
+    adduser Debian-exim schleuder
+    chmod g+r /var/lib/schleuder/db.sqlite
+
+If that is not possible, you can instead add the following router:
+
+    mlschleuder:
+      driver = accept
       require_files = /etc/exim/schleuder-lists
       address_data = ${lookup {$local_part@$domain} lsearch,ret=key {/etc/exim/schleuder-lists} {$value} fail}
       local_part_suffix_optional
       local_part_suffix = +* : -bounce : -sendkey : -request : -owner
       transport = mlschleuder_transport_local
 
-`/etc/exim/schleuder-lists` is a simple textfile containing one list-address per line. You can for example create it by executing `schleuder-cli lists list > /etc/exim/schleuder-lists` after creating or deleting any lists. In more advanced setups you might have different conditions depending on how you manage the inventory of your schleuder lists and decide to accept a mail for a list.
+`/etc/exim/schleuder-lists` is a simple textfile containing one list-address per line. You can for example create it by executing `schleuder-cli lists list > /etc/exim/schleuder-lists` after creating or deleting any lists.
+
+In more advanced setups you might have different conditions depending on how you manage the inventory of your schleuder lists and decide to accept a mail for a list.
 
 Within the `begin transports` section of your `exim.conf` you then configure the transport:
 
