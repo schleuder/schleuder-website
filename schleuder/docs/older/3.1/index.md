@@ -19,7 +19,7 @@ Schleuder is an email hub for groups. Subscribers can communicate encryptedly an
 
 Basically Schleuder is a "wanted man-in-the-middle".
 
-Each list has its own keypair. Schleuder decrypts every incoming email and verifies its signature with the keys from the list's keyring. Then Schleuder loops over the list of subscribers, creates for each a stripped down copy of the message, encrypts it with the subscriber's key and signs it with its own key, and sends it out.
+Each list has its own key pair. Schleuder decrypts every incoming email and verifies its signature with the keys from the list's keyring. Then Schleuder loops over the list of subscribers, creates for each a stripped down copy of the message, encrypts it with the subscriber's key and signs it with its own key, and sends it out.
 
 Schleuder inserts some lines of metadata into the top of the email, containing a (configurable) copy of some of the original headers and the result of the decryption and verification of the incoming email. Here's an example:
 
@@ -332,7 +332,7 @@ x-fetch-key: 0x12345678DEADBEEF12345678DEADBEEF12345678
 This keyword must be send to the normal list-address: `listname@hostname`.
 
 x-attach-listkey:
-: Attachs the public key of the list. Probably most useful in combination with x-resend.
+: Attaches the public key of the list. Probably most useful in combination with x-resend.
 
 
 #### Other
@@ -383,7 +383,7 @@ User-relevant changes in version 3.1 compared to version 3.0:
 * New `x-`keywords:
   * `x-get-logfile`: Sends the logfile of the list.
   * `x-get-version`: Returns the version of schleuder.
-  * `x-attach-listkey`: Attachs the public key of the list. Probably most useful when in combination with x-resend.
+  * `x-attach-listkey`: Attaches the public key of the list. Probably most useful when in combination with x-resend.
 * Changed and fixed `x-`keywords:
   * `x-get-key`: Handles multiple keys per match; keys are added as attachments.
 * Whitespaces and 0x-prefix in the input are tolerated while setting the fingerprint of a subscription.
