@@ -11,5 +11,6 @@ This release brings some improvements and bug fixes, but breaks usage only by ch
 * Schleuder doesn't use `dirmngr` anymore but communicates with keyservers using own code. For this it newly requires `libcurl` and the rubygem "typhoeus".
 * Schleuder now knows how to import a key from an incoming email: if the email is encrypted or signed, and if the list doesn't know a key matching the sender's address (`From` header), then Schleuder will check if such a matching key is present in the email's attachments or its Autocrypt-headers. This hopefully is helpful in case a list receives emails from a lot of different people with fluctuating key usage. The feature is configurable per list, and is off by default.
 * After uploading keys, the users now directly see details about the uplaoded keys. This is meant to help in situations in which people accidentally upload expired keys.
+* The oldest supported Ruby version is now 3.1.
 
 Please see the [changelog](https://0xacab.org/schleuder/schleuder/blob/main/CHANGELOG.md#500-2024-XX-XX) for further details.
