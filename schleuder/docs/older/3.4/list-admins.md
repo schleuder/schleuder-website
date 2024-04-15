@@ -47,7 +47,7 @@ These keywords must be send to `foo-request@hostname`. They are used to get info
 This keyword must be send to the normal list-address: `foo@hostname`.
 
 **x-attach-listkey:**
-: Attachs the public key of the list. This might be useful for example after the setup of a new list, to distribute the public key of the list to all subscribers.
+: Attaches the public key of the list. This might be useful for example after the setup of a new list, to distribute the public key of the list to all subscribers.
 
 
 #### Other
