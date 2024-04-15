@@ -15,6 +15,7 @@ Keywords require that:
 * they start the line and begin with "x-",
 * they are written into the beginning of the *first text-part* of the email (usually that's just the normal body of the email),
 * possible arguments must be written *on the same line* as the keyword (exceptions are mentioned in the descriptions below),
+* they are separated from the body of the email with a blank line,
 * the email must be *encrypted and signed* by a list-member's key.
 * the email must be formatted as a *plain text* message and not with HTML, RTF or similar formatting.
 
