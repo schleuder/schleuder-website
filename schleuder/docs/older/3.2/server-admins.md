@@ -42,7 +42,7 @@ The package will finalize the setup of Schleuder, too.
 
 #### CentOS
 
-For CentOS 7 there is a maintained [copr-repository](https://copr.fedorainfracloud.org/coprs/schleuder/schleuder/) using [Software Collections](https://www.softwarecollections.org/en/).
+For CentOS 7 there is a maintained [copr-repository](https://copr.fedorainfracloud.org/coprs/schleuder/schleuder/).
 
 {: .note}
 All steps need root privileges
