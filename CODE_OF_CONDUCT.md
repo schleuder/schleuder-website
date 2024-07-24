@@ -22,7 +22,7 @@ If anyone engages in abusive, harassing, or otherwise unacceptable behavior, inc
 
 If you are being harassed, notice that someone else is being harassed, or have any other concerns, please [contact the development team]({{ "contact.html" | absolute_url }}) immediately.
 
-We expect everyone to follow these rules anywhere in the Schleuder project’s codebases, issue trackers, IRC channel, group chat, mailing lists, meetups, and any other events.
+We expect everyone to follow these rules anywhere in the Schleuder project’s codebases, issue trackers, related chats, mailing lists, meetups, and any other events.
 
 This code of conduct applies both within project spaces and in public spaces when an individual is representing the project or its community.
 
