@@ -14,3 +14,5 @@ This release brings some improvements and bug fixes, but breaks usage only by ch
 * The oldest supported Ruby version is now 3.1.
 
 Please see the [changelog](https://0xacab.org/schleuder/schleuder/blob/main/CHANGELOG.md#500-2024-XX-XX) for further details.
+
+We dedicate this release to René Paulokat. He helped to kickstart this project, and his influence is still present in the code base to this day. We will keep this project alive – as long as it matters, just as René would have done. May he rest in peace. 🖤
