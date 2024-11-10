@@ -19,7 +19,7 @@ Besides schleuder you should also install at least one of [schleuder-cli](https:
 {: .note}
 The step needs root privileges
 
-We maintain schleuder and schleuder-cli in "buster" and above. (For production usage we recommend Debian "buster".)
+We maintain schleuder and schleuder-cli in "bookworm" and the older "buster". (For production usage we recommend Debian "bookworm".)
 To install the packages
 
     apt-get install schleuder schleuder-cli
