@@ -34,7 +34,7 @@ For instructions on how to install from rubygems please see the [README](https:/
 #### Automation
 
 To ease the installation and configuration of schleuder, schleuder-cli and schleuder-web, and to help with the creation and deletion of lists, you can have a look at
-an [ansible role](https://github.com/systemli/ansible-role-schleuder), which is targetted at Debian-systems.
+an [ansible role](https://github.com/systemli/ansible-role-schleuder), which is targeted at Debian-systems.
 
 
 ### Configuration
