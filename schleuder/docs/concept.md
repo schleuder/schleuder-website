@@ -2,7 +2,7 @@
 title: Concept
 ---
 
-{% include docs-head.md version=4.0 %}
+{% include docs-head.md version=5.0 %}
 
 Schleuder is an OpenPGP-enabled mailing list manager with resending capabilities. This document tries to explain what that means.
 
