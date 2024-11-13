@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Schleuder 5.0.0 released"
-date: "2024-XX-XX"
+date: "2024-11-13"
 ---
 
 This release brings some improvements and bug fixes, but breaks usage only by changing technical dependencies and dropping the default setting of one config option:
@@ -13,6 +13,6 @@ This release brings some improvements and bug fixes, but breaks usage only by ch
 * After uploading keys, the users now directly see details about the uploaded keys. This is meant to help in situations in which people accidentally upload expired keys.
 * The oldest supported Ruby version is now 3.1.
 
-Please see the [changelog](https://0xacab.org/schleuder/schleuder/blob/main/CHANGELOG.md#500-2024-XX-XX) for further details.
+Please see the [changelog](https://0xacab.org/schleuder/schleuder/blob/main/CHANGELOG.md#500--2024-11-13) for further details.
 
 We dedicate this release to René Paulokat. He helped to kickstart this project, and his influence is still present in the code base to this day. We will keep this project alive – as long as it matters, just as René would have done. May he rest in peace. 🖤
