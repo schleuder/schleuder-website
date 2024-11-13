@@ -9,22 +9,55 @@ title: Documentation for server-admins
 
 ### Installation
 
-You can install schleuder either from a Debian package or rubygems.
+You can install schleuder either from Linux distribution packages or rubygems. Currently there are supported distribution packages for Debian ("buster" and above), CentOS 7 and Archlinux (via AUR). If you use one of the directly supported platforms, you should choose the packages over the gems.
+
+{: .note}
+Don't use the packages provided by Ubuntu in all releases up to and including 17.10, they are severely outdated. On Ubuntu 18.04 only use the package if it has at least version 3.2.2.
 
 Besides schleuder you should also install at least one of [schleuder-cli](https://0xacab.org/schleuder/schleuder-cli) (the command line tool to manage Schleuder lists), and [schleuder-web](https://0xacab.org/schleuder/schleuder-web) (the web interface to manage and maintain Schleuder lists).
 
+Additionally we recommend running an entropy source such as `haveged`. This ensures Schleuder won't be blocked by lacking entropy, which otherwise might happen e.g. during key generation.
 
 #### Debian
 
 {: .note}
 The step needs root privileges
 
-We maintain schleuder and schleuder-cli in "bookworm" and the older "buster". (For production usage we recommend Debian "bookworm".)
+We maintain schleuder and schleuder-cli in "buster" and above. (For production usage we recommend Debian "buster".)
 To install the packages
 
     apt-get install schleuder schleuder-cli
 
 Running `schleuder install` afterwards isn't necessary, the package takes care of it.
+
+#### CentOS
+
+For CentOS 7 there is a maintained [copr-repository](https://copr.fedorainfracloud.org/coprs/schleuder/schleuder/).
+
+{: .note}
+All steps need root privileges
+
+Install the repository & the SCL repository
+
+    yum install centos-release-scl
+    curl -o /etc/yum.repos.d/schleuder-schleuder-epel-7.repo https://copr.fedorainfracloud.org/coprs/schleuder/schleuder/repo/epel-7/schleuder-schleuder-epel-7.repo
+
+Now you are ready to install schleuder and schleuder-cli
+
+    yum install schleuder schleuder-cli
+
+Afterwards run `schleuder install` to finalize the setup of Schleuder. This creates necessary directories, copies example configs, etc. If you see errors about missing write permissions please follow the advice given.
+
+{: .note}
+The copr-repository also provides you with a package for [schleuder-web](https://0xacab.org/schleuder/schleuder-web/). Please read the documentation of schleuder-web on how to get it up and running.
+
+#### Archlinux
+
+For archlinux there are the [AUR](https://wiki.archlinux.org/title/Arch_User_Repository) packages for [schleuder](https://aur.archlinux.org/packages/schleuder/) and [schleuder-cli](https://aur.archlinux.org/packages/schleuder-cli/).
+
+See the [official AUR documentation](https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages) on how to install AUR packages or use one of the many available [AUR helpers](https://wiki.archlinux.org/title/AUR_helpers) to manage AUR dependencies.
+
+Once you have installed the `schleuder` package you need to run `schleuder install` as the created schleuder system user. See also the [schleuder wiki page](https://wiki.archlinux.org/title/Schleuder) for information about installation and configuration.
 
 #### From Ruby-Gem
 
@@ -33,8 +66,11 @@ For instructions on how to install from rubygems please see the [README](https:/
 
 #### Automation
 
-To ease the installation and configuration of schleuder, schleuder-cli and schleuder-web, and to help with the creation and deletion of lists, you can have a look at
-an [ansible role](https://github.com/systemli/ansible-role-schleuder), which is targeted at Debian-systems.
+To ease the installation and configuration of schleuder, schleuder-cli and schleuder-web, and to help with the creation and deletion of lists, you can rely either on...
+
+* an [ansible role](https://github.com/systemli/ansible-role-schleuder), which works for Debian, or
+
+* a [puppet module](https://0xacab.org/schleuder/puppet-schleuder). Currently it works for CentOS 7, but we would like to make it work for Debian as well - help would be highly appreciated.
 
 
 ### Configuration
@@ -87,7 +123,7 @@ Now adapt the following lines for each list and add them to `/etc/postfix/transp
 Afterwards run `postmap /etc/postfix/transport_schleuder` and restart postfix. Remember to repeat this also for newly created lists later.
 
 
-Another way to tell postfix which domain and list can be piped to schleuder is to get that information out of the sqlite database. A requirement for that is the postfix-sqlite package.
+Another way to tell postfix which domain and list can be piped to schleuder is to get that information out of the sqlite database. A requirement for that is the postfix-sqlite package, which isn't in the standard repositories of CentOS, but Debian.
 
 **To dedicate a whole domain to Schleuder,** add these lines to `main.cf`:
 
@@ -265,7 +301,7 @@ Call this command weekly from cron to automate the check and have the results se
 
     schleuder refresh_keys
 
-The available package for Debian installs a weekly cron job that check and refresh keys. Listadmins will be notified about issues with or changes to their keyring.
+The available packages for Debian and CentOS both install a weekly cron job that check and refresh keys. Listadmins will be notified about issues with or changes to their keyring.
 
 An additional maintenance command is available that allows you to pin subscriptions to their best matching key. If there is no key assigned, schleuder will try to select a key from the list's keyring that distinctly matches the subscription's email address.
 
