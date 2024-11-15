@@ -53,7 +53,7 @@ The copr-repository also provides you with a package for [schleuder-web](https:/
 
 #### Archlinux
 
-For archlinux there are the [AUR](https://wiki.archlinux.org/title/Arch_User_Repository) packages for [schleuder](https://aur.archlinux.org/packages/schleuder/) and [schleuder-cli](https://aur.archlinux.org/packages/schleuder-cli/).
+For archlinux there is a [AUR](https://wiki.archlinux.org/title/Arch_User_Repository) package for [schleuder-cli](https://aur.archlinux.org/packages/schleuder-cli/).
 
 See the [official AUR documentation](https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages) on how to install AUR packages or use one of the many available [AUR helpers](https://wiki.archlinux.org/title/AUR_helpers) to manage AUR dependencies.
 
